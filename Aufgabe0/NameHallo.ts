@@ -32,16 +32,3 @@ class Prompt_Box_Hi
 
 
 
-
-/*
-window.onload = () =>
-{
-    var button = <HTMLButtonElement>document.getElementById("Button1");
-    button.onclick = function ()
-    
-    {
-    var box = new Prompt_Box_Hi();
-    box.show();
-    }     
-};
-*/
