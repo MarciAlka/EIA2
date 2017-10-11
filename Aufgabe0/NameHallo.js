@@ -1,18 +1,8 @@
 /*Aufgabe 0 von Denise Marcella Alka, 06.Oktober.2017*/
-
-
-function getName1 (){
-	var name = prompt("Geben Sie hier bitte ihren Namen ein:"," ");
-		document.write(name ,", Herzlich Willkommen!");		
+function getName1() {
+    var name = prompt("Geben Sie hier bitte ihren Namen ein:", " ");
+    document.write(name, ", Herzlich Willkommen!");
 }
-
-
-
-
-
-
-
-
 /*class Prompt_Box_Hi
 
 {
@@ -29,19 +19,3 @@ function getName1 (){
     }
 }
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
