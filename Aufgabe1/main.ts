@@ -1,3 +1,5 @@
+/*Work by Marci Alka*/
+
 window.addEventListener("load", init);
 
 function init(): void {

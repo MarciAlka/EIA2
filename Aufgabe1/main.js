@@ -1,3 +1,4 @@
+/*Work by Marci Alka*/
 window.addEventListener("load", init);
 function init() {
     let canvas = document.getElementsByTagName("canvas")[0];
