@@ -7,9 +7,7 @@ function init() {
     /*hellgraues Rechteck f�r den Himmel*/
     crc2.fillStyle = "#E0FFFF";
     crc2.fillRect(0, 0, 800, 600);
-    /*Dreieckiger Berg �ber Rechteck
-    #DCDCDC
-    */
+    /*Dreieckiger Berg �ber Rechteck*/
     crc2.beginPath();
     crc2.moveTo(0, 0);
     crc2.lineTo(800, 600);
@@ -75,5 +73,132 @@ function init() {
     crc2.beginPath();
     crc2.arc(730, 118, 10, 0, 2 * Math.PI);
     crc2.fillStyle = "#FFFFFF";
+    crc2.fill();
+    /*gr�ne B�ume
+    Grundangaben:
+    
+    winziger Baum:
+    crc2.moveTo(350, 260);
+    crc2.lineTo(360, 310);
+    crc2.lineTo(340, 310);
+    
+    kleiner Baum:
+    crc2.moveTo(250, 250);
+    crc2.lineTo(280, 350);
+    crc2.lineTo(220, 350);
+    
+    
+    mittlerer Baum:
+    crc2.moveTo(200, 300);
+    crc2.lineTo(250, 500);
+    crc2.lineTo(150, 500);
+    */
+    /*winzig*/
+    crc2.beginPath();
+    crc2.moveTo(10, 100);
+    crc2.lineTo(20, 150);
+    crc2.lineTo(0, 150);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(20, 40);
+    crc2.lineTo(30, 90);
+    crc2.lineTo(10, 90);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(180, 150);
+    crc2.lineTo(190, 200);
+    crc2.lineTo(170, 200);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(350, 260);
+    crc2.lineTo(360, 310);
+    crc2.lineTo(340, 310);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    /*klein*/
+    crc2.beginPath();
+    crc2.moveTo(250, 250);
+    crc2.lineTo(280, 350);
+    crc2.lineTo(220, 350);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(100, 100);
+    crc2.lineTo(130, 200);
+    crc2.lineTo(70, 200);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(150, 180);
+    crc2.lineTo(180, 280);
+    crc2.lineTo(120, 280);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(400, 380);
+    crc2.lineTo(430, 480);
+    crc2.lineTo(370, 480);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    /*mittel*/
+    crc2.beginPath();
+    crc2.moveTo(50, 100);
+    crc2.lineTo(100, 300);
+    crc2.lineTo(0, 300);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(200, 200);
+    crc2.lineTo(250, 400);
+    crc2.lineTo(150, 400);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    /*Ausnahme klein*/
+    crc2.beginPath();
+    crc2.moveTo(75, 280);
+    crc2.lineTo(105, 380);
+    crc2.lineTo(45, 380);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(60, 400);
+    crc2.lineTo(110, 600);
+    crc2.lineTo(10, 600);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
+    crc2.fill();
+    crc2.beginPath();
+    crc2.moveTo(200, 380);
+    crc2.lineTo(250, 580);
+    crc2.lineTo(150, 580);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = "#6E8B3D";
     crc2.fill();
 }
