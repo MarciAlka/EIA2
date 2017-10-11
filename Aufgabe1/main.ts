@@ -11,6 +11,39 @@ function init(): void {
     crc2.fillStyle = "#E0FFFF";
     crc2.fillRect(0, 0, 800, 600);
     
+    /*Berge*/
+    crc2.beginPath();
+    crc2.moveTo(600, 400);
+    crc2.lineTo(800, 500);
+    crc2.lineTo(10, 600);
+    crc2.closePath(); 
+    crc2.fillStyle = "#FCFCFC";
+    crc2.fill();
+    
+    crc2.beginPath();
+    crc2.moveTo(750, 450);
+    crc2.lineTo(800, 470);
+    crc2.lineTo(100, 470);
+    crc2.closePath(); 
+    crc2.fillStyle = "#FCFCFC";
+    crc2.fill();
+    
+    crc2.beginPath();
+    crc2.moveTo(800, 470);
+    crc2.lineTo(800, 600);
+    crc2.lineTo(400, 600);
+    crc2.closePath(); 
+    crc2.fillStyle = "#FCFCFC";
+    crc2.fill();
+    
+    crc2.beginPath();
+    crc2.moveTo(720, 450);
+    crc2.lineTo(870, 470);
+    crc2.lineTo(400, 600);
+    crc2.closePath(); 
+    crc2.fillStyle = "#FCFCFC";
+    crc2.fill();
+    
     /*Dreieckiger Berg über Rechteck*/
     crc2.beginPath();
     crc2.moveTo(0, 0);
