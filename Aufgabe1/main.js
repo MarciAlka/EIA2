@@ -232,3 +232,4 @@ function init() {
     crc2.fillStyle = "#6E8B3D";
     crc2.fill();
 }
+//# sourceMappingURL=main.js.map
