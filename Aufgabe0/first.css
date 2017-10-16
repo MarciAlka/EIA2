@@ -1,4 +1,8 @@
-/* css Datei von Denise Marcella Alka */
+/* css Datei von Denise Marcella Alka 
+hiermit versichere ich, dass der Code
+von mir (Denise Marcella Alka, 256690) 
+eigenständig geschrieben wurde
+*/
 
 /* Einbettung font */ 
 @import url('https://fonts.googleapis.com/css?family=Courgette');
@@ -8,6 +12,7 @@ body {
 	font-size: 1.0em;
 	font-family: "Courgette", sans-serif;
 }
+
 
 img, button {
 	display:block;
