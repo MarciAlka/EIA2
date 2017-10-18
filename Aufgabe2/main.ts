@@ -79,47 +79,51 @@ function init(): void {
     crc2.fill();
     
     /*Wolke 1*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(670, 120, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
     /*W1.2*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(680, 130, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
     /*W1.3*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(660, 130, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
     /*W1.4*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(670, 128, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
     
         /*Wolke 2*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(730, 110, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
     /*W2.2*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(740, 120, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
     /*W2.3*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(720, 120, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
     /*W2.4*/
-    crc2.beginPath();
+    /*crc2.beginPath();
     crc2.arc(730, 118, 10, 0, 2 * Math.PI);
     crc2.fillStyle ="#FFFFFF";
     crc2.fill();
+    */
     
+    /*Wolken*/
+    drawCloud (670, 120, 10, "#FFFFFF");
+    drawCloud (730, 110, 10, "#FFFFFF");
     
     /* Bäume*/
     
@@ -199,6 +203,26 @@ function drawTreeL (x : number, y : number, color : string){
 }
 
 /*Wolken*/
-function drawCloud (){}
+function drawCloud (x:number, y:number, rad:number, color: string){
+    crc2.beginPath();
+    crc2.arc(670, 120, rad, 0, 2 * Math.PI);
+    crc2.fillStyle = color;
+    crc2.fill();
+    /*W1.2*/
+    crc2.beginPath();
+    crc2.arc(x + 10, y + 10, rad, 0, 2 * Math.PI);
+    crc2.fillStyle = color;
+    crc2.fill();
+    /*W1.3*/
+    crc2.beginPath();
+    crc2.arc(x - 10, y + 10, rad, 0, 2 * Math.PI);
+    crc2.fillStyle = color;
+    crc2.fill();
+    /*W1.4*/
+    crc2.beginPath();
+    crc2.arc(x, y + 8, rad, 0, 2 * Math.PI);
+    crc2.fillStyle = color;
+    crc2.fill();
+}
 
 /*Schneeflocken*/
