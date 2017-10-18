@@ -171,7 +171,6 @@ function drawTreeS (x : number, y : number, color : string){
     crc2.fill();	
 }
 
-
 /*kleiner Baum*/
 function drawTreeL (x : number, y : number, color : string){
 
