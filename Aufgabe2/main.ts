@@ -128,11 +128,11 @@ function init(): void {
     /* Bäume*/
     
     	/*winzige Bäume; Zufallschleife*/
-    		for (let i:number =0; i<4;i++){
-    			let x:number=150+Math.random()*100;
-    			let y: number=180+Math.random()*60;
-    			
-    			drawTreeS (10,100,"#6E8B3");
+    		for (let i: number = 0; i < 4; i++){
+    			let x: number= 150 + Math.random() * 100;
+    			let y: number= 180 + Math.random() * 60;
+
+                drawTreeS (10, 100, "#6E8B3");
     			
     			/*
     			drawTreeS (20,40,"#6E8B3D");
@@ -163,7 +163,7 @@ function init(): void {
 }
 
 /*winziger Baum*/
-function drawTreeS (x : number, y : number, color : string){
+function drawTreeS (x : number, y : number, color : string) :void {
 
     crc2.beginPath();
     crc2.moveTo(x, y);
@@ -176,7 +176,7 @@ function drawTreeS (x : number, y : number, color : string){
 }
 
 /*kleiner Baum*/
-function drawTreeL (x : number, y : number, color : string){
+function drawTreeL (x : number, y : number, color : string) :void {
 
     crc2.beginPath();
     crc2.moveTo(x, y);
@@ -190,7 +190,7 @@ function drawTreeL (x : number, y : number, color : string){
 
 
 /*mittlerer Baum*/
- function drawTreeM (x : number, y : number, color : string){
+ function drawTreeM (x : number, y : number, color : string) :void {
 
     crc2.beginPath();
     crc2.moveTo(x, y);
@@ -203,7 +203,7 @@ function drawTreeL (x : number, y : number, color : string){
 }
 
 /*Wolken*/
-function drawCloud (x:number, y:number, rad:number, color: string){
+function drawCloud (x:number, y:number, rad:number, color: string) :void {
     crc2.beginPath();
     crc2.arc(670, 120, rad, 0, 2 * Math.PI);
     crc2.fillStyle = color;
