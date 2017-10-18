@@ -198,7 +198,7 @@ var A2;
         crc2.beginPath();
         /*x nach rechts; 1 ist radius 2 damit Kreis...bei 1 halbkreis*/
         crc2.arc(x, y, 1, 0, 2 * Math.PI);
-        crc2.fillStyle = "#FFD700";
+        crc2.fillStyle = "#FFFFFF";
         crc2.fill();
     }
 })(A2 || (A2 = {}));
