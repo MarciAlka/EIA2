@@ -128,7 +128,7 @@ function init(): void {
     /* Bäume*/
     
     	/*winzige Bäume; Zufallschleife*/
-    		for (let i:number =0; i<30;i++){
+    		for (let i:number =0; i<4;i++){
     			let x:number=150+Math.random()*100;
     			let y: number=180+Math.random()*60;
     			

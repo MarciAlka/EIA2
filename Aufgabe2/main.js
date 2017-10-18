@@ -113,7 +113,7 @@ var A2;
         drawCloud(730, 110, 10, "#FFFFFF");
         /* B�ume*/
         /*winzige B�ume; Zufallschleife*/
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 4; i++) {
             let x = 150 + Math.random() * 100;
             let y = 180 + Math.random() * 60;
             drawTreeS(10, 100, "#6E8B3");
