@@ -19,3 +19,4 @@ function getName1() {
     }
 }
 */
+//# sourceMappingURL=NameHallo.js.map
