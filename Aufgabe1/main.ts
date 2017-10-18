@@ -7,12 +7,13 @@ eigenständig geschrieben wurde
 
 window.addEventListener("load", init);
 
+/*globale Variable*/
+let crc2: CanvasRenderingContext2D = canvas.getContext("2d");
+console.log(crc2);
+
 function init(): void {
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     console.log(canvas);
-
-    let crc2: CanvasRenderingContext2D = canvas.getContext("2d");
-    console.log(crc2);
     
     /*hellgraues Rechteck für den Himmel*/
     crc2.fillStyle = "#E0FFFF";
@@ -144,6 +145,7 @@ function init(): void {
     crc2.lineTo(150, 500);
     */
     
+    
     /*winzig*/
     crc2.beginPath();
     crc2.moveTo(10, 100);
@@ -266,6 +268,4 @@ function init(): void {
     crc2.fill();
     
 }
-
-
 
