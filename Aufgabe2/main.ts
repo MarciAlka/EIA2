@@ -211,7 +211,7 @@ function drawTreeL (x : number, y : number, color : string) :void {
 /*Wolken*/
 function drawCloud (x:number, y:number, rad:number, color: string) :void {
     crc2.beginPath();
-    crc2.arc(670, 120, rad, 0, 2 * Math.PI);
+    crc2.arc(x, y, rad, 0, 2 * Math.PI);
     crc2.fillStyle = color;
     crc2.fill();
     /*W1.2*/
