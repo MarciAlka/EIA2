@@ -1,7 +1,7 @@
 /*Aufgabe 1 von Denise Marcella Alka, 08.Oktober.2017
 hiermit versichere ich, dass der Code von mir
 (Denise Marcella Alka, 256690)
-eigenst�ndig geschrieben wurde
+eigenst�ndig geschrieben wurde;
 */
 var A2;
 (function (A2) {
