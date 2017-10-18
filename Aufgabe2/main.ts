@@ -158,8 +158,14 @@ function init(): void {
     		drawTreeM (60,400,"#6E8B3D");
     		drawTreeM (200,380,"#6E8B3D");
     
- 
-}
+    /*Schneeflocken*/
+        
+        for(let i: number = 0; i < 30; i++){
+            let x: number= 150 + Math.random() * 100;
+            let y: number= 180 + Math.random() * 60;
+            drawSnowf(10,50);    
+        }
+    
 }
 
 /*winziger Baum*/
@@ -226,3 +232,11 @@ function drawCloud (x:number, y:number, rad:number, color: string) :void {
 }
 
 /*Schneeflocken*/
+function drawSnowf (x:number, y:number){
+    crc2.beginPath();
+    /*x nach rechts; 1 ist radius 2 damit Kreis...bei 1 halbkreis*/
+    crc2.arc(x, y, 1, 0, 2 * Math.PI);
+    crc2.fillStyle ="#FFD700";
+    crc2.fill();        
+}
+}

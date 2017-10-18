@@ -131,62 +131,75 @@ var A2;
         /*weiter mittlere B�ume*/
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
+        /*Schneeflocken*/
+        for (let i = 0; i < 30; i++) {
+            let x = 150 + Math.random() * 100;
+            let y = 180 + Math.random() * 60;
+            drawSnowf(10, 50);
+        }
+    }
+    /*winziger Baum*/
+    function drawTreeS(x, y, color) {
+        crc2.beginPath();
+        crc2.moveTo(x, y);
+        crc2.lineTo(x + 10, y + 50);
+        crc2.lineTo(x - 10, y + 50);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = color;
+        crc2.fill();
+    }
+    /*kleiner Baum*/
+    function drawTreeL(x, y, color) {
+        crc2.beginPath();
+        crc2.moveTo(x, y);
+        crc2.lineTo(x + 30, y + 100);
+        crc2.lineTo(x - 30, y + 100);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = color;
+        crc2.fill();
+    }
+    /*mittlerer Baum*/
+    function drawTreeM(x, y, color) {
+        crc2.beginPath();
+        crc2.moveTo(x, y);
+        crc2.lineTo(x + 50, y + 200);
+        crc2.lineTo(x - 50, y + 200);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = color;
+        crc2.fill();
+    }
+    /*Wolken*/
+    function drawCloud(x, y, rad, color) {
+        crc2.beginPath();
+        crc2.arc(670, 120, rad, 0, 2 * Math.PI);
+        crc2.fillStyle = color;
+        crc2.fill();
+        /*W1.2*/
+        crc2.beginPath();
+        crc2.arc(x + 10, y + 10, rad, 0, 2 * Math.PI);
+        crc2.fillStyle = color;
+        crc2.fill();
+        /*W1.3*/
+        crc2.beginPath();
+        crc2.arc(x - 10, y + 10, rad, 0, 2 * Math.PI);
+        crc2.fillStyle = color;
+        crc2.fill();
+        /*W1.4*/
+        crc2.beginPath();
+        crc2.arc(x, y + 8, rad, 0, 2 * Math.PI);
+        crc2.fillStyle = color;
+        crc2.fill();
+    }
+    /*Schneeflocken*/
+    function drawSnowf(x, y) {
+        crc2.beginPath();
+        /*x nach rechts; 1 ist radius 2 damit Kreis...bei 1 halbkreis*/
+        crc2.arc(x, y, 1, 0, 2 * Math.PI);
+        crc2.fillStyle = "#FFD700";
+        crc2.fill();
     }
 })(A2 || (A2 = {}));
-/*winziger Baum*/
-function drawTreeS(x, y, color) {
-    crc2.beginPath();
-    crc2.moveTo(x, y);
-    crc2.lineTo(x + 10, y + 50);
-    crc2.lineTo(x - 10, y + 50);
-    crc2.closePath();
-    crc2.stroke();
-    crc2.fillStyle = color;
-    crc2.fill();
-}
-/*kleiner Baum*/
-function drawTreeL(x, y, color) {
-    crc2.beginPath();
-    crc2.moveTo(x, y);
-    crc2.lineTo(x + 30, y + 100);
-    crc2.lineTo(x - 30, y + 100);
-    crc2.closePath();
-    crc2.stroke();
-    crc2.fillStyle = color;
-    crc2.fill();
-}
-/*mittlerer Baum*/
-function drawTreeM(x, y, color) {
-    crc2.beginPath();
-    crc2.moveTo(x, y);
-    crc2.lineTo(x + 50, y + 200);
-    crc2.lineTo(x - 50, y + 200);
-    crc2.closePath();
-    crc2.stroke();
-    crc2.fillStyle = color;
-    crc2.fill();
-}
-/*Wolken*/
-function drawCloud(x, y, rad, color) {
-    crc2.beginPath();
-    crc2.arc(670, 120, rad, 0, 2 * Math.PI);
-    crc2.fillStyle = color;
-    crc2.fill();
-    /*W1.2*/
-    crc2.beginPath();
-    crc2.arc(x + 10, y + 10, rad, 0, 2 * Math.PI);
-    crc2.fillStyle = color;
-    crc2.fill();
-    /*W1.3*/
-    crc2.beginPath();
-    crc2.arc(x - 10, y + 10, rad, 0, 2 * Math.PI);
-    crc2.fillStyle = color;
-    crc2.fill();
-    /*W1.4*/
-    crc2.beginPath();
-    crc2.arc(x, y + 8, rad, 0, 2 * Math.PI);
-    crc2.fillStyle = color;
-    crc2.fill();
-}
-/*Schneeflocken*/ 
 //# sourceMappingURL=main.js.map
