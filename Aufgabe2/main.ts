@@ -194,7 +194,7 @@ function drawTreeL (x : number, y : number, color : string){
     crc2.lineTo(x - 50, y + 200);
     crc2.closePath();
     crc2.stroke(); 
-    crc2.fillStyle = color;
+    crc2.fillStyle = "color";
     crc2.fill();	
 }
 
