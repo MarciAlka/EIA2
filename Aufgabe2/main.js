@@ -111,7 +111,7 @@ var A2;
         for (let i = 0; i < 30; i++) {
             let x = 150 + Math.random() * 100;
             let y = 180 + Math.random() * 60;
-            drawTreeS(10, 100, "#6E8B3D");
+            drawTreeS(10, 100, "#6E8B3");
         }
         /*kleine B�ume*/
         drawTreeL(250, 250, "#6E8B3D");
@@ -136,7 +136,7 @@ function drawTreeS(x, y, color) {
     crc2.lineTo(x - 10, y + 50);
     crc2.closePath();
     crc2.stroke();
-    crc2.fillStyle = "color";
+    crc2.fillStyle = color;
     crc2.fill();
 }
 /*kleiner Baum*/
@@ -147,7 +147,7 @@ function drawTreeL(x, y, color) {
     crc2.lineTo(x - 30, y + 100);
     crc2.closePath();
     crc2.stroke();
-    crc2.fillStyle = "color";
+    crc2.fillStyle = color;
     crc2.fill();
 }
 /*mittlerer Baum*/
@@ -158,7 +158,7 @@ function drawTreeM(x, y, color) {
     crc2.lineTo(x - 50, y + 200);
     crc2.closePath();
     crc2.stroke();
-    crc2.fillStyle = "color";
+    crc2.fillStyle = color;
     crc2.fill();
 }
 /*Wolken*/

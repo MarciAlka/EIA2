@@ -128,7 +128,7 @@ function init(): void {
     			let x:number=150+Math.random()*100;
     			let y: number=180+Math.random()*60;
     			
-    			drawTreeS (10,100,"#6E8B3D");
+    			drawTreeS (10,100,"#6E8B3");
     			
     			/*
     			drawTreeS (20,40,"#6E8B3D");
@@ -167,7 +167,7 @@ function drawTreeS (x : number, y : number, color : string){
     crc2.lineTo(x - 10, y + 50);
     crc2.closePath();
     crc2.stroke(); 
-    crc2.fillStyle = "color";
+    crc2.fillStyle = color;
     crc2.fill();	
 }
 
@@ -180,7 +180,7 @@ function drawTreeL (x : number, y : number, color : string){
     crc2.lineTo(x - 30, y + 100);
     crc2.closePath();
     crc2.stroke(); 
-    crc2.fillStyle = "color";
+    crc2.fillStyle = color;
     crc2.fill();
 }
 
@@ -194,7 +194,7 @@ function drawTreeL (x : number, y : number, color : string){
     crc2.lineTo(x - 50, y + 200);
     crc2.closePath();
     crc2.stroke(); 
-    crc2.fillStyle = "color";
+    crc2.fillStyle = color;
     crc2.fill();	
 }
 
