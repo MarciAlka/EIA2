@@ -4,11 +4,13 @@ hiermit versichere ich, dass der Code von mir
 eigenst�ndig geschrieben wurde
 */
 window.addEventListener("load", init);
+/*globale Variable*/
+let crc2;
+console.log(crc2);
 function init() {
     let canvas = document.getElementsByTagName("canvas")[0];
+    crc2 = canvas.getContext("2d");
     console.log(canvas);
-    let crc2 = canvas.getContext("2d");
-    console.log(crc2);
     /*hellgraues Rechteck f�r den Himmel*/
     crc2.fillStyle = "#E0FFFF";
     crc2.fillRect(0, 0, 800, 600);

@@ -12,7 +12,7 @@ var A2;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);
-        let crc2 = canvas.getContext("2d");
+        crc2 = canvas.getContext("2d");
         console.log(crc2);
         /*hellgraues Rechteck f�r den Himmel*/
         crc2.fillStyle = "#E0FFFF";
@@ -101,8 +101,7 @@ var A2;
         /*crc2.beginPath();
         crc2.arc(720, 120, 10, 0, 2 * Math.PI);
         crc2.fillStyle ="#FFFFFF";
-        crc2.fill();
-        /*W2.4*/
+        crc2.fill();      /*W2.4*/
         /*crc2.beginPath();
         crc2.arc(730, 118, 10, 0, 2 * Math.PI);
         crc2.fillStyle ="#FFFFFF";
@@ -111,7 +110,7 @@ var A2;
         /*Wolken*/
         drawCloud(670, 120, 10, "#FFFFFF");
         drawCloud(730, 110, 10, "#FFFFFF");
-        /* B�ume*/
+        /* B�ume
         /*winzige B�ume; Zufallschleife*/
         for (let i = 0; i < 4; i++) {
             let x = 150 + Math.random() * 100;
@@ -131,12 +130,12 @@ var A2;
         /*weiter mittlere B�ume*/
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
-        /*Schneeflocken*/
-        for (let i = 0; i < 30; i++) {
-            let x = 150 + Math.random() * 100;
-            let y = 180 + Math.random() * 60;
+        /*Schneeflocken
+        for (let i: number = 0; i < 30; i++) {
+            let x: number = 150 + Math.random() * 100;
+            let y: number = 180 + Math.random() * 60;
             drawSnowf(10, 50);
-        }
+        }*/
     }
     /*winziger Baum*/
     function drawTreeS(x, y, color) {
