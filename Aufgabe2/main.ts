@@ -130,7 +130,7 @@ namespace A2 {
             let x: number = 150 + Math.random() * 100;
             let y: number = 180 + Math.random() * 60;
 
-            drawTreeS(10, 100, "#6E8B3");
+            drawTreeS(x, y, "#6E8B3D");
 
             /*
             drawTreeS (20,40,"#6E8B3D");
@@ -156,12 +156,12 @@ namespace A2 {
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
 
-        /*Schneeflocken    
+        /*Schneeflocken*/ 
         for (let i: number = 0; i < 30; i++) {
             let x: number = 150 + Math.random() * 100;
             let y: number = 180 + Math.random() * 60;
-            drawSnowf(10, 50);
-        }*/
+            drawSnowf(x, y);
+        }
 
     }
 

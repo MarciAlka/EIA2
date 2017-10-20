@@ -115,7 +115,7 @@ var A2;
         for (let i = 0; i < 4; i++) {
             let x = 150 + Math.random() * 100;
             let y = 180 + Math.random() * 60;
-            drawTreeS(10, 100, "#6E8B3D");
+            drawTreeS(x, y, "#6E8B3D");
         }
         /*kleine B�ume*/
         drawTreeL(250, 250, "#6E8B3D");
@@ -130,12 +130,12 @@ var A2;
         /*weiter mittlere B�ume*/
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
-        /*Schneeflocken
-        for (let i: number = 0; i < 30; i++) {
-            let x: number = 150 + Math.random() * 100;
-            let y: number = 180 + Math.random() * 60;
-            drawSnowf(10, 50);
-        }*/
+        /*Schneeflocken*/
+        for (let i = 0; i < 30; i++) {
+            let x = 150 + Math.random() * 100;
+            let y = 180 + Math.random() * 60;
+            drawSnowf(x, y);
+        }
     }
     /*winziger Baum*/
     function drawTreeS(x, y, color) {
