@@ -115,7 +115,7 @@ var A2;
         for (let i = 0; i < 4; i++) {
             let x = 150 + Math.random() * 100;
             let y = 180 + Math.random() * 60;
-            drawTreeS(10, 100, "#6E8B3");
+            drawTreeS(10, 100, "#6E8B3D");
         }
         /*kleine B�ume*/
         drawTreeL(250, 250, "#6E8B3D");
