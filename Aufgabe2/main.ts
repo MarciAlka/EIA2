@@ -157,9 +157,9 @@ namespace A2 {
         drawTreeM(200, 380, "#6E8B3D");
 
         /*Schneeflocken*/ 
-        for (let i: number = 0; i < 30; i++) {
-            let x: number = 150 + Math.random() * 100;
-            let y: number = 180 + Math.random() * 60;
+        for (let i: number = 0; i < 500; i++) {
+            let x: number = 1 + Math.random() * 780;
+            let y: number = 1 + Math.random() * 580;
             drawSnowf(x, y);
         }
 
@@ -229,10 +229,10 @@ namespace A2 {
     }
 
     /*Schneeflocken*/
-    function drawSnowf(x: number, y: number) {
+    function drawSnowf(x: number, y: number): void {
         crc2.beginPath();
         /*x nach rechts; 1 ist radius 2 damit Kreis...bei 1 halbkreis*/
-        crc2.arc(x, y, 1, 0, 2 * Math.PI);
+        crc2.arc(x, y, 2, 0, 2 * Math.PI);
         crc2.fillStyle = "#FFFFFF";
         crc2.fill();
     }

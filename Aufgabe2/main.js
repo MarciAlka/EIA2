@@ -131,9 +131,9 @@ var A2;
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
         /*Schneeflocken*/
-        for (let i = 0; i < 30; i++) {
-            let x = 150 + Math.random() * 100;
-            let y = 180 + Math.random() * 60;
+        for (let i = 0; i < 500; i++) {
+            let x = 1 + Math.random() * 780;
+            let y = 1 + Math.random() * 580;
             drawSnowf(x, y);
         }
     }
@@ -196,7 +196,7 @@ var A2;
     function drawSnowf(x, y) {
         crc2.beginPath();
         /*x nach rechts; 1 ist radius 2 damit Kreis...bei 1 halbkreis*/
-        crc2.arc(x, y, 1, 0, 2 * Math.PI);
+        crc2.arc(x, y, 2, 0, 2 * Math.PI);
         crc2.fillStyle = "#FFFFFF";
         crc2.fill();
     }
