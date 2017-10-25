@@ -129,8 +129,8 @@ namespace A3 {
             arrayX[i] = 100; //320
             arrayY[i] = 100; //150
             drawSnowf(arrayX[i], arrayY[i]);
-        */
-        }
+        
+        }*/
         
         aniSnowf();
         //window.setTimeout(aniSnowf, 20);
