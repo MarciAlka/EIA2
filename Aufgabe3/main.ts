@@ -72,8 +72,8 @@ namespace A3 {
 
         /*linie Skilift*/
         crc2.beginPath();
-        crc2.moveTo(30, 0);
-        crc2.lineTo(800, 580);
+        crc2.moveTo(100, 0); //30,0
+        crc2.lineTo(870, 580); //800,580
         crc2.stroke();
 
         /*Sonne*/
@@ -281,6 +281,32 @@ namespace A3 {
             crc2.fill();
             */
             
+        }
+       
+      //Skifahrer
+        
+       function drawSki(x: number, y: number, color: string): void {
+
+        crc2.beginPath();
+        crc2.moveTo(x, y);
+        crc2.lineTo(x + 10, y + 50);
+        crc2.lineTo(x - 10, y + 50);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = color;
+        crc2.fill();
+    }
+        
+      function aniSki(): void {
+        console.log("Timeout");
+        //Bild einfügen, hier Hintergrund restaurieren
+        crc2.putImageData(imgData, 0, 0);
+        
+        for (let i: number = 0; i < arrayX.length; i++) {
+            arrayX[i] += Math.random() * 10 - 50; 
+            arrayY[i] += Math.random() * 10 - 20;
+          
+            drawSki(0,10,"red");
         }
         
    
