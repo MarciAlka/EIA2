@@ -7,7 +7,7 @@ eigenständig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 namespace A3 {
     window.addEventListener("load", init);
     
-    /*globale Variable*/
+    //globale Variable
     let crc2: CanvasRenderingContext2D;
     let arrayX: number[] = [];
     let arrayY: number[] = [];
@@ -30,15 +30,12 @@ namespace A3 {
         console.log(crc2);
         
         
-        /*hellgraues Rechteck für den Himmel*/
-        /*crc2.fillStyle = "#E0FFFF";
-        crc2.fillRect(0, 0, 800, 600);
-        */
+        //hellgraues Rechteck für den Himmel
         
         var gradient = crc2.createLinearGradient(0, 0, 0, 600);
-        gradient.addColorStop(0, "#E0FFFF");
-        gradient.addColorStop(0.5, "#4ba1b4"); //0,5
-        gradient.addColorStop(1, "#4962bf");  //1
+        gradient.addColorStop(0, "#E0FFFF"); //Ursprungsfarbe
+        gradient.addColorStop(0.5, "#4ba1b4"); 
+        gradient.addColorStop(1, "#4962bf");  
         crc2.fillStyle = gradient;
         crc2.fillRect(0, 0, 800, 600);
         
@@ -123,21 +120,14 @@ namespace A3 {
         /*weiter mittlere Bäume*/
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
-
-        /*Schneeflocken*/ 
-        /*for (let i: number = 0; i < 500; i++) {
-            let x: number = 1 + Math.random() * 780;
-            let y: number = 1 + Math.random() * 580;
-            drawSnowf(x, y);
-        }
-        */
        
+        
+        
         // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
       
         //Animationen
-        
-      
+           
         animate();
         
         for (let i: number = 0; i < 100; i++) {
@@ -159,10 +149,10 @@ namespace A3 {
     
     
     
-    //FUNKTIONEN
+//FUNKTIONEN
 
-    /*winziger Baum*/
-    function drawTreeS(x: number, y: number, color: string): void {
+//winziger Baum
+function drawTreeS(x: number, y: number, color: string): void {
 
         crc2.beginPath();
         crc2.moveTo(x, y);
@@ -172,10 +162,10 @@ namespace A3 {
         crc2.stroke();
         crc2.fillStyle = color;
         crc2.fill();
-    }
+}
 
-    /*kleiner Baum*/
-    function drawTreeL(x: number, y: number, color: string): void {
+//kleiner Baum
+function drawTreeL(x: number, y: number, color: string): void {
 
         crc2.beginPath();
         crc2.moveTo(x, y);
@@ -185,11 +175,11 @@ namespace A3 {
         crc2.stroke();
         crc2.fillStyle = color;
         crc2.fill();
-    }
+}
 
 
-    /*mittlerer Baum*/
-    function drawTreeM(x: number, y: number, color: string): void {
+//mittlerer Baum
+function drawTreeM(x: number, y: number, color: string): void {
 
         crc2.beginPath();
         crc2.moveTo(x, y);
@@ -199,11 +189,10 @@ namespace A3 {
         crc2.stroke();
         crc2.fillStyle = color;
         crc2.fill();
-    }
+}
 
-    /*Wolken*/
-    
-    function drawCloud(x: number, y: number, rad: number, color: string): void {
+//Wolken    
+function drawCloud(x: number, y: number, rad: number, color: string): void {
         crc2.beginPath();
         crc2.arc(x, y, rad, 0, 2 * Math.PI);
         crc2.fillStyle = color;
@@ -223,9 +212,9 @@ namespace A3 {
         crc2.arc(x, y + 8, rad, 0, 2 * Math.PI);
         crc2.fillStyle = color;
         crc2.fill();
-    }
+}
     
-     function randomCloud(x: number, y: number, rad: number, color: string){
+    function randomCloud(x: number, y: number, rad: number, color: string){
         for (let i: number = 0; i < 500; i++) {
             let x: number = 1 + Math.random() * 800; //780
             let y: number = 1 + Math.random() * 600; //580
@@ -233,29 +222,8 @@ namespace A3 {
         }
     }
     
-    /*Animation Wolken*/
- /*   function aniCloud(): void {    
-        console.log("Timeout");
-      
-        crc2.clearRect(0, 0, 800, 600)
-        crc2.putImageData(imgData, 0, 0);
-              
-        for (let i: number = 0; i < arrayX.length; i++) {
-            arrayX[i] += 10 //Math.random() * 5 - 0; // 10   50, -0 
-            arrayY[i] += 0 //Math.random() * 10 - 0; // 0   60, -30
-           
-        drawCloud(arrayX[i], arrayY[i], 10, "#FFFFFF"); 
-        
-          if(arrayX[0]>800){
-                arrayX[0]=0;        
-          }
-        }
-       
-        window.setTimeout(aniCloud, 100); 
-    }
-*/
-    /*Schneeflocken*/
-    
+
+    //Schneeflocken   
     function flocke(){
         crc2.arc(5, 10, 2, 0, 2 * Math.PI);
         crc2.fillStyle = "#FFFFFF";
@@ -268,6 +236,7 @@ namespace A3 {
         crc2.fillStyle = "#FFFFFF";
         crc2.fill();
     }
+
     
     function randomSnowf(x: number, y: number){
         for (let i: number = 0; i < 50; i++) {
@@ -276,6 +245,7 @@ namespace A3 {
             drawSnowf(x, y);
         }
     }
+
     
     function drawSnowf2(x: number, y:number){
         for (let i: number = 0; i < 500; i++) {
@@ -284,29 +254,9 @@ namespace A3 {
             drawSnowf(x, y);
         }
     }
+
     
- /*   function aniSnowf(): void {
-        console.log("Timeout");
-        //Bild einfügen, hier Hintergrund restaurieren
-        crc2.clearRect(0, 0, 800, 600)
-        crc2.putImageData(imgData, 0, 0);
-        
-        for (let i: number = 0; i < arrayX.length; i++) {
-            arrayX[i] += Math.random() * 50 - 1; // *10 - 50
-            arrayY[i] += Math.random() * 50 - 1; // *10 - 20
-            
-            drawSnowf(arrayX[i], arrayX[i]);
-            
-            if(arrayX[0]>800){
-                arrayX[0]=0;        
-            }
-            
-            
-        } window.setTimeout(aniSnowf, 100);
-      }
-*/       
     //Skifahrer
-        
     function drawSki(x: number, y: number): void {
         
          
@@ -332,35 +282,11 @@ namespace A3 {
         crc2.fillStyle = "#9cacdb";
         crc2.fillRect(x-5, y+4, 10, 14);
             
-    } 
-        
-/*    function aniSki(): void {
-        console.log("Timeout");
-        
-        crc2.clearRect(0, 0, 800, 600);
-        crc2.putImageData(imgData, 0, 0);
-        
-        
-        for (let i: number = 0; i < arrayX.length; i++) {
-            arrayX[i] += 10;//Math.random() * 50 + 1; 
-            arrayY[i] += 1;//Math.random() * 50 + 1;
-          
-   
-            drawSki (arrayX[i], arrayY[i]);
-            
-            if(arrayX[0]>800){
-                arrayX[0]=0;        
-            }
-        }
-        
-        window.setTimeout(aniSnowf, 20); //20
-      }
-*/     
+    }    
     
-    /*Funktion Animate*/
-    
-    function animate(): void{
-         console.log("Timeout");
+    //Funktion Animate 
+    function animate(): void{ 
+         //console.log("Timeout"); 
         
          //Bild einfügen, hier Hintergrund restaurieren
         crc2.clearRect(0, 0, 800, 600)
@@ -369,49 +295,55 @@ namespace A3 {
         for (let i: number = 0; i < arrayX.length; i++) {
             
             arrayX[i] += 10; //Math.random() * 5 - 0; 10
-            arrayY[i] += 0; //Math.random() * 10 - 0; 0
-            skiX [i] += 10;
-            skiY [i] += 10;
-            wolkeX [i] += 10;
-            wolkeY [i] += 0;
-            
-        /*drawCloud(arrayX[i], arrayY[i], 10, "#FFFFFF");
-        drawCloud(arrayX[i]-80, arrayY[i]+50, 10, "#FFFFFF");
-        drawCloud(arrayX[i]+100, arrayY[i]+40, 10, "#FFFFFF");
-        drawCloud(arrayX[i]-200, arrayY[i]+150, 20, "#FFFFFF");
-        */
-         
-        drawCloud(wolkeX[i], wolkeY[i], 10, "#FFFFFF");
-        drawCloud(wolkeX[i]-80, wolkeY[i]+50, 10, "#FFFFFF");
-        drawCloud(wolkeX[i]+100, wolkeY[i]+40, 10, "#FFFFFF");
-        drawCloud(wolkeX[i]-200, wolkeY[i]+150, 20, "#FFFFFF");
+            arrayY[i] += 0; //Math.random() * 10 - 0; 0  
         
-        //drawSki (arrayX[i], arrayX[i]);
-        //drawSki (arrayX[i]-100, arrayX[i]-5);
-        drawSki (skiX[i], skiY[i]);
-        drawSki (skiX[i]-300, skiY[i]);
-        drawSki (skiX[i]-200, skiY[i]-300);
-            
-        randomSnowf(arrayX[i], arrayY[i]);
+            randomSnowf(arrayX[i], arrayY[i]);
          
         
-          if (arrayX[0]>800){
-              arrayX[0]=0;
-          }
-          if (wolkeX[0]>800){
-                wolkeX[0]=0;        
-          }
-          if (skiX[i]>800){
-              skiX[0]=0;
-          }
+            if (arrayX[i]>1000){
+                arrayX[i]=0;
+            }
+         
           
         }
         
+        //Animation Wolken
+        for(let i: number = 0; i < skiX.length; i++){
+            
+            wolkeX [i] += 10;
+            wolkeY [i] += 0;
+            
+            drawCloud(wolkeX[i], wolkeY[i], 10, "#FFFFFF");
+            drawCloud(wolkeX[i]-80, wolkeY[i]+50, 10, "#FFFFFF");
+            drawCloud(wolkeX[i]+100, wolkeY[i]+40, 10, "#FFFFFF");
+            drawCloud(wolkeX[i]-200, wolkeY[i]+150, 20, "#FFFFFF");
+            
+            if (wolkeX[0]>800){
+                wolkeX[0]=0;        
+          }
+        }
         
-        
+        //Animation Skifahrer
+        for(let i: number = 0; i < skiX.length; i++){
+            skiX [i] += 10;
+            skiY [i] += 10;
+            
+            drawSki (skiX[i], skiY[i]);
+            drawSki (skiX[i]-300, skiY[i]);
+            drawSki (skiX[i]-200, skiY[i]-300);
+            
+            console.log(skiX[i], skiY[i]);
+            if (skiX[i]>800||skiY[i]>600){
+              skiX[i]=0;
+              skiY[i]=10;
+            }
+            
+            
+        }
+        //Geschwindigkeit
         window.setTimeout(animate, 100);
     
-        }
+    }
     
 // hier endet Namespace    
 }
