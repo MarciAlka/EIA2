@@ -11,6 +11,14 @@ namespace A3 {
     let crc2: CanvasRenderingContext2D;
     let arrayX: number[] = [];
     let arrayY: number[] = [];
+    
+    let wolkeX: number[] = [];
+    let wolkeY: number[] = [];
+    let skiX: number[] = [];
+    let skiY: number[] = [];
+    let snowX: number[] = [];
+    let snowY: number[] = [];
+    
     let imgData: ImageData;
 
 
@@ -23,10 +31,17 @@ namespace A3 {
         
         
         /*hellgraues Rechteck für den Himmel*/
-        crc2.fillStyle = "#E0FFFF";
+        /*crc2.fillStyle = "#E0FFFF";
         crc2.fillRect(0, 0, 800, 600);
-      
-
+        */
+        
+        var gradient = crc2.createLinearGradient(0, 0, 0, 600);
+        gradient.addColorStop(0, "#E0FFFF");
+        gradient.addColorStop(0.5, "#4ba1b4"); //0,5
+        gradient.addColorStop(1, "#4962bf");  //1
+        crc2.fillStyle = gradient;
+        crc2.fillRect(0, 0, 800, 600);
+        
         /*Berge*/
         crc2.beginPath();
         crc2.moveTo(600, 400);
@@ -72,8 +87,8 @@ namespace A3 {
 
         /*linie Skilift*/
         crc2.beginPath();
-        crc2.moveTo(100, 0); //30,0
-        crc2.lineTo(870, 580); //800,580
+        crc2.moveTo(70, 0); //30,0
+        crc2.lineTo(800, 530); //800,580 ; 840,580
         crc2.stroke();
 
         /*Sonne*/
@@ -82,10 +97,6 @@ namespace A3 {
         crc2.arc(700, 100, 50, 0, 2 * Math.PI);
         crc2.fillStyle = "#FFD700";
         crc2.fill();
-
-        /*Wolken*/
-        //drawCloud(670, 120, 10, "#FFFFFF");
-        //drawCloud(730, 110, 10, "#FFFFFF");
 
         /* Bäume    
         /*winzige Bäume; Zufallschleife*/
@@ -123,24 +134,28 @@ namespace A3 {
        
         // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+      
+        //Animationen
         
-        /*Schneeflocken zeichnen*/
-        /*for (let i: number = 0; i < 10; i++) {
-            arrayX[i] = 100; //320
-            arrayY[i] = 100; //150
-            drawSnowf(arrayX[i], arrayY[i]);
+      
+        animate();
         
-        }*/
-        
-        aniSnowf();
-        //window.setTimeout(aniSnowf, 20);
-        //window.setTimeout(aniCloud, 400);
-        aniCloud();
-        
-        
+        for (let i: number = 0; i < 100; i++) {
+            arrayX[i] = 10;
+            arrayY[i] = 100;
+            skiX[i] = 10;
+            skiY[i] = 100;
+            wolkeX[i] = 10;
+            wolkeY[i] = 100;
+        }
 
-
+        crc2.putImageData(imgData, 0, 0);
+        
+//hier endet init()
 }
+    
+    
+    
     
     
     
@@ -219,22 +234,26 @@ namespace A3 {
     }
     
     /*Animation Wolken*/
-    function aniCloud(): void {
+ /*   function aniCloud(): void {    
         console.log("Timeout");
-         //Bild einfügen, hier Hintergrund restaurieren
-        //crc2.putImageData(imgData, 0, 0);
-        
+      
+        crc2.clearRect(0, 0, 800, 600)
+        crc2.putImageData(imgData, 0, 0);
+              
         for (let i: number = 0; i < arrayX.length; i++) {
-            arrayX[i] += Math.random() * 10 - 0; //*10 -50 
-            arrayY[i] += Math.random() * 10 - 0; // *10 - 20
+            arrayX[i] += 10 //Math.random() * 5 - 0; // 10   50, -0 
+            arrayY[i] += 0 //Math.random() * 10 - 0; // 0   60, -30
            
-        drawCloud(arrayX[i], arrayY[i], 10, "#FFFFFF");
+        drawCloud(arrayX[i], arrayY[i], 10, "#FFFFFF"); 
         
+          if(arrayX[0]>800){
+                arrayX[0]=0;        
+          }
         }
-        
+       
         window.setTimeout(aniCloud, 100); 
     }
-
+*/
     /*Schneeflocken*/
     
     function flocke(){
@@ -244,75 +263,155 @@ namespace A3 {
     }
     
     function drawSnowf(x: number, y: number) :void {
-        crc2.beginPath();/*
-        /*x nach rechts; 1 ist radius 2 damit Kreis...bei 1 halbkreis*/
+        crc2.beginPath();
         crc2.arc(x, y, 2, 0, 2 * Math.PI);
         crc2.fillStyle = "#FFFFFF";
         crc2.fill();
-        
-        
     }
     
     function randomSnowf(x: number, y: number){
-        for (let i: number = 0; i < 500; i++) {
+        for (let i: number = 0; i < 50; i++) {
             let x: number = 1 + Math.random() * 800; //780
             let y: number = 1 + Math.random() * 600; //580
             drawSnowf(x, y);
         }
     }
     
-    function aniSnowf(): void {
+    function drawSnowf2(x: number, y:number){
+        for (let i: number = 0; i < 500; i++) {
+            let x: number = i;
+            let y: number = i;
+            drawSnowf(x, y);
+        }
+    }
+    
+ /*   function aniSnowf(): void {
         console.log("Timeout");
         //Bild einfügen, hier Hintergrund restaurieren
+        crc2.clearRect(0, 0, 800, 600)
         crc2.putImageData(imgData, 0, 0);
-        /*crc2.clearRect(0, 0, 400, 300);*/
         
         for (let i: number = 0; i < arrayX.length; i++) {
-            arrayX[i] += Math.random() * 10 - 50; // hier experimentieren um
-            arrayY[i] += Math.random() * 10 - 20; // andere Bewegungsmuster zu finden
-            /*crc2.fillStyle = "#ff0000";
-            crc2.fillRect(arrayX[i], arrayY[i], 20, 20);
-            */
-            randomSnowf(arrayX[i], arrayX[i]);
+            arrayX[i] += Math.random() * 50 - 1; // *10 - 50
+            arrayY[i] += Math.random() * 50 - 1; // *10 - 20
             
-            /*crc2.beginPath();
-            crc2.arc(arrayX[i], arrayY[i], 2, 0, 2 * Math.PI);
-            crc2.fillStyle = "#FFFFFF";
-            crc2.fill();
-            */
+            drawSnowf(arrayX[i], arrayX[i]);
             
-        }
-       
-      //Skifahrer
+            if(arrayX[0]>800){
+                arrayX[0]=0;        
+            }
+            
+            
+        } window.setTimeout(aniSnowf, 100);
+      }
+*/       
+    //Skifahrer
         
-       function drawSki(x: number, y: number, color: string): void {
-
+    function drawSki(x: number, y: number): void {
+        
+         
+        // Dreieck für Beine/Ski
+            
         crc2.beginPath();
-        crc2.moveTo(x, y);
-        crc2.lineTo(x + 10, y + 50);
-        crc2.lineTo(x - 10, y + 50);
+        crc2.moveTo(x, y+5);
+        crc2.lineTo(x + 10, y + 33);
+        crc2.lineTo(x - 5, y + 23);
         crc2.closePath();
         crc2.stroke();
-        crc2.fillStyle = color;
+        crc2.fillStyle = "red";
         crc2.fill();
-    }
+            
+        //Kreis für Kopf
+        crc2.beginPath();
+        crc2.arc(x+1, y+1, 5, 0, 2 * Math.PI);
+        crc2.fillStyle = "#f1c56b";
+        crc2.fill();
+            
+        //Viereck körper crc2.fillRect(0, 0, 800, 600);
+            
+        crc2.fillStyle = "#9cacdb";
+        crc2.fillRect(x-5, y+4, 10, 14);
+            
+    } 
         
-      function aniSki(): void {
+/*    function aniSki(): void {
         console.log("Timeout");
-        //Bild einfügen, hier Hintergrund restaurieren
+        
+        crc2.clearRect(0, 0, 800, 600);
         crc2.putImageData(imgData, 0, 0);
         
+        
         for (let i: number = 0; i < arrayX.length; i++) {
-            arrayX[i] += Math.random() * 10 - 50; 
-            arrayY[i] += Math.random() * 10 - 20;
+            arrayX[i] += 10;//Math.random() * 50 + 1; 
+            arrayY[i] += 1;//Math.random() * 50 + 1;
           
-            drawSki(0,10,"red");
+   
+            drawSki (arrayX[i], arrayY[i]);
+            
+            if(arrayX[0]>800){
+                arrayX[0]=0;        
+            }
         }
         
-   
         window.setTimeout(aniSnowf, 20); //20
-    }
+      }
+*/     
     
+    /*Funktion Animate*/
     
-   
+    function animate(): void{
+         console.log("Timeout");
+        
+         //Bild einfügen, hier Hintergrund restaurieren
+        crc2.clearRect(0, 0, 800, 600)
+        crc2.putImageData(imgData, 0, 0);
+              
+        for (let i: number = 0; i < arrayX.length; i++) {
+            
+            arrayX[i] += 10; //Math.random() * 5 - 0; 10
+            arrayY[i] += 0; //Math.random() * 10 - 0; 0
+            skiX [i] += 10;
+            skiY [i] += 10;
+            wolkeX [i] += 10;
+            wolkeY [i] += 0;
+            
+        /*drawCloud(arrayX[i], arrayY[i], 10, "#FFFFFF");
+        drawCloud(arrayX[i]-80, arrayY[i]+50, 10, "#FFFFFF");
+        drawCloud(arrayX[i]+100, arrayY[i]+40, 10, "#FFFFFF");
+        drawCloud(arrayX[i]-200, arrayY[i]+150, 20, "#FFFFFF");
+        */
+         
+        drawCloud(wolkeX[i], wolkeY[i], 10, "#FFFFFF");
+        drawCloud(wolkeX[i]-80, wolkeY[i]+50, 10, "#FFFFFF");
+        drawCloud(wolkeX[i]+100, wolkeY[i]+40, 10, "#FFFFFF");
+        drawCloud(wolkeX[i]-200, wolkeY[i]+150, 20, "#FFFFFF");
+        
+        //drawSki (arrayX[i], arrayX[i]);
+        //drawSki (arrayX[i]-100, arrayX[i]-5);
+        drawSki (skiX[i], skiY[i]);
+        drawSki (skiX[i]-300, skiY[i]);
+        drawSki (skiX[i]-200, skiY[i]-300);
+            
+        randomSnowf(arrayX[i], arrayY[i]);
+         
+        
+          if (arrayX[0]>800){
+              arrayX[0]=0;
+          }
+          if (wolkeX[0]>800){
+                wolkeX[0]=0;        
+          }
+          if (skiX[i]>800){
+              skiX[0]=0;
+          }
+          
+        }
+        
+        
+        
+        window.setTimeout(animate, 100);
+    
+        }
+    
+// hier endet Namespace    
 }
