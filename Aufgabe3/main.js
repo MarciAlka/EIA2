@@ -18,12 +18,14 @@ var A3;
     let snowY = [];
     let skiXOrig = [];
     let skiYOrig = [];
+    let wolkeXOrig = [];
+    let wolkeYOrig = [];
     let imgData;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
-        console.log(canvas);
+        //console.log(canvas);
         crc2 = canvas.getContext("2d");
-        console.log(crc2);
+        //console.log(crc2);
         //hellgraues Rechteck f�r den Himmel
         var gradient = crc2.createLinearGradient(0, 0, 0, 600);
         gradient.addColorStop(0, "#E0FFFF"); //Ursprungsfarbe
@@ -108,8 +110,6 @@ var A3;
             arrayY[i] = 100 + Math.random() * 600;
         }
         for (let i = 0; i < 3; i++) {
-            //arrayX[i] = 10 + Math.random() * 800;
-            //arrayY[i] = 100 + Math.random() * 600;
             if (i == 0) {
                 skiX[i] = 10;
                 skiY[i] = 100;
@@ -128,8 +128,25 @@ var A3;
                 skiXOrig[i] = skiX[i];
                 skiYOrig[i] = skiY[i];
             }
-            wolkeX[i] = 10;
-            wolkeY[i] = 100;
+            //test
+            if (i == 0) {
+                wolkeX[i] = 10;
+                wolkeY[i] = 100; //100
+                wolkeXOrig[i] = skiX[i];
+                wolkeYOrig[i] = skiY[i];
+            }
+            else if (i == 1) {
+                wolkeX[i] = 200;
+                wolkeY[i] = 140;
+                wolkeXOrig[i] = wolkeX[i];
+                wolkeYOrig[i] = wolkeY[i];
+            }
+            else if (i == 2) {
+                wolkeX[i] = -190;
+                wolkeY[i] = 250;
+                wolkeXOrig[i] = wolkeX[i];
+                wolkeYOrig[i] = wolkeY[i];
+            }
         }
         animate();
         crc2.putImageData(imgData, 0, 0);
@@ -250,7 +267,6 @@ var A3;
             arrayY[i] += 5; //Math.random() * 10 - 0; 0  
             drawSnowf(arrayX[i], arrayY[i]);
             if (arrayY[i] > 600) {
-                //arrayX[i]=0;
                 arrayY[i] = 0;
             }
         }
@@ -258,12 +274,14 @@ var A3;
         for (let i = 0; i < skiX.length; i++) {
             wolkeX[i] += 10;
             wolkeY[i] += 0;
-            drawCloud(wolkeX[i], wolkeY[i], 10, "#FFFFFF");
-            drawCloud(wolkeX[i] - 80, wolkeY[i] + 50, 10, "#FFFFFF");
-            drawCloud(wolkeX[i] + 100, wolkeY[i] + 40, 10, "#FFFFFF");
-            drawCloud(wolkeX[i] - 200, wolkeY[i] + 150, 20, "#FFFFFF");
+            drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
+            //drawCloud(wolkeX[i]-80, wolkeY[i]+50, 10, "#FFFFFF");
+            //drawCloud(wolkeX[i]+100, wolkeY[i]+40, 10, "#FFFFFF");
+            //drawCloud(wolkeX[i]-200, wolkeY[i]+150, 20, "#FFFFFF");
+            drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
+            drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
             if (wolkeX[i] > 800) {
-                wolkeX[i] = 0;
+                wolkeX[i] = wolkeXOrig[i]; //0;        
             }
         }
         //Animation Skifahrer

@@ -22,15 +22,18 @@ namespace A3 {
     let skiXOrig: number[] = [];
     let skiYOrig: number[] = [];
     
+    let wolkeXOrig: number[] = [];
+    let wolkeYOrig: number[] = [];
+    
     let imgData: ImageData;
 
 
     function init(): void {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
-        console.log(canvas);
+        //console.log(canvas);
 
         crc2 = canvas.getContext("2d");
-        console.log(crc2);
+        //console.log(crc2);
         
         
         //hellgraues Rechteck für den Himmel
@@ -138,8 +141,6 @@ namespace A3 {
         }
         
         for (let i: number = 0; i < 3; i++) {
-            //arrayX[i] = 10 + Math.random() * 800;
-            //arrayY[i] = 100 + Math.random() * 600;
             
             if (i == 0){
                 skiX[i] = 10;
@@ -160,9 +161,30 @@ namespace A3 {
                 skiXOrig[i] = skiX[i];
                 skiYOrig[i] = skiY[i];
             } 
+            
+            //test
+            if (i == 0){
+                wolkeX[i] = 10;
+                wolkeY[i] = 100; //100
+                
+                wolkeXOrig[i] = skiX[i];
+                wolkeYOrig[i] = skiY[i];
+            }
+            else if (i == 1){ 
+                wolkeX[i] = 200;
+                wolkeY[i] = 140;
+                wolkeXOrig[i] = wolkeX[i];
+                wolkeYOrig[i] = wolkeY[i];
+            }
+            else if (i == 2){
+                wolkeX[i] = -190;
+                wolkeY[i] = 250;
+                wolkeXOrig[i] = wolkeX[i];
+                wolkeYOrig[i] = wolkeY[i];
+            } 
 
-            wolkeX[i] = 10;
-            wolkeY[i] = 100;
+            //wolkeX[i] = 10;
+            //wolkeY[i] = 100;
         }
         
         animate();
@@ -324,7 +346,6 @@ function drawCloud(x: number, y: number, rad: number, color: string): void {
          
         
             if (arrayY[i]>600){
-                //arrayX[i]=0;
                 arrayY[i]=0;
             }
          
@@ -337,13 +358,16 @@ function drawCloud(x: number, y: number, rad: number, color: string): void {
             wolkeX [i] += 10;
             wolkeY [i] += 0;
             
-            drawCloud(wolkeX[i], wolkeY[i], 10, "#FFFFFF");
-            drawCloud(wolkeX[i]-80, wolkeY[i]+50, 10, "#FFFFFF");
-            drawCloud(wolkeX[i]+100, wolkeY[i]+40, 10, "#FFFFFF");
-            drawCloud(wolkeX[i]-200, wolkeY[i]+150, 20, "#FFFFFF");
+            drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
+            //drawCloud(wolkeX[i]-80, wolkeY[i]+50, 10, "#FFFFFF");
+            
+            //drawCloud(wolkeX[i]+100, wolkeY[i]+40, 10, "#FFFFFF");
+            //drawCloud(wolkeX[i]-200, wolkeY[i]+150, 20, "#FFFFFF");
+            drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
+            drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
             
             if (wolkeX[i]>800){
-                wolkeX[i]=0;        
+                wolkeX[i]= wolkeXOrig[i];   //0;        
           }
         }
         
