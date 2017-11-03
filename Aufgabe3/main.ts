@@ -19,6 +19,9 @@ namespace A3 {
     let snowX: number[] = [];
     let snowY: number[] = [];
     
+    let skiXOrig: number[] = [];
+    let skiYOrig: number[] = [];
+    
     let imgData: ImageData;
 
 
@@ -128,28 +131,41 @@ namespace A3 {
       
         //Animationen
            
-        animate();
+         
+       for (let i: number = 0; i < 100; i++) {
+            arrayX[i] = 10 + Math.random() * 800;
+            arrayY[i] = 100 + Math.random() * 600;
+        }
         
-        for (let i: number = 0; i < 100; i++) {
-            arrayX[i] = 10;
-            arrayY[i] = 100;
+        for (let i: number = 0; i < 3; i++) {
+            //arrayX[i] = 10 + Math.random() * 800;
+            //arrayY[i] = 100 + Math.random() * 600;
             
-            //if (skiX[1]){
-            skiX[i] = 10;
-            skiY[i] = 100;
-            //}
-            /*else if (skiX[2]){ 
+            if (i == 0){
+                skiX[i] = 10;
+                skiY[i] = 100;
+                
+                skiXOrig[i] = skiX[i];
+                skiYOrig[i] = skiY[i];
+            }
+            else if (i == 1){ 
             skiX[i] = -290;
             skiY[i] = 100;
+                skiXOrig[i] = skiX[i];
+                skiYOrig[i] = skiY[i];
             }
-            else if (skiX[3]){
+            else if (i == 2){
             skiX[i] = -190;
             skiY[i] = -200;
-            } */
+                skiXOrig[i] = skiX[i];
+                skiYOrig[i] = skiY[i];
+            } 
 
             wolkeX[i] = 10;
             wolkeY[i] = 100;
         }
+        
+        animate();
 
         crc2.putImageData(imgData, 0, 0);
         
@@ -236,12 +252,7 @@ function drawCloud(x: number, y: number, rad: number, color: string): void {
     
 
     //Schneeflocken   
-    function flocke(){
-        crc2.arc(5, 10, 2, 0, 2 * Math.PI);
-        crc2.fillStyle = "#FFFFFF";
-        crc2.fill();
-    }
-    
+
     function drawSnowf(x: number, y: number) :void {
         crc2.beginPath();
         crc2.arc(x, y, 2, 0, 2 * Math.PI);
@@ -306,14 +317,15 @@ function drawCloud(x: number, y: number, rad: number, color: string): void {
               
         for (let i: number = 0; i < arrayX.length; i++) {
             
-            arrayX[i] += 10; //Math.random() * 5 - 0; 10
-            arrayY[i] += 0; //Math.random() * 10 - 0; 0  
+            arrayX[i] += 0; //Math.random() * 5 - 0; 10
+            arrayY[i] += 5; //Math.random() * 10 - 0; 0  
         
-            randomSnowf(arrayX[i], arrayY[i]);
+            drawSnowf(arrayX[i], arrayY[i]);
          
         
-            if (arrayX[i]>1000){
-                arrayX[i]=0;
+            if (arrayY[i]>600){
+                //arrayX[i]=0;
+                arrayY[i]=0;
             }
          
           
@@ -330,24 +342,25 @@ function drawCloud(x: number, y: number, rad: number, color: string): void {
             drawCloud(wolkeX[i]+100, wolkeY[i]+40, 10, "#FFFFFF");
             drawCloud(wolkeX[i]-200, wolkeY[i]+150, 20, "#FFFFFF");
             
-            if (wolkeX[0]>800){
-                wolkeX[0]=0;        
+            if (wolkeX[i]>800){
+                wolkeX[i]=0;        
           }
         }
         
         //Animation Skifahrer
         for(let i: number = 0; i < skiX.length; i++){
-            skiX [i] += 10;
-            skiY [i] += 10;
+            skiX[i] += 10;
+            skiY[i] += 10;
 
             drawSki (skiX[i], skiY[i]);
-            //drawSki (skiX[i]-300, skiY[i]);
-            //drawSki (skiX[i]-200, skiY[i]-300);
+            drawSki (skiX[i], skiY[i]);
+            drawSki (skiX[i], skiY[i]);
             
-            console.log(skiX[i], skiY[i]);
+            //console.log(skiX[i], skiY[i]);
+            
             if (skiX[i]>800||skiY[i]>600){
-              skiX[i]=0;
-              skiY[i]=10;
+              skiX[i]= skiXOrig[i]; // = skiXOrigin[i]
+              skiY[i]= skiYOrig[i]; // = skiYOrigin[i]
             }
          
     
