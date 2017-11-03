@@ -105,8 +105,18 @@ var A3;
         for (let i = 0; i < 100; i++) {
             arrayX[i] = 10;
             arrayY[i] = 100;
+            //if (skiX[1]){
             skiX[i] = 10;
             skiY[i] = 100;
+            //}
+            /*else if (skiX[2]){
+            skiX[i] = -290;
+            skiY[i] = 100;
+            }
+            else if (skiX[3]){
+            skiX[i] = -190;
+            skiY[i] = -200;
+            } */
             wolkeX[i] = 10;
             wolkeY[i] = 100;
         }
@@ -253,8 +263,8 @@ var A3;
             skiX[i] += 10;
             skiY[i] += 10;
             drawSki(skiX[i], skiY[i]);
-            drawSki(skiX[i] - 300, skiY[i]);
-            drawSki(skiX[i] - 200, skiY[i] - 300);
+            //drawSki (skiX[i]-300, skiY[i]);
+            //drawSki (skiX[i]-200, skiY[i]-300);
             console.log(skiX[i], skiY[i]);
             if (skiX[i] > 800 || skiY[i] > 600) {
                 skiX[i] = 0;
