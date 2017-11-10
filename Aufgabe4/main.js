@@ -79,26 +79,31 @@ var A3;
         crc2.arc(700, 100, 50, 0, 2 * Math.PI);
         crc2.fillStyle = "#FFD700";
         crc2.fill();
-        /* B�ume
-        /*winzige B�ume; Zufallschleife*/
+        //B�ume    
+        //winzige B�ume; Zufallschleife
         for (let i = 0; i < 4; i++) {
             let x = 150 + Math.random() * 100;
             let y = 180 + Math.random() * 60;
             drawTreeS(x, y, "#6E8B3D");
         }
-        /*kleine B�ume*/
+        /* B�ume sind nun in Animate, bis auf die zuf�llig platzierten... sonst werden diese animiert.
+        //kleine B�ume
         drawTreeL(250, 250, "#6E8B3D");
         drawTreeL(100, 100, "#6E8B3D");
         drawTreeL(150, 180, "#6E8B3D");
         drawTreeL(400, 380, "#6E8B3D");
-        /*mittlere B�ume*/
+
+        //mittlere B�ume
         drawTreeM(50, 100, "#6E8B3D");
         drawTreeM(200, 200, "#6E8B3D");
-        /*Ausnahme kleiner Baum*/
+
+        //Ausnahme kleiner Baum
         drawTreeS(75, 280, "#6E8B3D");
-        /*weiter mittlere B�ume*/
+
+        //weiter mittlere B�ume
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
+        */
         // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         //Animationen
@@ -292,6 +297,28 @@ var A3;
                 skiArr[i].y = skiYOrig[i]; // = skiYOrigin[i]
             }
         }
+        //B�ume    
+        /*//winzige B�ume; Zufallschleife -> nicht hier, sonst animiert
+        for (let i: number = 0; i < 4; i++) {
+            let x: number = 150 + Math.random() * 100;
+            let y: number = 180 + Math.random() * 60;
+
+            drawTreeS(x, y, "#6E8B3D");
+        }
+        */
+        //kleine B�ume
+        drawTreeL(250, 250, "#6E8B3D");
+        drawTreeL(100, 100, "#6E8B3D");
+        drawTreeL(150, 180, "#6E8B3D");
+        drawTreeL(400, 380, "#6E8B3D");
+        //mittlere B�ume
+        drawTreeM(50, 100, "#6E8B3D");
+        drawTreeM(200, 200, "#6E8B3D");
+        //Ausnahme kleiner Baum
+        drawTreeS(75, 280, "#6E8B3D");
+        //weiter mittlere B�ume
+        drawTreeM(60, 400, "#6E8B3D");
+        drawTreeM(200, 380, "#6E8B3D");
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }

@@ -112,33 +112,34 @@ namespace A3 {
         crc2.fillStyle = "#FFD700";
         crc2.fill();
 
-        /* Bäume    
-        /*winzige Bäume; Zufallschleife*/
+        
+        //Bäume    
+        //winzige Bäume; Zufallschleife
         for (let i: number = 0; i < 4; i++) {
             let x: number = 150 + Math.random() * 100;
             let y: number = 180 + Math.random() * 60;
 
             drawTreeS(x, y, "#6E8B3D");
         }
-
-        /*kleine Bäume*/
+        /* Bäume sind nun in Animate, bis auf die zufällig platzierten... sonst werden diese animiert.
+        //kleine Bäume
         drawTreeL(250, 250, "#6E8B3D");
         drawTreeL(100, 100, "#6E8B3D");
         drawTreeL(150, 180, "#6E8B3D");
         drawTreeL(400, 380, "#6E8B3D");
 
-        /*mittlere Bäume*/
+        //mittlere Bäume
         drawTreeM(50, 100, "#6E8B3D");
         drawTreeM(200, 200, "#6E8B3D");
 
-        /*Ausnahme kleiner Baum*/
+        //Ausnahme kleiner Baum
         drawTreeS(75, 280, "#6E8B3D");
 
-        /*weiter mittlere Bäume*/
+        //weiter mittlere Bäume
         drawTreeM(60, 400, "#6E8B3D");
         drawTreeM(200, 380, "#6E8B3D");
-
-
+        */
+        
 
         // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -395,6 +396,35 @@ namespace A3 {
 
 
         }
+        
+           //Bäume    
+        /*//winzige Bäume; Zufallschleife -> nicht hier, sonst animiert
+        for (let i: number = 0; i < 4; i++) {
+            let x: number = 150 + Math.random() * 100;
+            let y: number = 180 + Math.random() * 60;
+
+            drawTreeS(x, y, "#6E8B3D");
+        }
+        */
+        //kleine Bäume
+        drawTreeL(250, 250, "#6E8B3D");
+        drawTreeL(100, 100, "#6E8B3D");
+        drawTreeL(150, 180, "#6E8B3D");
+        drawTreeL(400, 380, "#6E8B3D");
+
+        //mittlere Bäume
+        drawTreeM(50, 100, "#6E8B3D");
+        drawTreeM(200, 200, "#6E8B3D");
+
+        //Ausnahme kleiner Baum
+        drawTreeS(75, 280, "#6E8B3D");
+
+        //weiter mittlere Bäume
+        drawTreeM(60, 400, "#6E8B3D");
+        drawTreeM(200, 380, "#6E8B3D");
+
+
+        
         //Geschwindigkeit
         window.setTimeout(animate, 100);
 
