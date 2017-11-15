@@ -1,10 +1,10 @@
-/*Aufgabe 1 von Denise Marcella Alka, 08.Oktober.2017
+/*Aufgabe 4 von Denise Marcella Alka, November.2017
 hiermit versichere ich, dass der Code von mir
 (Denise Marcella Alka, 256690)
 eigenst�ndig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 */
-var A3;
-(function (A3) {
+var A4;
+(function (A4) {
     window.addEventListener("load", init);
     //globale Variable
     let crc2;
@@ -322,5 +322,5 @@ var A3;
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }
-})(A3 || (A3 = {}));
+})(A4 || (A4 = {}));
 //# sourceMappingURL=main.js.map

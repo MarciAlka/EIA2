@@ -1,10 +1,10 @@
-/*Aufgabe 1 von Denise Marcella Alka, 08.Oktober.2017
+/*Aufgabe 4 von Denise Marcella Alka, November.2017
 hiermit versichere ich, dass der Code von mir 
 (Denise Marcella Alka, 256690) 
 eigenständig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 */
 
-namespace A3 {
+namespace A4 {
     window.addEventListener("load", init);
 
     
