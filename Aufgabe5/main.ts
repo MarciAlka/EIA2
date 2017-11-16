@@ -30,9 +30,9 @@ namespace A5 {
     let snowArr: Schnee [] = [];
     let wolkeArr: Wolken[] = [];
     
-    export let clski: Skifahrer;
-    export let clsnow: Schnee;
-    export let clwolken: Wolken;
+    let clski: Skifahrer;
+    let clsnow: Schnee;
+    let clwolken: Wolken;
     //let clbäume: Bäume;
     
 
@@ -150,8 +150,16 @@ namespace A5 {
         */
             
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
-            clski = new Skifahrer (10,100,Math.random() * 2 - 1,Math.random() * 2 - 1);
+            
+            
+            clski = new Skifahrer (200,100,Math.random() * 2 - 1,Math.random() * 2 - 1);
                 skiArr[i] = clski;
+            
+            //Warum geht das hier nicht???????????
+            //let s: clski = new Skifahrer (200,100,Math.random() * 2 - 1,Math.random() * 2 - 1);
+            //    skiArr[i] = s;
+            
+            }
             
             /* ARRAY GEHT SO NICHT :(
             if (i == 0) {
@@ -175,8 +183,11 @@ namespace A5 {
             }
             */
             
+        
+        for (let i: number = 0; i < 3; i++) {
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
             clwolken = new Wolken (0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
+                wolkeArr[i]= clwolken;
             
             /*ARRAY GEHT SO NICHT :(
             if (i == 0) {
