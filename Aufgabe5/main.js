@@ -110,8 +110,11 @@ var A5;
                 };
             */
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
-            clski = new A5.Skifahrer(200, 100, Math.random() * 2 - 1, Math.random() * 2 - 1);
-            skiArr[i] = clski;
+            //clski = new Skifahrer (200,100,Math.random() * 2 - 1,Math.random() * 2 - 1);
+            //  skiArr[i] = clski;
+            //Warum geht das hier nicht???????????
+            let s = new A5.Skifahrer(200, 100, Math.random() * 2 - 1, Math.random() * 2 - 1);
+            skiArr[i] = s;
         }
         /* ARRAY GEHT SO NICHT :(
         if (i == 0) {
