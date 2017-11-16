@@ -20,6 +20,9 @@ var A5;
     let skiArr = [];
     let snowArr = [];
     let wolkeArr = [];
+    let clski;
+    let clsnow;
+    let clwolken;
     //let clb�ume: B�ume;
     let imgData;
     function init() {
@@ -93,8 +96,8 @@ var A5;
         //Animationen
         for (let i = 0; i < 120; i++) {
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
-            A5.clsnow = new A5.Schnee(10 + Math.random() * 800, 100 + Math.random() * 600);
-            snowArr[i] = A5.clsnow;
+            clsnow = new A5.Schnee(10 + Math.random() * 800, 100 + Math.random() * 600);
+            snowArr[i] = clsnow;
         }
         for (let i = 0; i < 3; i++) {
             /*
@@ -107,31 +110,34 @@ var A5;
                 };
             */
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
-            A5.clski = new A5.Skifahrer(10, 100, Math.random() * 2 - 1, Math.random() * 2 - 1);
-            skiArr[i] = A5.clski;
-            /* ARRAY GEHT SO NICHT :(
-            if (i == 0) {
-                skiArr[i].x = 10;
-                skiArr[i].y = 100;
+            clski = new A5.Skifahrer(200, 100, Math.random() * 2 - 1, Math.random() * 2 - 1);
+            skiArr[i] = clski;
+        }
+        /* ARRAY GEHT SO NICHT :(
+        if (i == 0) {
+            skiArr[i].x = 10;
+            skiArr[i].y = 100;
 
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            else if (i == 1) {
-                skiArr[i].x = -290;
-                skiArr[i].y = 100;
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            else if (i == 2) {
-                skiArr[i].x = -190;
-                skiArr[i].y = -200;
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            */
+            skiXOrig[i] = skiArr[i].x;
+            skiYOrig[i] = skiArr[i].y;
+        }
+        else if (i == 1) {
+            skiArr[i].x = -290;
+            skiArr[i].y = 100;
+            skiXOrig[i] = skiArr[i].x;
+            skiYOrig[i] = skiArr[i].y;
+        }
+        else if (i == 2) {
+            skiArr[i].x = -190;
+            skiArr[i].y = -200;
+            skiXOrig[i] = skiArr[i].x;
+            skiYOrig[i] = skiArr[i].y;
+        }
+        */
+        for (let i = 0; i < 3; i++) {
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
-            A5.clwolken = new A5.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
+            clwolken = new A5.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
+            wolkeArr[i] = clwolken;
         }
         animate();
         A5.crc2.putImageData(imgData, 0, 0);
@@ -178,9 +184,9 @@ var A5;
         //Bild einf�gen, hier Hintergrund restaurieren
         A5.crc2.clearRect(0, 0, 800, 600);
         A5.crc2.putImageData(imgData, 0, 0);
-        A5.clski.updateSki();
-        A5.clsnow.updateSchnee();
-        A5.clwolken.updateWolken();
+        clski.updateSki();
+        clsnow.updateSchnee();
+        clwolken.updateWolken();
         //schneeflocken
         for (let i = 0; i < snowArr.length; i++) {
             let s = snowArr[i];
