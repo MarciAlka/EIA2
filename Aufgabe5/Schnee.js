@@ -17,14 +17,11 @@ var A5;
             this.draw();
         }
         move() {
-            for (let i = 0; i < A5.snowX.length; i++) {
-                //snowX[i] += 0; 
-                //snowY[i] += 5;  
-                //drawSnowf(snowX[i], snowY[i]);
-                if (A5.snowY[i] > 600) {
-                    A5.snowY[i] = 0;
-                }
+            if (this.y > 600) {
+                this.y = 0;
             }
+            //test
+            this.y += 10; //Math.random();
         }
         draw() {
             A5.crc2.beginPath();

@@ -27,18 +27,12 @@ namespace A5 {
     
         
         move(): void {
-            
-            for (let i: number = 0; i < wolkeX.length; i++) {
 
-                wolkeX[i] += 10;
-                wolkeY[i] += 0;
-
-                //drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
-
-                if (wolkeX[i] > 800) {
-                    wolkeX[i] = wolkeXOrig[i];          
-                }
+            if (this.x > 800) {
+                this.x = 0;
             }
+            this.x += 10;
+            this.y += 0;
            
             
         }

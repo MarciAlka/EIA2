@@ -6,36 +6,32 @@ eigenst�ndig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 var A5;
 (function (A5) {
     class Skifahrer {
-        //dx: number;
-        //dy: number;
         //color: string;
-        constructor(_x, _y) {
+        constructor(_x, _y, _dx, _dy) {
             this.x = _x;
             this.y = _y;
+            this.dx = _dx;
+            this.dy = _dy;
         }
-        //let skiXOrig: number[] = [];
-        //let skiYOrig: number[] = [];
         updateSki() {
             this.move();
             this.draw();
         }
-        //}
         move() {
             //this.x += Math.random() * 4 - 2; // hier experimentieren um
             //this.y += Math.random() * 4 - 2; // andere Bewegungsmuster zu finden
-            for (let i = 0; i < A5.skiArr.length; i++) {
-                //hab kein Array mehr, also alternative!->nachtrag:Arr oben erstellt in main
-                let s = A5.skiArr[i]; //
-                s.updateSki();
-                s.x += 10;
-                s.y += 10;
-                //drawSki (skiX[i], skiY[i]);
-                //drawSki(s);
-                if (s.x > 800 || s.y > 600) {
-                    s.x = A5.skiXOrig[i]; // = skiXOrigin[i]
-                    s.y = A5.skiYOrig[i]; // = skiYOrigin[i]
-                }
+            if (this.x > 800) {
+                this.x = 0;
+                this.y = 0;
             }
+            if (this.y > 600) {
+                this.y = 0;
+                this.y = 0;
+            }
+            this.x += 10;
+            this.y += 10;
+            //this.y += this.dy;
+            //this.y += this.dx; 
         }
         draw() {
             // Dreieck f�r Beine/Ski
@@ -56,31 +52,7 @@ var A5;
             A5.crc2.fillStyle = "#9cacdb";
             A5.crc2.fillRect(this.x - 5, this.y + 4, 10, 14);
         }
-        initruf() {
-            for (let i = 0; i < 3; i++) {
-                A5.clski = new Skifahrer(200, 100);
-                //existiert noch nicht! clski.setRandomStyle();
-                if (i == 0) {
-                    A5.skiArr[i].x = 10;
-                    A5.skiArr[i].y = 100;
-                    A5.skiXOrig[i] = A5.skiArr[i].x;
-                    A5.skiYOrig[i] = A5.skiArr[i].y;
-                }
-                else if (i == 1) {
-                    A5.skiArr[i].x = -290;
-                    A5.skiArr[i].y = 100;
-                    A5.skiXOrig[i] = A5.skiArr[i].x;
-                    A5.skiYOrig[i] = A5.skiArr[i].y;
-                }
-                else if (i == 2) {
-                    A5.skiArr[i].x = -190;
-                    A5.skiArr[i].y = -200;
-                    A5.skiXOrig[i] = A5.skiArr[i].x;
-                    A5.skiYOrig[i] = A5.skiArr[i].y;
-                }
-            }
-        }
     }
     A5.Skifahrer = Skifahrer;
 })(A5 || (A5 = {}));
-//# sourceMappingURL=skifahrer.js.map
+//# sourceMappingURL=Skifahrer.js.map

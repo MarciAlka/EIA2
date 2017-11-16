@@ -10,18 +10,18 @@ namespace A5 {
     
         x: number;
         y: number;
-        //dx: number;
-        //dy: number;
+        dx: number;
+        dy: number;
+        
         //color: string;
         
-        constructor(_x: number, _y: number) {
+        constructor(_x: number, _y: number, _dx:number, _dy:number) {
             this.x = _x;
             this.y = _y;
+            this.dx = _dx;
+            this.dy = _dy;
         }
 
-        
-        //let skiXOrig: number[] = [];
-        //let skiYOrig: number[] = [];
 
         updateSki(): void {
             this.move();
@@ -29,35 +29,28 @@ namespace A5 {
         }
     
     
-
-        //}
-    
     
         move(): void {
             //this.x += Math.random() * 4 - 2; // hier experimentieren um
             //this.y += Math.random() * 4 - 2; // andere Bewegungsmuster zu finden
             
-            
-            
-            for (let i: number = 0; i < skiArr.length; i++) {
-                //hab kein Array mehr, also alternative!->nachtrag:Arr oben erstellt in main
-                let s: Skifahrer = skiArr[i]; //
-                s.updateSki();
-                
-            s.x += 10;
-            s.y += 10;
-
-            //drawSki (skiX[i], skiY[i]);
-            //drawSki(s);
-
-            if (s.x > 800 || s.y > 600) {
-                s.x = skiXOrig[i]; // = skiXOrigin[i]
-                s.y = skiYOrig[i]; // = skiYOrigin[i]
+            if (this.x > 800) {
+                this.x = 0;
+                this.y = 0;
+            }
+            if (this.y > 600) {
+                this.y = 0;
+                this.y = 0;
             }
 
-
-            }
+            this.x += 10;
+            this.y += 10;
             
+            
+            //this.y += this.dy;
+            //this.y += this.dx; 
+            
+           
             
         }
 
@@ -88,33 +81,6 @@ namespace A5 {
 
         }
     
-     initruf():void{
-     for (let i: number = 0; i < 3; i++) {
-
-        clski = new Skifahrer(200, 100);
-        //existiert noch nicht! clski.setRandomStyle();
-
-            if (i == 0) {
-                skiArr[i].x = 10;
-                skiArr[i].y = 100;
-
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            else if (i == 1) {
-                skiArr[i].x = -290;
-                skiArr[i].y = 100;
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            else if (i == 2) {
-                skiArr[i].x = -190;
-                skiArr[i].y = -200;
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-         }
-        }
          
          
          

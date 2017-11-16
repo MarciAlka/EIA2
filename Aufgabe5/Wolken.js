@@ -18,14 +18,11 @@ var A5;
             this.draw();
         }
         move() {
-            for (let i = 0; i < A5.wolkeX.length; i++) {
-                A5.wolkeX[i] += 10;
-                A5.wolkeY[i] += 0;
-                //drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
-                if (A5.wolkeX[i] > 800) {
-                    A5.wolkeX[i] = A5.wolkeXOrig[i];
-                }
+            if (this.x > 800) {
+                this.x = 0;
             }
+            this.x += 10;
+            this.y += 0;
         }
         draw() {
             A5.crc2.beginPath();

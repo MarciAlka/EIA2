@@ -26,20 +26,15 @@ namespace A5 {
     
         
         move(): void {
-            for (let i: number = 0; i < snowX.length; i++) {
-                
-                
-                //snowX[i] += 0; 
-                //snowY[i] += 5;  
 
-                //drawSnowf(snowX[i], snowY[i]);
 
-                if (snowY[i] > 600) {
-                    snowY[i] = 0;
+                if (this.y > 600) {
+                    this.y = 0;
                 }
-
-           
-            }
+            
+            //test
+             this.y += 10;//Math.random();
+                
         }
 
         
@@ -48,6 +43,7 @@ namespace A5 {
             crc2.arc(this.x, this.y, 2, 0, 2 * Math.PI);
             crc2.fillStyle = "#FFFFFF";
             crc2.fill();
+            
         }
     }
     
