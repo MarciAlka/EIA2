@@ -281,9 +281,9 @@ namespace A5 {
         crc2.clearRect(0, 0, 800, 600)
         crc2.putImageData(imgData, 0, 0);
         
-        clski.updateSki();
-        clsnow.updateSchnee();
-        clwolken.updateWolken();
+        //clski.updateSki();
+        //clsnow.updateSchnee();
+        //clwolken.updateWolken();
         
       
 
