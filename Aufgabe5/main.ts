@@ -157,7 +157,7 @@ namespace A5 {
             
             //Warum geht das hier nicht???????????
             //let s: clski = new Skifahrer (200,100,Math.random() * 2 - 1,Math.random() * 2 - 1);
-            //    skiArr[i] = s;
+                //skiArr[i] = s;
             
             }
             
