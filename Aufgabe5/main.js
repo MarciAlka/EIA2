@@ -184,9 +184,9 @@ var A5;
         //Bild einf�gen, hier Hintergrund restaurieren
         A5.crc2.clearRect(0, 0, 800, 600);
         A5.crc2.putImageData(imgData, 0, 0);
-        clski.updateSki();
-        clsnow.updateSchnee();
-        clwolken.updateWolken();
+        //clski.updateSki();
+        //clsnow.updateSchnee();
+        //clwolken.updateWolken();
         //schneeflocken
         for (let i = 0; i < snowArr.length; i++) {
             let s = snowArr[i];
