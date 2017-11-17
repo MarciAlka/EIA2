@@ -35,7 +35,7 @@ namespace A5 {
             //this.y += Math.random() * 4 - 2; // andere Bewegungsmuster zu finden
             
             if (this.x > 800) {
-                this.x = 0;
+                //this.x = 0;
                 this.y = 0;
             }
             if (this.y > 600) {
