@@ -26,7 +26,6 @@ var A5;
             }
             if (this.y > 600) {
                 this.y = 0;
-                this.y = 0;
             }
             this.x += 10;
             this.y += 10;
