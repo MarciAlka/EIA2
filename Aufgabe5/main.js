@@ -6,16 +6,6 @@ eigenst�ndig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 var A5;
 (function (A5) {
     window.addEventListener("load", init);
-    //let wolkeX: number[] = [];
-    //let wolkeY: number[] = [];
-    //let skiX: number[] = [];
-    //let skiY: number[] = [];
-    //let snowX: number[] = [];
-    //let snowY: number[] = [];
-    //let skiXOrig: number[] = [];
-    //let skiYOrig: number[] = [];
-    //let wolkeXOrig: number[] = [];
-    //let wolkeYOrig: number[] = [];
     //Neu
     let skiArr = [];
     let snowArr = [];
@@ -100,40 +90,14 @@ var A5;
             snowArr[i] = clsnow;
         }
         for (let i = 0; i < 3; i++) {
-            /*
-                skiArr[i] = {
-                    x: 200,
-                    y: 100,
-                    dx: Math.random() * 2 - 1,
-                    dy: Math.random() * 2 - 1,
-                    color: "#FFFFFF"//"hsl(" + Math.random() * 360 + ", 100%, 50%)"
-                };
-            */
-            //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
-            clski = new A5.Skifahrer(200, 100, Math.random() * 2 - 1, Math.random() * 2 - 1);
+            let skiX = 2000;
+            let skiY = Math.random() * 300 - 200; //Random davor 100
+            let skiDx = Math.random() * 2 - 1;
+            let skiDy = Math.random() * 2 - 1;
+            clski = new A5.Skifahrer(skiX, skiY, skiDx, skiDy);
             skiArr[i] = clski;
         }
-        /* ARRAY GEHT SO NICHT :(
-        if (i == 0) {
-            skiArr[i].x = 10;
-            skiArr[i].y = 100;
-
-            skiXOrig[i] = skiArr[i].x;
-            skiYOrig[i] = skiArr[i].y;
-        }
-        else if (i == 1) {
-            skiArr[i].x = -290;
-            skiArr[i].y = 100;
-            skiXOrig[i] = skiArr[i].x;
-            skiYOrig[i] = skiArr[i].y;
-        }
-        else if (i == 2) {
-            skiArr[i].x = -190;
-            skiArr[i].y = -200;
-            skiXOrig[i] = skiArr[i].x;
-            skiYOrig[i] = skiArr[i].y;
-        }
-        */
+        console.log(skiArr.length);
         for (let i = 0; i < 3; i++) {
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
             clwolken = new A5.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
@@ -184,9 +148,6 @@ var A5;
         //Bild einf�gen, hier Hintergrund restaurieren
         A5.crc2.clearRect(0, 0, 800, 600);
         A5.crc2.putImageData(imgData, 0, 0);
-        //clski.updateSki();
-        //clsnow.updateSchnee();
-        //clwolken.updateWolken();
         //schneeflocken
         for (let i = 0; i < snowArr.length; i++) {
             let s = snowArr[i];
@@ -198,14 +159,8 @@ var A5;
             s.updateWolken();
         }
         //Animation Skifahrer
-        //
         for (let i = 0; i < skiArr.length; i++) {
             let s = skiArr[i];
-            s.updateSki();
-        }
-        //DAS HIER MUSS NUN IN DIE KLASSE AUSGELAGERT WERDEN!!!!!!
-        for (let i = 0; i < skiArr.length; i++) {
-            let s = skiArr[i]; //
             s.updateSki();
         }
         //B�ume    

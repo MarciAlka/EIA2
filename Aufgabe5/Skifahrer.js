@@ -20,16 +20,14 @@ var A5;
         move() {
             //this.x += Math.random() * 4 - 2; // hier experimentieren um
             //this.y += Math.random() * 4 - 2; // andere Bewegungsmuster zu finden
-            if (this.x > 800) {
+            if (this.x > 800 || this.y > 600) {
                 this.x = 0;
-            }
-            if (this.y > 600) {
                 this.y = 0;
             }
             this.x += 10;
             this.y += 10;
-            //this.y += this.dy;
-            //this.y += this.dx; 
+            this.y += this.dy;
+            this.y += this.dx;
         }
         draw() {
             // Dreieck f�r Beine/Ski

@@ -11,19 +11,6 @@ namespace A5 {
     //globale Variable
     export let crc2: CanvasRenderingContext2D;
 
-    //let wolkeX: number[] = [];
-    //let wolkeY: number[] = [];
-    //let skiX: number[] = [];
-    //let skiY: number[] = [];
-    //let snowX: number[] = [];
-    //let snowY: number[] = [];
-
-    //let skiXOrig: number[] = [];
-    //let skiYOrig: number[] = [];
-
-    //let wolkeXOrig: number[] = [];
-    //let wolkeYOrig: number[] = [];
-
     
     //Neu
     let skiArr: Skifahrer[] = [];
@@ -132,98 +119,38 @@ namespace A5 {
         //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
         clsnow = new Schnee (10 + Math.random() * 800,100 + Math.random() * 600);
             snowArr[i] = clsnow;
-            
-            //ALT snowX[i] = 10 + Math.random() * 800;
-            //ALT snowY[i] = 100 + Math.random() * 600;
+
         }
         
         
         for (let i: number = 0; i < 3; i++) {
-        /*
-            skiArr[i] = {
-                x: 200,
-                y: 100,
-                dx: Math.random() * 2 - 1,
-                dy: Math.random() * 2 - 1,
-                color: "#FFFFFF"//"hsl(" + Math.random() * 360 + ", 100%, 50%)"
-            };
-        */
+               
+            let skiX = 2000;
+            let skiY = Math.random() * 300 - 200; //Random davor 100
+            let skiDx = Math.random() * 2 - 1;
+            let skiDy = Math.random() * 2 - 1;
             
-            //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
-            
-            
-            clski = new Skifahrer (200,100,Math.random() * 2 - 1,Math.random() * 2 - 1);
+            clski = new Skifahrer (skiX, skiY, skiDx, skiDy);
                 skiArr[i] = clski;
             
-            //Warum geht das hier nicht???????????
-            //let s: clski = new Skifahrer (200,100,Math.random() * 2 - 1,Math.random() * 2 - 1);
-                //skiArr[i] = s;
-            
-            }
-            
-            /* ARRAY GEHT SO NICHT :(
-            if (i == 0) {
-                skiArr[i].x = 10;
-                skiArr[i].y = 100;
-
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            else if (i == 1) {
-                skiArr[i].x = -290;
-                skiArr[i].y = 100;
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            else if (i == 2) {
-                skiArr[i].x = -190;
-                skiArr[i].y = -200;
-                skiXOrig[i] = skiArr[i].x;
-                skiYOrig[i] = skiArr[i].y;
-            }
-            */
-            
+        }
+        
+        console.log(skiArr.length);
         
         for (let i: number = 0; i < 3; i++) {
             //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
             clwolken = new Wolken (0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
                 wolkeArr[i]= clwolken;
             
-            /*ARRAY GEHT SO NICHT :(
-            if (i == 0) {
-                wolkeX[i] = 10;
-                wolkeY[i] = 100; //100
-
-                wolkeXOrig[i] = wolkeX[i];
-                wolkeYOrig[i] = wolkeY[i];
-            }
-            else if (i == 1) {
-                wolkeX[i] = 200;
-                wolkeY[i] = 140;
-                wolkeXOrig[i] = wolkeX[i];
-                wolkeYOrig[i] = wolkeY[i];
-            }
-            else if (i == 2) {
-                wolkeX[i] = -190;
-                wolkeY[i] = 250;
-                wolkeXOrig[i] = wolkeX[i];
-                wolkeYOrig[i] = wolkeY[i];
-            }
-
-            //wolkeX[i] = 10;
-            //wolkeY[i] = 100; */
+            
         } 
 
         animate();
 
         crc2.putImageData(imgData, 0, 0);
-
+        
         //hier endet init()
     }
-
-
-
-
 
 
     //FUNKTIONEN
@@ -281,9 +208,6 @@ namespace A5 {
         crc2.clearRect(0, 0, 800, 600)
         crc2.putImageData(imgData, 0, 0);
         
-        //clski.updateSki();
-        //clsnow.updateSchnee();
-        //clwolken.updateWolken();
         
       
 
@@ -293,18 +217,6 @@ namespace A5 {
             let s: Schnee = snowArr[i];
             
             s.updateSchnee();
-                
-            //s.x += 10;
-            //s.y += 10;
-            
-            //ALT snowX[i] += 0; //Math.random() * 5 - 0; 10
-            //ALT snowY[i] += 5; //Math.random() * 10 - 0; 0  
-
-            //drawSnowf(snowX[i], snowY[i]);
-
-            //if (snowY[i] > 600) {
-            //    snowY[i] = 0;
-            //}
            
         }
 
@@ -315,62 +227,22 @@ namespace A5 {
             let s: Wolken = wolkeArr[i];
                 s.updateWolken();
             
-            //wolkeX[i] += 10;
-            //wolkeY[i] += 0;
-
-            //drawCloud(wolkeX[i], wolkeY[i], 15, "#FFFFFF");
             
-            /*
-            if (wolkeX[i] > 800) {
-                wolkeX[i] = wolkeXOrig[i];   //0;        
-            } */
         }
         
 
         //Animation Skifahrer
-        //
+        
             
            for (let i: number = 0; i < skiArr.length; i++) {
             
             let s: Skifahrer = skiArr[i];
                 s.updateSki();
                
-            //skiArr[i].x += 10;
-            //skiArr[i].y += 10;
-
-            //drawSki (skiX[i], skiY[i]);
-            //clski.draw(); skiArr[i]);
-            /*
-            if (skiArr[i].x > 800 || skiArr[i].y > 600) {
-                skiArr[i].x = skiXOrig[i]; // = skiXOrigin[i]
-                skiArr[i].y = skiYOrig[i]; // = skiYOrigin[i]
-            }
-            */
+            
 
             }
             
-        
-            //DAS HIER MUSS NUN IN DIE KLASSE AUSGELAGERT WERDEN!!!!!!
-            for (let i: number = 0; i < skiArr.length; i++) {
-                
-                let s: Skifahrer = skiArr[i]; //
-                s.updateSki();
-                
-            //s.x += 10;
-            //s.y += 10;
-
-            //drawSki (skiX[i], skiY[i]);
-            //drawSki(s);
-            
-            /*
-            if (s.x > 800 || s.y > 600) {
-                s.x = skiXOrig[i]; // = skiXOrigin[i]
-                s.y = skiYOrig[i]; // = skiYOrigin[i]
-            }
-            */
-
-
-            }
         
            //Bäume    
 
