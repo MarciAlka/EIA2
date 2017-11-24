@@ -6,15 +6,10 @@ eigenst�ndig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 var A6;
 (function (A6) {
     window.addEventListener("load", init);
-    //Neu
-    let skiArr = [];
-    let snowArr = [];
-    let wolkeArr = [];
     let objektArr = [];
     let clski;
     let clsnow;
     let clwolken;
-    //let clb�ume: B�ume;
     let imgData;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
@@ -97,7 +92,6 @@ var A6;
             clski = new A6.Skifahrer(skiX, skiY, skiDx, skiDy);
             objektArr.push(clski);
         }
-        console.log(skiArr.length);
         for (let i = 0; i < 3; i++) {
             clwolken = new A6.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
             objektArr.push(clwolken);
@@ -146,7 +140,7 @@ var A6;
         //Bild einf�gen, hier Hintergrund restaurieren
         A6.crc2.clearRect(0, 0, 800, 600);
         A6.crc2.putImageData(imgData, 0, 0);
-        //schneeflocken
+        //schneeflocken, wolken, skifahrer
         for (let i = 0; i < objektArr.length; i++) {
             let s = objektArr[i];
             s.update();

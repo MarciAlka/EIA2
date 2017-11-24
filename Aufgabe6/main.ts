@@ -11,17 +11,11 @@ namespace A6 {
     //globale Variable
     export let crc2: CanvasRenderingContext2D;
 
-    
-    //Neu
-    let skiArr: Objekt[] = [];
-    let snowArr: Objekt [] = [];
-    let wolkeArr: Objekt[] = [];
     let objektArr: Objekt [] = [];
     
     let clski: Skifahrer;
     let clsnow: Schnee;
     let clwolken: Wolken;
-    //let clbäume: Bäume;
     
 
     let imgData: ImageData;
@@ -140,7 +134,7 @@ namespace A6 {
             
         }
         
-        console.log(skiArr.length);
+  
         
         for (let i: number = 0; i < 3; i++) {
 
@@ -214,8 +208,8 @@ namespace A6 {
         
       
 
-        //schneeflocken
-        for (let i: number = 0; i < objektArr.length; i++) { //snowArr.length
+        //schneeflocken, wolken, skifahrer
+        for (let i: number = 0; i < objektArr.length; i++) { 
             
 
             let s: Objekt = objektArr[i];                        
