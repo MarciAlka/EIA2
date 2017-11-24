@@ -6,14 +6,14 @@ eigenständig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 
 namespace A6 {
     
-    export class Skifahrer extends Objekte {
+    export class Skifahrer extends Objekt {
     
         x: number;
         y: number;
         dx: number;
         dy: number;
         
-        //color: string;
+
         
         constructor(_x: number, _y: number, _dx:number, _dy:number) {
             super(_x,_y);
@@ -24,16 +24,9 @@ namespace A6 {
         }
 
 
-        updateSki(): void {
-            this.move();
-            this.draw();
-        }
-    
     
     
         move(): void {
-            //this.x += Math.random() * 4 - 2; // hier experimentieren um
-            //this.y += Math.random() * 4 - 2; // andere Bewegungsmuster zu finden
             
             if (this.x > 800 || this.y > 600) {
                 this.x = 0;

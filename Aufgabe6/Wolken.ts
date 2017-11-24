@@ -6,21 +6,13 @@ eigenständig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 
 namespace A6 {
 
-    export class Wolken extends Objekte {
+    export class Wolken extends Objekt {
     
-        //x: number;
-        //y: number;
-     
         
         constructor(_x: number, _y: number) {
             super(_x,_y);
             this.x = _x;
             this.y = _y;
-        }
-
-        updateWolken(): void {
-            this.move();
-            this.draw();
         }
     
         

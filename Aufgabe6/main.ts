@@ -13,10 +13,10 @@ namespace A6 {
 
     
     //Neu
-    let skiArr: Skifahrer[] = [];
-    let snowArr: Schnee [] = [];
-    let wolkeArr: Wolken[] = [];
-    let objekteArr: Objekte [] = [];
+    let skiArr: Objekt[] = [];
+    let snowArr: Objekt [] = [];
+    let wolkeArr: Objekt[] = [];
+    let objektArr: Objekt [] = [];
     
     let clski: Skifahrer;
     let clsnow: Schnee;
@@ -118,11 +118,11 @@ namespace A6 {
 
 
         for (let i: number = 0; i < 120; i++) {
-        //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
+      
         clsnow = new Schnee (10 + Math.random() * 800, 100 + Math.random() * 600);
-//            snowArr[i] = clsnow;
+
             
-            objekteArr.push(clsnow);
+            objektArr.push(clsnow);
 
         }
         
@@ -135,27 +135,24 @@ namespace A6 {
             let skiDy = Math.random() * 2 - 1;
             
             clski = new Skifahrer (skiX, skiY, skiDx, skiDy);
-//                skiArr[i] = clski;
             
-            objekteArr.push(clski);
+            objektArr.push(clski);
             
         }
         
         console.log(skiArr.length);
         
         for (let i: number = 0; i < 3; i++) {
-            //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
+
             clwolken = new Wolken (0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
-                //wolkeArr[i]= clwolken;
             
-            objekteArr.push(clwolken);
+            objektArr.push(clwolken);
         } 
 
         animate();
 
         crc2.putImageData(imgData, 0, 0);
         
-        //hier endet init()
     }
 
 
@@ -218,39 +215,15 @@ namespace A6 {
       
 
         //schneeflocken
-        for (let i: number = 0; i < objekteArr.length; i++) { //snowArr.length
+        for (let i: number = 0; i < objektArr.length; i++) { //snowArr.length
             
-            //let s: Schnee = snowArr[i];
-            let s: Objekte = objekteArr[i];
+
+            let s: Objekt = objektArr[i];                        
+            s.update();
             
-            s.move();
            
         }
-
-        //Animation Wolken
-        
-        for (let i: number = 0; i < objekteArr.length; i++) { //wolkeArr.length
-            
-            //let s: Wolken = wolkeArr[i];
-            let s: Wolken = objekteArr[i];    
-            s.updateWolken();
-            
-            
-        }
-        
-
-        //Animation Skifahrer
-        
-            
-           for (let i: number = 0; i < skiArr.length; i++) {
-            
-            let s: Skifahrer = skiArr[i];
-                s.updateSki();
-               
-            
-
-            }
-            
+          
         
            //Bäume    
 

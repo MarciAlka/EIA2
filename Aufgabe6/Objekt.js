@@ -5,26 +5,21 @@ eigenst�ndig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 */
 var A6;
 (function (A6) {
-    class Objekte {
-        //dx: number;
-        //dy: number;
+    class Objekt {
         constructor(_x, _y) {
             this.x = _x;
             this.y = _y;
+        }
+        update() {
+            this.move();
             this.draw();
         }
-        //        update(): void {
-        //            this.move();
-        //            this.draw();
-        //        }
         draw() {
             // abstract
         }
         move() {
-            //this.x += Math.random() * 4 - 2;
-            //this.y += Math.random() * 4 - 2;
         }
     }
-    A6.Objekte = Objekte;
+    A6.Objekt = Objekt;
 })(A6 || (A6 = {}));
-//# sourceMappingURL=Objekte.js.map
+//# sourceMappingURL=Objekt.js.map

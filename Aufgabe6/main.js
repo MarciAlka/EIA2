@@ -10,7 +10,7 @@ var A6;
     let skiArr = [];
     let snowArr = [];
     let wolkeArr = [];
-    let objekteArr = [];
+    let objektArr = [];
     let clski;
     let clsnow;
     let clwolken;
@@ -86,10 +86,8 @@ var A6;
         imgData = A6.crc2.getImageData(0, 0, canvas.width, canvas.height);
         //Animationen
         for (let i = 0; i < 120; i++) {
-            //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
             clsnow = new A6.Schnee(10 + Math.random() * 800, 100 + Math.random() * 600);
-            //            snowArr[i] = clsnow;
-            objekteArr.push(clsnow);
+            objektArr.push(clsnow);
         }
         for (let i = 0; i < 3; i++) {
             let skiX = 2000;
@@ -97,19 +95,15 @@ var A6;
             let skiDx = Math.random() * 2 - 1;
             let skiDy = Math.random() * 2 - 1;
             clski = new A6.Skifahrer(skiX, skiY, skiDx, skiDy);
-            //                skiArr[i] = clski;
-            objekteArr.push(clski);
+            objektArr.push(clski);
         }
         console.log(skiArr.length);
         for (let i = 0; i < 3; i++) {
-            //NEU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!TEST
             clwolken = new A6.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
-            //wolkeArr[i]= clwolken;
-            objekteArr.push(clwolken);
+            objektArr.push(clwolken);
         }
         animate();
         A6.crc2.putImageData(imgData, 0, 0);
-        //hier endet init()
     }
     //FUNKTIONEN
     //winziger Baum
@@ -153,34 +147,10 @@ var A6;
         A6.crc2.clearRect(0, 0, 800, 600);
         A6.crc2.putImageData(imgData, 0, 0);
         //schneeflocken
-        for (let i = 0; i < objekteArr.length; i++) {
-            //let s: Schnee = snowArr[i];
-            let s = objekteArr[i];
-            s.move();
+        for (let i = 0; i < objektArr.length; i++) {
+            let s = objektArr[i];
+            s.update();
         }
-        //        //Animation Wolken
-        //        
-        //        for (let i: number = 0; i < objekteArr.length; i++) { //wolkeArr.length
-        //            
-        //            //let s: Wolken = wolkeArr[i];
-        //            let s: Wolken = objekteArr[i];    
-        //            s.updateWolken();
-        //            
-        //            
-        //        }
-        //        
-        //
-        //        //Animation Skifahrer
-        //        
-        //            
-        //           for (let i: number = 0; i < skiArr.length; i++) {
-        //            
-        //            let s: Skifahrer = skiArr[i];
-        //                s.updateSki();
-        //               
-        //            
-        //
-        //            }
         //B�ume    
         //kleine B�ume
         drawTreeL(250, 250, "#6E8B3D");

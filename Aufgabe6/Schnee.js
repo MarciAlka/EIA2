@@ -5,17 +5,11 @@ eigenst�ndig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 */
 var A6;
 (function (A6) {
-    class Schnee extends A6.Objekte {
-        //x: number;
-        //y: number;
+    class Schnee extends A6.Objekt {
         constructor(_x, _y) {
             super(_x, _y);
             this.x = _x;
             this.y = _y;
-        }
-        updateSchnee() {
-            this.move();
-            this.draw();
         }
         move() {
             if (this.y > 600) {

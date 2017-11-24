@@ -6,24 +6,14 @@ eigenständig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 
 namespace A6 {
 
-    export class Schnee extends Objekte {
-    
-        //x: number;
-        //y: number;
-
-     
-        
+    export class Schnee extends Objekt {
+          
         constructor(_x: number, _y: number) {
             super(_x,_y);
             this.x = _x;
             this.y = _y;
         }
 
-        updateSchnee(): void {
-            this.move();
-            this.draw();
-        }
-    
         
         move(): void {
 

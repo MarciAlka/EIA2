@@ -5,8 +5,7 @@ eigenst�ndig geschrieben wurde; er wurde nicht diktiert oder kopiert;
 */
 var A6;
 (function (A6) {
-    class Skifahrer extends A6.Objekte {
-        //color: string;
+    class Skifahrer extends A6.Objekt {
         constructor(_x, _y, _dx, _dy) {
             super(_x, _y);
             this.x = _x;
@@ -14,13 +13,7 @@ var A6;
             this.dx = _dx;
             this.dy = _dy;
         }
-        updateSki() {
-            this.move();
-            this.draw();
-        }
         move() {
-            //this.x += Math.random() * 4 - 2; // hier experimentieren um
-            //this.y += Math.random() * 4 - 2; // andere Bewegungsmuster zu finden
             if (this.x > 800 || this.y > 600) {
                 this.x = 0;
                 this.y = 0;
