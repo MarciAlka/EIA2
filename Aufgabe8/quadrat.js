@@ -39,8 +39,10 @@ var L08_DOM;
         var letters = '0123456789ABCDEF';
         div.style.width = "10px";
         div.style.height = "10px";
-        //zuf�llige Farben
-        // vll auch so? div.style.backgroundColor = "hsl(" + color + ", 100%, 50%)";
+        //zuf�llige Farben hsl: Farbs�ttigung (saturation): 
+        //(0% = Neutralgrau, 50% = wenig ges�ttigte Farbe, 
+        //100% = ges�ttigte, reine Farbe), entspricht einem 
+        //Intervall von Null bis Eins
         //div.style.color= letters[Math.floor(Math.random() * 16)];
         div.style.backgroundColor = "hsl(" + color + ", 100%, 50%)";
         //Verschiebung:

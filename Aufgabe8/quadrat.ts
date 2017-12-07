@@ -49,8 +49,10 @@ namespace L08_DOM {
             
             div.style.width = "10px";
             div.style.height = "10px";
-            //zufällige Farben
-            // vll auch so? div.style.backgroundColor = "hsl(" + color + ", 100%, 50%)";
+            //zufällige Farben hsl: Farbsättigung (saturation): 
+            //(0% = Neutralgrau, 50% = wenig gesättigte Farbe, 
+            //100% = gesättigte, reine Farbe), entspricht einem 
+            //Intervall von Null bis Eins
             //div.style.color= letters[Math.floor(Math.random() * 16)];
             div.style.backgroundColor = "hsl(" + color + ", 100%, 50%)";
             
