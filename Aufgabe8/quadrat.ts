@@ -39,7 +39,7 @@ namespace L08_DOM {
         
     }
     
-    function init(x, y, color): void {
+    function init(x:number, y:number, color:number): void {
         
         //for (let i: number = 0; i < 10; i++) {
             
