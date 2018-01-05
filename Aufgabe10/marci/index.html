@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--Name: Denise Marcella Alka
+    Matrikel: 256690
+    Datum: 28.12.2017
+    Hiermit versichere ich, dass ich diesen
+    Code selbst geschrieben habe. Er wurde
+    nicht kopiert und auch nicht diktiert -->
+    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabe 10</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body class="c-container">
+
+<header>
+	<div id="bannerimage"> <!-- <img src="file:///I:/Studium/EIA2/Git/EIA2/Aufgabe10/marci/css/img/bannerBaum.jpg" alt="Banner"> -->
+	</div>
+	<br />
+	<p>Aktueller Preis: <span class="js-price">0</span>€ <button>Prüfen</button>
+	<!-- hier noch einen Login button, einen Kontakt usw einbauen! (nachträgich)
+	Hilfe für Login button von w3 schools:
+	https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
+	 -->
+	<br />
+	<div class="c-header">
+        <h1>Wunschbaum-Zauber</h1>
+        <p>Bestellen Sie Ihren Wunschbaum bequem von Zuhause!
+        Einfach Baumgröße & Dekoration auswählen, Lieferadresse angeben und bestätigen
+    </div>
+</header>
+
+<div class= "c-container2">
+
+
+<div class="c-container__left">
+
+    <div class="c-articles / js-articles">
+        <!--
+        <div class="o-articles__item">
+            <label><span>Artikel</span><br>Anzahl: <input name="artikel" type="number" placeholder="Anzahl" value="0"></label>
+        </div>
+        -->
+
+    </div>
+
+</div>
+
+<div class="c-container__right">
+    <p>Aktueller Preis: <span class="js-price">0</span>€ <button>Prüfen</button>
+    <form action="bestellen.php" method="post" class="">
+    <br/>
+    <fieldset id="radio">
+		<legend> <h2> Lieferoption: </h2> </legend>
+		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+		<label for="radio1">normal</label>
+		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+		<label for="radio2">express</label>
+		<input type="radio" name="Radiogroup" value="radio3" id="radio3"/>
+		<label for="radio3">over-night</label>
+	</fieldset>
+	<br/>
+	
+	<!-- Achtung! hier noch 2 buttons einbauen; einmal Adresse und einmal Login; diese Daten sollen erst
+	beim draufklicken dann erscheinen; wird nachträglich gemacht; -->
+	<fieldset id="text">
+		<legend> <h2> Adresse </h2> </legend>
+		Vor- und Nachname:
+		<hr/>
+		<input type="text" name="Text" placeholder="Name" required/>
+		<hr/>
+		
+		Straße und Hausnummer:
+		<hr/>
+		<input type="text" name="Text" placeholder="street and number" required/>
+		<hr/>
+	
+		Mail
+		<hr/>
+		<input type="email" name="Mail" placeholder="place @ between"/>
+		<hr/>
+		
+	</fieldset>
+	
+	<br/>
+	
+    
+    
+    <p><h2>Artikel Übersicht</h2>
+        <table class="c-total-table">
+            <tr class="o-total-table__row">
+                <th class="o-total-table__heading">Artikelname</th>
+                <th class="o-total-table__heading">Preis</th>
+                <th class="o-total-table__heading">Anzahl</th>
+                <th class="o-total-table__heading">Zu zahlen</th>
+            </tr>
+            <tr class="o-total-table__row c-total-table__row--total">
+                <td>Total
+                <td>
+                <td>
+                <td class="c-total-table__total">0
+            </tr>
+        </table>
+        <hr/>
+        <br/>
+        
+      	<fieldset id="radio">
+      		Anmerkungen und Wünsche
+      		<hr/>
+			<textarea name="Area" cols="30" rows="3" placeholder="type here"></textarea>
+			<hr/>
+      	</fieldset>
+      	
+    </form>
+</div>
+
+</div>
+
+
+<script src="dist/main.js" type="application/javascript"></script>
+</body>
+</html>
