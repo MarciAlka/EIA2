@@ -10,9 +10,9 @@ var End;
 (function (End) {
     window.addEventListener("load", init);
     let objektArr = [];
-    //let clski: Krabbe;
-    //let clsnow: Kokos;
-    //let clwolken: Wolken;
+    //let clkrabbe: Krabbe;
+    let clkokos;
+    let clwolken;
     let imgData;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
@@ -59,6 +59,33 @@ var End;
         gradient.addColorStop(1, "#FFFFF0");
         End.crc2.fillStyle = gradient;
         End.crc2.fillRect(0, 400, 800, 600);
+        // hier Hintergrund speichern
+        imgData = End.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        //Animationen
+        for (let i = 0; i < 3; i++) {
+            clwolken = new End.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
+            objektArr.push(clwolken);
+        }
+        for (let i = 0; i < 20; i++) {
+            clkokos = new End.Kokosnuss(10 + Math.random() * 800, 100 + Math.random() * 600);
+            objektArr.push(clkokos);
+        }
+        animate();
+        End.crc2.putImageData(imgData, 0, 0);
     }
-})(End || (End = {}));
+    // FUNKTIONEN
+    //Funktion Animate 
+    function animate() {
+        //Bild einf�gen, hier Hintergrund restaurieren
+        End.crc2.clearRect(0, 0, 800, 600);
+        End.crc2.putImageData(imgData, 0, 0);
+        //Kokosnuss, Wolken
+        for (let i = 0; i < objektArr.length; i++) {
+            let s = objektArr[i];
+            s.update();
+        }
+        //Geschwindigkeit
+        window.setTimeout(animate, 100);
+    }
+})(End || (End = {})); //namespace Ende
 //# sourceMappingURL=main.js.map
