@@ -23,7 +23,7 @@ var End;
         }
         draw() {
             End.crc2.beginPath();
-            End.crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI);
+            End.crc2.arc(this.x, this.y, 20, 0, 2 * Math.PI);
             End.crc2.fillStyle = "#8B4513";
             End.crc2.fill();
         }

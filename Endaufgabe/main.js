@@ -59,6 +59,58 @@ var End;
         gradient.addColorStop(1, "#FFFFF0");
         End.crc2.fillStyle = gradient;
         End.crc2.fillRect(0, 400, 800, 600);
+        //Palme mit linien?? Ansatz, nachher auslagern
+        //Rechteck 1
+        /*
+        crc2.beginPath();
+        crc2.moveTo(80, 600);
+        crc2.lineTo(20, 600);
+        crc2.lineTo(15, 550);
+        crc2.lineTo(70,550);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = "#CD853F";
+        crc2.fill();
+        
+        //Rechteck 2
+        crc2.beginPath();
+        crc2.moveTo(70, 550); bis hierhin ver�ndert
+        crc2.lineTo(20, 600);
+        crc2.lineTo(15, 550);
+        crc2.lineTo(70,550);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = "#CD853F";
+        crc2.fill();
+        */
+        /*Sprechblase f�r sp�teren Text!
+        crc2.beginPath();
+        crc2.moveTo(75, 25);
+        crc2.quadraticCurveTo(25, 25, 25, 62.5);
+        crc2.quadraticCurveTo(25, 100, 50, 100);
+        crc2.quadraticCurveTo(50, 120, 30, 125);
+        crc2.quadraticCurveTo(60, 120, 65, 100);
+        crc2.quadraticCurveTo(125, 100, 125, 62.5);
+        crc2.quadraticCurveTo(125, 25, 75, 25);
+        crc2.stroke();
+        */
+        //Krabbe
+        /*
+        crc2.moveTo(75, 25);
+        crc2.quadraticCurveTo(25, 25, 25, 62.5);
+        crc2.quadraticCurveTo(25, 100, 65, 100);
+        crc2.quadraticCurveTo(125, 100, 125, 62.5);
+        crc2.quadraticCurveTo(125, 25, 75, 25);
+        */
+        End.crc2.beginPath();
+        End.crc2.moveTo(75, 25);
+        End.crc2.quadraticCurveTo(25, 25, 25, 62.5);
+        End.crc2.quadraticCurveTo(25, 100, 65, 100);
+        End.crc2.quadraticCurveTo(125, 105, 125, 62.5);
+        End.crc2.quadraticCurveTo(125, 25, 75, 25);
+        End.crc2.stroke();
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
         // hier Hintergrund speichern
         imgData = End.crc2.getImageData(0, 0, canvas.width, canvas.height);
         //Animationen
@@ -66,8 +118,12 @@ var End;
             clwolken = new End.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
             objektArr.push(clwolken);
         }
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 3; i++) {
             clkokos = new End.Kokosnuss(10 + Math.random() * 800, 100 + Math.random() * 600);
+            objektArr.push(clkokos);
+        }
+        for (let i = 0; i < 2; i++) {
+            clkokos = new End.Kokosnuss(1 + Math.random() * 800, 200 + Math.random() * 600);
             objektArr.push(clkokos);
         }
         animate();
@@ -86,6 +142,17 @@ var End;
         }
         //Geschwindigkeit
         window.setTimeout(animate, 100);
+    }
+    //Funktion f�r Palme
+    function Palme(x, y, color) {
+        End.crc2.beginPath();
+        End.crc2.moveTo(x, y);
+        End.crc2.lineTo(x + 30, y + 100);
+        End.crc2.lineTo(x - 30, y + 100);
+        End.crc2.closePath();
+        End.crc2.stroke();
+        End.crc2.fillStyle = color;
+        End.crc2.fill();
     }
 })(End || (End = {})); //namespace Ende
 //# sourceMappingURL=main.js.map

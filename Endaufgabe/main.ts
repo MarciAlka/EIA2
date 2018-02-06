@@ -17,9 +17,9 @@ export let crc2: CanvasRenderingContext2D;
 
 let objektArr: Objekt [] = [];
     
-//let clski: Krabbe;
-//let clsnow: Kokos;
-//let clwolken: Wolken;
+//let clkrabbe: Krabbe;
+let clkokos: Kokosnuss;
+let clwolken: Wolken;
     
 
 let imgData: ImageData;
@@ -80,7 +80,131 @@ function init(): void {
       crc2.fillStyle = gradient;
       crc2.fillRect(0, 400, 800, 600);
     
+      //Palme mit linien?? Ansatz, nachher auslagern
+        //Rechteck 1
+        /*
+        crc2.beginPath();
+        crc2.moveTo(80, 600);
+        crc2.lineTo(20, 600);
+        crc2.lineTo(15, 550);
+        crc2.lineTo(70,550);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = "#CD853F";
+        crc2.fill();
+        
+        //Rechteck 2
+        crc2.beginPath();
+        crc2.moveTo(70, 550); bis hierhin verändert
+        crc2.lineTo(20, 600);
+        crc2.lineTo(15, 550);
+        crc2.lineTo(70,550);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = "#CD853F";
+        crc2.fill();
+        */
+    
+    /*Sprechblase für späteren Text!
+    crc2.beginPath();
+    crc2.moveTo(75, 25);
+    crc2.quadraticCurveTo(25, 25, 25, 62.5);
+    crc2.quadraticCurveTo(25, 100, 50, 100);
+    crc2.quadraticCurveTo(50, 120, 30, 125);
+    crc2.quadraticCurveTo(60, 120, 65, 100);
+    crc2.quadraticCurveTo(125, 100, 125, 62.5);
+    crc2.quadraticCurveTo(125, 25, 75, 25);
+    crc2.stroke();
+    */
+    
+    //Krabbe
+    /*
+    crc2.moveTo(75, 25);
+    crc2.quadraticCurveTo(25, 25, 25, 62.5);
+    crc2.quadraticCurveTo(25, 100, 65, 100);
+    crc2.quadraticCurveTo(125, 100, 125, 62.5);
+    crc2.quadraticCurveTo(125, 25, 75, 25);
+    */
+    crc2.beginPath();
+    crc2.moveTo(75, 25);
+    crc2.quadraticCurveTo(25, 25, 25, 62.5);
+    crc2.quadraticCurveTo(25, 100, 65, 100);
+    crc2.quadraticCurveTo(125, 105, 125, 62.5);
+    crc2.quadraticCurveTo(125, 25, 75, 25);
+    crc2.stroke();
+    crc2.fillStyle = "#DB2929";
+    crc2.fill();
+    
+    // hier Hintergrund speichern
+        imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+    
+    //Animationen
+        
+        for (let i: number = 0; i < 3; i++) {
+
+        clwolken = new Wolken (0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
+            
+        objektArr.push(clwolken);
+        }
+
+        for (let i: number = 0; i < 3; i++) {
+      
+        clkokos = new Kokosnuss (10 + Math.random() * 800, 100 + Math.random() * 600);
+            
+            objektArr.push(clkokos);
+
+        }
+        
+        for (let i: number = 0; i < 2; i++) {
+      
+        clkokos = new Kokosnuss (1 + Math.random() * 800, 200 + Math.random() * 600);
+            
+            objektArr.push(clkokos);
+
+        }
+    
+        animate();
+    
+
+        crc2.putImageData(imgData, 0, 0);
     
     }
 
+
+// FUNKTIONEN
+
+//Funktion Animate 
+function animate(): void {
+         
+ 
+    //Bild einfügen, hier Hintergrund restaurieren
+    crc2.clearRect(0, 0, 800, 600)
+    crc2.putImageData(imgData, 0, 0);
+        
+    //Kokosnuss, Wolken
+    for (let i: number = 0; i < objektArr.length; i++) { 
+            
+        let s: Objekt = objektArr[i];                        
+        s.update();
+            
+           
+        }
+    
+    //Geschwindigkeit
+    window.setTimeout(animate, 100);
 }
+
+//Funktion für Palme
+function Palme(x: number, y: number, color: string): void {
+    crc2.beginPath();
+    crc2.moveTo(x, y);
+    crc2.lineTo(x + 30, y + 100);
+    crc2.lineTo(x - 30, y + 100);
+    crc2.closePath();
+    crc2.stroke();
+    crc2.fillStyle = color;
+    crc2.fill();
+}
+    
+    
+} //namespace Ende
