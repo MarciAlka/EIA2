@@ -103,11 +103,11 @@ var End;
         crc2.quadraticCurveTo(125, 25, 75, 25);
         */
         End.crc2.beginPath();
-        End.crc2.moveTo(75, 25);
-        End.crc2.quadraticCurveTo(25, 25, 25, 62.5);
-        End.crc2.quadraticCurveTo(25, 100, 65, 100);
-        End.crc2.quadraticCurveTo(125, 105, 125, 62.5);
-        End.crc2.quadraticCurveTo(125, 25, 75, 25);
+        End.crc2.moveTo(50, 38);
+        End.crc2.moveTo(35, 38);
+        End.crc2.quadraticCurveTo(5, 45, 25, 65);
+        End.crc2.quadraticCurveTo(40, 70, 50, 60);
+        End.crc2.quadraticCurveTo(60, 40, 35, 38);
         End.crc2.stroke();
         End.crc2.fillStyle = "#DB2929";
         End.crc2.fill();
