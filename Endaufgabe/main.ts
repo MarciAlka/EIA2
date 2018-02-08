@@ -17,7 +17,7 @@ export let crc2: CanvasRenderingContext2D;
 
 let objektArr: Objekt [] = [];
     
-//let clkrabbe: Krabbe;
+let clkrabbe: Krabbe;
 let clkokos: Kokosnuss;
 let clwolken: Wolken;
     
@@ -82,7 +82,7 @@ function init(): void {
     
       //Palme mit linien?? Ansatz, nachher auslagern
         //Rechteck 1
-        /*
+        /* noch ausKOMMENTiert
         crc2.beginPath();
         crc2.moveTo(80, 600);
         crc2.lineTo(20, 600);
@@ -105,7 +105,7 @@ function init(): void {
         crc2.fill();
         */
     
-    /*Sprechblase für späteren Text!
+    /*Sprechblase für späteren Text! KOMMENTAR
     crc2.beginPath();
     crc2.moveTo(75, 25);
     crc2.quadraticCurveTo(25, 25, 25, 62.5);
@@ -119,6 +119,7 @@ function init(): void {
     
     //Krabbe
     
+    /*
     crc2.beginPath();
     crc2.moveTo(50,38);
     crc2.moveTo(35,38);
@@ -271,9 +272,22 @@ function init(): void {
     crc2.arc(39, 62, 1, 0, 2 * Math.PI);
     crc2.fillStyle = "white";
     crc2.fill();
+    */
     
     // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+    
+    //Krabbe
+    
+    /* test Krabbe
+    clkrabbe = new Krabbe (50,38);
+            
+            objektArr.push(clkrabbe);
+    */
+    
+    clkrabbe = new Krabbe (400,450);
+            
+            objektArr.push(clkrabbe);
     
     //Animationen
         
