@@ -95,13 +95,6 @@ var End;
         crc2.stroke();
         */
         //Krabbe
-        /*
-        crc2.moveTo(75, 25);
-        crc2.quadraticCurveTo(25, 25, 25, 62.5);
-        crc2.quadraticCurveTo(25, 100, 65, 100);
-        crc2.quadraticCurveTo(125, 100, 125, 62.5);
-        crc2.quadraticCurveTo(125, 25, 75, 25);
-        */
         End.crc2.beginPath();
         End.crc2.moveTo(50, 38);
         End.crc2.moveTo(35, 38);
@@ -110,6 +103,126 @@ var End;
         End.crc2.quadraticCurveTo(60, 40, 35, 38);
         End.crc2.stroke();
         End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Krabbenbeine
+        //Bein 1 links
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(18, 40, 8, 6);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(13, 41, 8, 6);
+        End.crc2.fillRect(8, 42, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(10, 47); //untere
+        End.crc2.lineTo(0, 50); //linke spitze
+        End.crc2.lineTo(10, 42);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Bein 2 links
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(18, 47, 8, 6);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(13, 48, 8, 6);
+        End.crc2.fillRect(8, 49, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(10, 54);
+        End.crc2.lineTo(0, 57);
+        End.crc2.lineTo(10, 49);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Bein 3 links
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(18, 54, 8, 6);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(13, 55, 8, 6);
+        End.crc2.fillRect(8, 56, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(10, 61);
+        End.crc2.lineTo(0, 64);
+        End.crc2.lineTo(10, 56);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Bein 1 rechts
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(48, 40, 8, 6);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(53, 41, 8, 6);
+        End.crc2.fillRect(58, 42, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(62, 47); //untere
+        End.crc2.lineTo(72, 50); //linke spitze
+        End.crc2.lineTo(62, 42);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Bein 2 rechts
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(48, 47, 8, 6);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(53, 48, 8, 6);
+        End.crc2.fillRect(58, 49, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(62, 54);
+        End.crc2.lineTo(72, 57);
+        End.crc2.lineTo(62, 49);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Bein 3 rechts
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(48, 54, 8, 6);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(53, 55, 8, 6);
+        End.crc2.fillRect(58, 56, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(62, 61);
+        End.crc2.lineTo(72, 64);
+        End.crc2.lineTo(62, 56);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Schere 1 links
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(20, 62, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(23, 71); //untere
+        End.crc2.lineTo(13, 74); //spitze
+        End.crc2.lineTo(23, 66);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        End.crc2.beginPath();
+        End.crc2.moveTo(23, 71);
+        End.crc2.lineTo(33, 74);
+        End.crc2.lineTo(23, 66);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Schere 2 rechts
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fillRect(42, 62, 6, 6);
+        End.crc2.beginPath();
+        End.crc2.moveTo(46, 71); //untere
+        End.crc2.lineTo(36, 74); //spitze
+        End.crc2.lineTo(46, 66);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        End.crc2.beginPath();
+        End.crc2.moveTo(46, 71);
+        End.crc2.lineTo(56, 74);
+        End.crc2.lineTo(46, 66);
+        End.crc2.fillStyle = "#DB2929";
+        End.crc2.fill();
+        //Krabbenaugen
+        End.crc2.beginPath();
+        End.crc2.arc(28, 62, 2.5, 0, 2 * Math.PI);
+        End.crc2.fillStyle = "black";
+        End.crc2.fill();
+        End.crc2.beginPath();
+        End.crc2.arc(27, 62, 1, 0, 2 * Math.PI);
+        End.crc2.fillStyle = "white";
+        End.crc2.fill();
+        End.crc2.beginPath();
+        End.crc2.arc(40, 62, 2.5, 0, 2 * Math.PI);
+        End.crc2.fillStyle = "black";
+        End.crc2.fill();
+        End.crc2.beginPath();
+        End.crc2.arc(39, 62, 1, 0, 2 * Math.PI);
+        End.crc2.fillStyle = "white";
         End.crc2.fill();
         // hier Hintergrund speichern
         imgData = End.crc2.getImageData(0, 0, canvas.width, canvas.height);
