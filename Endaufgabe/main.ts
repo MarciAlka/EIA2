@@ -192,6 +192,7 @@ function animate(): void {
     
     
 //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten drückt
+/*
 function move_Krabbe_links(): void{
 clkrabbe.move_Krabbe_links;   
 }
@@ -201,8 +202,20 @@ function move_Krabbe_rechts(): void{
 //if (selectElement){}
 
 }
+*/
+
+//global: objekt bewegen
+var m_objekt : number = null;
     
-   
+function move_Krabbe_links(){
+   var krabbeLinks = document.getElementById('linksButton');
+    krabbeLinks.addEventListener('onmousedown',move_links); 
+}
+
+function move_links(){
+    //clkrabbe.move_Krabbe_links;
+    
+}
     
 //Funktion für Palme
 function Palme(x: number, y: number, color: string): void {

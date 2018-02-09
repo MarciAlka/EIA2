@@ -25,6 +25,7 @@ var End;
         move_Krabbe_links() {
             for (let i = 0; i < 800; i++) {
                 this.x = +i;
+                this.draw();
             }
         }
         draw() {

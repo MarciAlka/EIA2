@@ -135,12 +135,25 @@ var End;
         window.setTimeout(animate, 100);
     }
     //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten dr�ckt
-    function move_Krabbe_links() {
-        clkrabbe.move_Krabbe_links;
+    /*
+    function move_Krabbe_links(): void{
+    clkrabbe.move_Krabbe_links;
     }
-    function move_Krabbe_rechts() {
-        //var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
-        //if (selectElement){}
+    
+    function move_Krabbe_rechts(): void{
+    //var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
+    //if (selectElement){}
+    
+    }
+    */
+    //global: objekt bewegen
+    var m_objekt = null;
+    function move_Krabbe_links() {
+        var krabbeLinks = document.getElementById('linksButton');
+        krabbeLinks.addEventListener('onmousedown', move_links);
+    }
+    function move_links() {
+        //clkrabbe.move_Krabbe_links;
     }
     //Funktion f�r Palme
     function Palme(x, y, color) {
