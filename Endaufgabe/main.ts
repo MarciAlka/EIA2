@@ -207,12 +207,12 @@ function move_Krabbe_rechts(): void{
 //global: objekt bewegen
 var m_objekt : number = null;
     
-function move_Krabbe_links(){
+export function move_Krabbe_links(){
    var krabbeLinks = document.getElementById('linksButton');
     krabbeLinks.addEventListener('onmousedown',move_links); 
 }
 
-function move_links(){
+export function move_links(){
     clkrabbe.move_Krabbe_links;
     
 }

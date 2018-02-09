@@ -152,9 +152,11 @@ var End;
         var krabbeLinks = document.getElementById('linksButton');
         krabbeLinks.addEventListener('onmousedown', move_links);
     }
+    End.move_Krabbe_links = move_Krabbe_links;
     function move_links() {
         clkrabbe.move_Krabbe_links;
     }
+    End.move_links = move_links;
     //Funktion f�r Palme
     function Palme(x, y, color) {
         End.crc2.beginPath();
