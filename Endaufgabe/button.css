@@ -1,0 +1,26 @@
+/* 
+    Name: Denise Marcella Alka
+    Matrikel: 256690
+    Datum: 06.02.2017
+    Hiermit versichere ich, dass ich diesen
+    Code selbst geschrieben habe. Er wurde
+    nicht kopiert und auch nicht diktiert
+ */
+ 
+ h1 {
+ 	font-family:"Courgette", sans-serif;
+ }
+ 
+ .button {
+ 	display:inline;
+	margin: 2em auto;
+	font-family:"Courgette", sans-serif;
+  	font-size: 1.2em;
+  	width:10em; 	
+	border-width: 0;
+  	outline: none;
+  	border-radius: 2px;
+  	box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  	background-color: #66cdaa;/*#ff8000;*/
+  	color: #ecf0f1;
+ }
