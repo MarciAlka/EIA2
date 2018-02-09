@@ -34,6 +34,13 @@ namespace End {
         }
         
 move_Krabbe_links(): void{
+for (let i: number = 800; i >= 0; i--){
+    this.x =- i;
+    this.draw();
+    }
+}
+
+move_Krabbe_rechts(): void{
 for (let i: number = 0; i < 800; i++){
     this.x =+ i;
     this.draw();

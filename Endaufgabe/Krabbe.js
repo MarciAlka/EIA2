@@ -23,6 +23,12 @@ var End;
             }
         }
         move_Krabbe_links() {
+            for (let i = 800; i >= 0; i--) {
+                this.x = -i;
+                this.draw();
+            }
+        }
+        move_Krabbe_rechts() {
             for (let i = 0; i < 800; i++) {
                 this.x = +i;
                 this.draw();
