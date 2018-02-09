@@ -153,7 +153,7 @@ var End;
         krabbeLinks.addEventListener('onmousedown', move_links);
     }
     function move_links() {
-        //clkrabbe.move_Krabbe_links;
+        clkrabbe.move_Krabbe_links;
     }
     //Funktion f�r Palme
     function Palme(x, y, color) {

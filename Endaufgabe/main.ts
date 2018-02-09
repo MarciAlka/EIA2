@@ -213,7 +213,7 @@ function move_Krabbe_links(){
 }
 
 function move_links(){
-    //clkrabbe.move_Krabbe_links;
+    clkrabbe.move_Krabbe_links;
     
 }
     
