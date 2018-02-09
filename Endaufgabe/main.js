@@ -136,8 +136,6 @@ var End;
     }
     //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten dr�ckt
     function move_Krabbe_links() {
-        //var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
-        //if (selectElement){}
         clkrabbe.move_Krabbe_links;
     }
     function move_Krabbe_rechts() {

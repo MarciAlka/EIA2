@@ -23,8 +23,6 @@ var End;
             }
         }
         move_Krabbe_links() {
-            //var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
-            //if (selectElement){}
             for (let i = 0; i < 800; i++) {
                 this.x = +i;
             }

@@ -34,8 +34,6 @@ namespace End {
         }
         
 move_Krabbe_links(): void{
-//var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
-//if (selectElement){}
 for (let i: number = 0; i < 800; i++){
     this.x =+ i;
     }
