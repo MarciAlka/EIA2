@@ -1,3 +1,11 @@
+/* 
+    Name: Denise Marcella Alka
+    Matrikel: 256690
+    Datum: 06.02.2017
+    Hiermit versichere ich, dass ich diesen
+    Code selbst geschrieben habe. Er wurde
+    nicht kopiert und auch nicht diktiert
+ */
 namespace End {
 
     export class Objekt {
