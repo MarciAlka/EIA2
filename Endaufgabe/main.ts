@@ -193,12 +193,7 @@ function animate(): void {
     
 //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten drückt
 function move_Krabbe_links(): void{
-//var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
-//if (selectElement){}
-clkrabbe.move_Krabbe_links;
-    
-
-    
+clkrabbe.move_Krabbe_links;   
 }
 
 function move_Krabbe_rechts(): void{
