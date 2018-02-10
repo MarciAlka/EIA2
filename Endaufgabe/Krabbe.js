@@ -24,7 +24,7 @@ var End;
         }
         move_Krabbe_links() {
             for (let i = 800; i >= 0; i--) {
-                this.x = -i;
+                this.x -= 1; //-i vorher
                 this.draw();
             }
         }
@@ -38,7 +38,9 @@ var End;
             //Krabbe
             //void ctx.quadraticCurveTo(cpx, cpy, x, y);
             End.crc2.beginPath();
-            End.crc2.moveTo(50, 38);
+            //crc2.moveTo(50, 38);
+            End.crc2.moveTo(this.x, this.y);
+            //bis hierhin ge�ndert
             End.crc2.moveTo(this.x - 15, this.y);
             /*
             crc2.quadraticCurveTo(5, 45, this.x-25, this.y+27);
@@ -51,7 +53,7 @@ var End;
             End.crc2.stroke();
             End.crc2.fillStyle = "#DB2929";
             End.crc2.fill();
-            //Krabbenbeine
+            //Krabbenbei    
             //Bein 1 links
             End.crc2.fillStyle = "#DB2929";
             End.crc2.fillRect(this.x - 32, this.y + 2, 8, 6);
@@ -171,7 +173,7 @@ var End;
             End.crc2.arc(this.x - 11, this.y + 24, 1, 0, 2 * Math.PI);
             End.crc2.fillStyle = "white";
             End.crc2.fill();
-            //Krabbe
+            //Krab    
             /*
             crc2.beginPath();
             crc2.moveTo(50,38);
@@ -287,7 +289,7 @@ var End;
             crc2.fillStyle = "#DB2929";
             crc2.fill();
             
-                //Schere 2 rechts
+                //Scs
             crc2.fillStyle = "#DB2929";
             crc2.fillRect(42, 62, 6, 6);
             

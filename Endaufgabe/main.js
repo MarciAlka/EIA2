@@ -31,7 +31,7 @@ var End;
         gradient.addColorStop(1, "#4962bf");
         End.crc2.fillStyle = gradient;
         End.crc2.fillRect(0, 0, 800, 600);
-        //Sonne
+        //Son    
         // Create gradient
         //CanvasGradient createRadialGradient(x0, y0, radius0, x1, y1, radius1)
         //x0 - Horizontale Koordinate des Mittelpunkts des ersten Kreises
@@ -91,20 +91,19 @@ var End;
         crc2.quadraticCurveTo(50, 120, 30, 125);
         crc2.quadraticCurveTo(60, 120, 65, 100);
         crc2.quadraticCurveTo(125, 100, 125, 62.5);
-        crc2.quadraticCurveTo(125, 25, 75, 25);
-        crc2.stroke();
+        crc2.quadraticCurveTo(125, 25, 25        crc2.stroke();
         */
         // hier Hintergrund speichern
         imgData = End.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        //Krabbe
+        //Krab    
         /* test Krabbe
         clkrabbe = new Krabbe (50,38);
                 
-                objektArr.push(clkrabbe);
+                objektArr.push(abbe);
         */
         clkrabbe = new End.Krabbe(400, 450);
         objektArr.push(clkrabbe);
-        //Animationen
+        //Animation    
         for (let i = 0; i < 3; i++) {
             clwolken = new End.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
             objektArr.push(clwolken);
@@ -150,13 +149,14 @@ var End;
     var m_objekt = null;
     function move_Krabbe_links() {
         var krabbeLinks = document.getElementById('linksButton');
-        krabbeLinks.addEventListener('onmousedown', move_links);
+        krabbeLinks.addEventListener('mousedown', clkrabbe.move_Krabbe_links);
     }
     End.move_Krabbe_links = move_Krabbe_links;
-    function move_links() {
+    /*
+    export function move_links() {
         clkrabbe.move_Krabbe_links;
-    }
-    End.move_links = move_links;
+
+    } */
     //Funktion f�r Palme
     function Palme(x, y, color) {
         End.crc2.beginPath();
