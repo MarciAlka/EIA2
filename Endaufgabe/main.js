@@ -94,12 +94,6 @@ var End;
         */
         // hier Hintergrund speichern
         imgData = End.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        //Krab    
-        /* test Krabbe
-        clkrabbe = new Krabbe (50,38);
-                
-                objektArr.push(abbe);
-        */
         End.clkrabbe = new End.Krabbe(400, 450);
         objektArr.push(End.clkrabbe);
         //Animation    
@@ -116,6 +110,32 @@ var End;
             objektArr.push(clkokos);
         }
         animate();
+        document.querySelector("body").addEventListener("keydown", function (e) {
+            //const event: KeyboardEvent = window.event ? window.event : e;
+            switch (e.keyCode) {
+                //linke Pfeiltaste
+                case 37:
+                    End.clkrabbe.move_Krabbe_links();
+                    break;
+                //rechte Pfeiltaste
+                case 39:
+                    End.clkrabbe.move_Krabbe_rechts();
+                    break;
+            }
+        });
+        document.querySelector("body").addEventListener("keyup", function (e) {
+            //const event: KeyboardEvent = window.event ? window.event : e;
+            switch (e.keyCode) {
+                //linke Pfeiltaste
+                case 37:
+                    End.clkrabbe.stop_Krabbe();
+                    break;
+                //rechte Pfeiltaste
+                case 39:
+                    End.clkrabbe.stop_Krabbe();
+                    break;
+            }
+        });
         End.crc2.putImageData(imgData, 0, 0);
     }
     // FUNKTIONEN

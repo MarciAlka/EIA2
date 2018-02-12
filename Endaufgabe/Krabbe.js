@@ -28,10 +28,10 @@ var End;
             window.setTimeout(this.move, 10);
         }
         move_Krabbe_links() {
-            this.dx = -1;
+            this.dx = -10;
         }
         move_Krabbe_rechts() {
-            this.dx = +1;
+            this.dx = +10;
         }
         stop_Krabbe() {
             this.dx = 0;

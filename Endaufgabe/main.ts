@@ -118,13 +118,6 @@ namespace End {
     
         // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
-
-        //Krab    
-        /* test Krabbe
-        clkrabbe = new Krabbe (50,38);
-                
-                objektArr.push(abbe);
-        */
     
         clkrabbe = new Krabbe(400, 450);
 
@@ -155,8 +148,35 @@ namespace End {
         }
 
         animate();
-
-
+        
+        document.querySelector("body").addEventListener("keydown",function(e: KeyboardEvent){
+           //const event: KeyboardEvent = window.event ? window.event : e;
+            switch(e.keyCode){
+                    //linke Pfeiltaste
+                    case 37:
+                        clkrabbe.move_Krabbe_links();
+                    break;
+                    //rechte Pfeiltaste
+                    case 39:
+                        clkrabbe.move_Krabbe_rechts();
+                    break;
+                }          
+        });
+        
+        document.querySelector("body").addEventListener("keyup",function(e: KeyboardEvent){
+           //const event: KeyboardEvent = window.event ? window.event : e;
+            switch(e.keyCode){
+                    //linke Pfeiltaste
+                    case 37:
+                        clkrabbe.stop_Krabbe();
+                    break;
+                    //rechte Pfeiltaste
+                    case 39:
+                        clkrabbe.stop_Krabbe();
+                    break;
+                }          
+        });
+        
         crc2.putImageData(imgData, 0, 0);
 
     }

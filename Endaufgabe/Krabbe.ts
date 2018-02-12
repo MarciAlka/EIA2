@@ -37,12 +37,12 @@ namespace End {
         }
 
         move_Krabbe_links(): void {
-                this.dx =- 1;
+                this.dx =- 10;
         }
 
         move_Krabbe_rechts(): void {
             
-                this.dx = + 1;        
+                this.dx = + 10;        
         }
 
         stop_Krabbe():void {
