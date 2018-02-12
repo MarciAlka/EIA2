@@ -9,17 +9,20 @@
 
 namespace End {
     export class Krabbe extends Objekt {
-
+    dx:number;
         constructor(_x: number, _y: number) {
             super(_x, _y);
             this.x = _x;
             this.y = _y;
+            this.dx = 0;
+            this.move()
         }
 
 
         move(): void {
 
-
+            this.x += dx;
+            
             if (this.x > 800) {
                 this.x = 800;
             }
@@ -27,26 +30,25 @@ namespace End {
             if (this.x < 0) {
                 this.x = 0;
             }
-
-
+            this.draw();
+            window.setTimeout(this.move,100);
 
 
         }
 
         move_Krabbe_links(): void {
-            for (let i: number = 800; i >= 0; i--) {
-                this.x -= 1; //-i vorher
-                this.draw();
+                this.dx =- 1;
             }
         }
 
         move_Krabbe_rechts(): void {
-            for (let i: number = 0; i < 800; i++) {
-                this.x = + i;
-                this.draw();
-            }
+            
+                this.dx = + 1;        
         }
 
+        stop_Krabbe():void {
+            this.dx = 0;
+        }
 
         draw(): void {
             //Krabbe
