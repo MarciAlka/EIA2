@@ -10,7 +10,6 @@ var End;
 (function (End) {
     window.addEventListener("load", init);
     let objektArr = [];
-    let clkrabbe;
     let clkokos;
     let clwolken;
     let imgData;
@@ -101,8 +100,8 @@ var End;
                 
                 objektArr.push(abbe);
         */
-        clkrabbe = new End.Krabbe(400, 450);
-        objektArr.push(clkrabbe);
+        End.clkrabbe = new End.Krabbe(400, 450);
+        objektArr.push(End.clkrabbe);
         //Animation    
         for (let i = 0; i < 3; i++) {
             clwolken = new End.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
@@ -135,28 +134,11 @@ var End;
     }
     //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten dr�ckt
     /*
-    function move_Krabbe_links(): void{
-    clkrabbe.move_Krabbe_links;
-    }
-    
-    function move_Krabbe_rechts(): void{
-    //var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
-    //if (selectElement){}
-    
-    }
+        export function move_Krabbe_links() {
+            var krabbeLinks = document.getElementById('linksButton');
+            krabbeLinks.addEventListener('mousedown', clkrabbe.move_Krabbe_links);
+        }
     */
-    //global: objekt bewegen
-    var m_objekt = null;
-    function move_Krabbe_links() {
-        var krabbeLinks = document.getElementById('linksButton');
-        krabbeLinks.addEventListener('mousedown', clkrabbe.move_Krabbe_links);
-    }
-    End.move_Krabbe_links = move_Krabbe_links;
-    /*
-    export function move_links() {
-        clkrabbe.move_Krabbe_links;
-
-    } */
     //Funktion f�r Palme
     function Palme(x, y, color) {
         End.crc2.beginPath();
