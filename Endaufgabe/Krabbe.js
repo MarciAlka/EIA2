@@ -25,7 +25,7 @@ var End;
                 this.x = 0;
             }
             this.draw();
-            window.setTimeout(this.move, 100);
+            window.setTimeout(this.move, 10);
         }
         move_Krabbe_links() {
             this.dx = -1;

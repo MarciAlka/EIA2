@@ -31,7 +31,7 @@ namespace End {
                 this.x = 0;
             }
             this.draw();
-            window.setTimeout(this.move,100);
+            window.setTimeout(this.move,10);
 
 
         }
