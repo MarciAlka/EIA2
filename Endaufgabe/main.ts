@@ -18,7 +18,7 @@ namespace End {
 
     let objektArr: Objekt[] = [];
 
-    let clkrabbe: Krabbe;
+    export let clkrabbe: Krabbe;
     let clkokos: Kokosnuss;
     let clwolken: Wolken;
 
@@ -187,31 +187,14 @@ namespace End {
 
 
     //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten drückt
-    /*
-    function move_Krabbe_links(): void{
-    clkrabbe.move_Krabbe_links;   
-    }
-    
-    function move_Krabbe_rechts(): void{
-    //var selectElement = <HTMLSelectElement>document.getElementById('linksButton');
-    //if (selectElement){}
-    
-    }
-    */
 
-    //global: objekt bewegen
-    var m_objekt: number = null;
 
+/*
     export function move_Krabbe_links() {
         var krabbeLinks = document.getElementById('linksButton');
         krabbeLinks.addEventListener('mousedown', clkrabbe.move_Krabbe_links);
     }
-    
-    /*
-    export function move_links() {
-        clkrabbe.move_Krabbe_links;
-
-    } */
+*/
 
     //Funktion für Palme
     function Palme(x: number, y: number, color: string): void {
