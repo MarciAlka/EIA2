@@ -15,13 +15,13 @@ namespace End {
             this.x = _x;
             this.y = _y;
             this.dx = 0;
-            this.move()
+            this.move();
         }
 
 
         move(): void {
 
-            this.x += dx;
+            this.x += this.dx;
             
             if (this.x > 800) {
                 this.x = 800;
@@ -38,7 +38,6 @@ namespace End {
 
         move_Krabbe_links(): void {
                 this.dx =- 1;
-            }
         }
 
         move_Krabbe_rechts(): void {

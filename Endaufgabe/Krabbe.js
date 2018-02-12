@@ -13,26 +13,28 @@ var End;
             super(_x, _y);
             this.x = _x;
             this.y = _y;
+            this.dx = 0;
+            this.move();
         }
         move() {
+            this.x += this.dx;
             if (this.x > 800) {
                 this.x = 800;
             }
             if (this.x < 0) {
                 this.x = 0;
             }
+            this.draw();
+            window.setTimeout(this.move, 100);
         }
         move_Krabbe_links() {
-            for (let i = 800; i >= 0; i--) {
-                this.x -= 1; //-i vorher
-                this.draw();
-            }
+            this.dx = -1;
         }
         move_Krabbe_rechts() {
-            for (let i = 0; i < 800; i++) {
-                this.x = +i;
-                this.draw();
-            }
+            this.dx = +1;
+        }
+        stop_Krabbe() {
+            this.dx = 0;
         }
         draw() {
             //Krabbe
