@@ -21,7 +21,10 @@ namespace End {
 
 
                 if (this.y > 600) {
-                    this.y = 0;
+                    deleteKokosnuss(this);
+                    const clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0);
+                    addKokosnuss(clkokos);
+//                    this.x = 1 + Math.random() * 800;
                 }
             
             //test
@@ -35,6 +38,13 @@ namespace End {
             crc2.arc(this.x, this.y, 20, 0, 2 * Math.PI);
             crc2.fillStyle = "#8B4513";
             crc2.fill();
+            
+            crc2.beginPath();
+            crc2.fillStyle = "orange";
+            crc2.moveTo(this.x-20, this.y+20);
+            crc2.lineTo(this.x+20,this.y+20);
+            //crc2.fillStyle = "orange";
+            crc2.stroke();
             
         }
     }

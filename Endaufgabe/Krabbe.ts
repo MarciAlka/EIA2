@@ -31,7 +31,8 @@ namespace End {
                 this.x = 0;
             }
             this.draw();
-            window.setTimeout(this.move,10);
+            //window.setTimeout(this.move,10);
+            //window.setTimeout(() => this.move(),10);
 
 
         }
@@ -72,7 +73,7 @@ namespace End {
             crc2.fillStyle = "#DB2929";
             crc2.fill();
 
-            //Krabbenbei    
+            //Krabbenbein    
             //Bein 1 links
             crc2.fillStyle = "#DB2929";
             crc2.fillRect(this.x - 32, this.y + 2, 8, 6);
@@ -213,7 +214,14 @@ namespace End {
             crc2.arc(this.x - 11, this.y + 24, 1, 0, 2 * Math.PI);
             crc2.fillStyle = "white";
             crc2.fill();
-
+            
+        
+            
+            crc2.beginPath();
+            crc2.moveTo(this.x, this.y);
+            crc2.lineTo(this.x-30,this.y);
+            crc2.fillStyle = "blue";
+            crc2.stroke();
 
             //Krab    
             /*

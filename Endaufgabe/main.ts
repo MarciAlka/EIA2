@@ -17,15 +17,17 @@ namespace End {
 
 
     let objektArr: Objekt[] = [];
+    let kokosArr: Kokosnuss [] = [];
 
     export let clkrabbe: Krabbe;
-    let clkokos: Kokosnuss;
     let clwolken: Wolken;
-
 
     let imgData: ImageData;
 
-
+    export function addKokosnuss(nut: Kokosnuss) {
+        objektArr.push(nut);
+        kokosArr.push(nut);
+    }
 
     function init(): void {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
@@ -131,21 +133,15 @@ namespace End {
             objektArr.push(clwolken);
         }
 
-        for (let i: number = 0; i < 3; i++) {
+        let clkokos: Kokosnuss;
+        for (let i: number = 0; i < 6; i++) {
 
-            clkokos = new Kokosnuss(10 + Math.random() * 800, 100 + Math.random() * 600);
-
-            objektArr.push(clkokos);
-
+            //clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 100 + Math.random() * 600);
+            clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0);
+            
+            addKokosnuss(clkokos);
         }
 
-        for (let i: number = 0; i < 2; i++) {
-
-            clkokos = new Kokosnuss(1 + Math.random() * 800, 200 + Math.random() * 600);
-
-            objektArr.push(clkokos);
-
-        }
 
         animate();
         
@@ -177,6 +173,7 @@ namespace End {
                 }          
         });
         
+        
         crc2.putImageData(imgData, 0, 0);
 
     }
@@ -193,14 +190,9 @@ namespace End {
         crc2.putImageData(imgData, 0, 0);
 
         //Kokosnuss, Wolken
-        for (let i: number = 0; i < objektArr.length; i++) {
+        objektArr.forEach(obj => obj.update());
 
-            let s: Objekt = objektArr[i];
-            s.update();
-
-
-        }
-
+        cocosCrash();
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }
@@ -226,6 +218,19 @@ namespace End {
         crc2.stroke();
         crc2.fillStyle = color;
         crc2.fill();
+    }
+    
+    function cocosCrash(){
+        kokosArr.forEach (kokosnuss => {
+            if (clkrabbe.y <= kokosnuss.y +10 && clkrabbe.x <= kokosnuss.x+20 && clkrabbe.x >= kokosnuss.x-20){
+                alert("GAME OVER");
+            }
+        }); 
+    }
+    
+    export function deleteKokosnuss(nut: Kokosnuss){
+        kokosArr.slice(kokosArr.indexOf(nut), 1);
+        objektArr.slice(objektArr.indexOf(nut), 1);
     }
 
 

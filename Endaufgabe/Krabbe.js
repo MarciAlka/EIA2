@@ -25,7 +25,8 @@ var End;
                 this.x = 0;
             }
             this.draw();
-            window.setTimeout(this.move, 10);
+            //window.setTimeout(this.move,10);
+            //window.setTimeout(() => this.move(),10);
         }
         move_Krabbe_links() {
             this.dx = -10;
@@ -55,7 +56,7 @@ var End;
             End.crc2.stroke();
             End.crc2.fillStyle = "#DB2929";
             End.crc2.fill();
-            //Krabbenbei    
+            //Krabbenbein    
             //Bein 1 links
             End.crc2.fillStyle = "#DB2929";
             End.crc2.fillRect(this.x - 32, this.y + 2, 8, 6);
@@ -175,6 +176,11 @@ var End;
             End.crc2.arc(this.x - 11, this.y + 24, 1, 0, 2 * Math.PI);
             End.crc2.fillStyle = "white";
             End.crc2.fill();
+            End.crc2.beginPath();
+            End.crc2.moveTo(this.x, this.y);
+            End.crc2.lineTo(this.x - 30, this.y);
+            End.crc2.fillStyle = "blue";
+            End.crc2.stroke();
             //Krab    
             /*
             crc2.beginPath();

@@ -10,9 +10,14 @@ var End;
 (function (End) {
     window.addEventListener("load", init);
     let objektArr = [];
-    let clkokos;
+    let kokosArr = [];
     let clwolken;
     let imgData;
+    function addKokosnuss(nut) {
+        objektArr.push(nut);
+        kokosArr.push(nut);
+    }
+    End.addKokosnuss = addKokosnuss;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         End.crc2 = canvas.getContext("2d");
@@ -101,13 +106,11 @@ var End;
             clwolken = new End.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
             objektArr.push(clwolken);
         }
-        for (let i = 0; i < 3; i++) {
-            clkokos = new End.Kokosnuss(10 + Math.random() * 800, 100 + Math.random() * 600);
-            objektArr.push(clkokos);
-        }
-        for (let i = 0; i < 2; i++) {
-            clkokos = new End.Kokosnuss(1 + Math.random() * 800, 200 + Math.random() * 600);
-            objektArr.push(clkokos);
+        let clkokos;
+        for (let i = 0; i < 6; i++) {
+            //clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 100 + Math.random() * 600);
+            clkokos = new End.Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0);
+            addKokosnuss(clkokos);
         }
         animate();
         document.querySelector("body").addEventListener("keydown", function (e) {
@@ -145,10 +148,8 @@ var End;
         End.crc2.clearRect(0, 0, 800, 600);
         End.crc2.putImageData(imgData, 0, 0);
         //Kokosnuss, Wolken
-        for (let i = 0; i < objektArr.length; i++) {
-            let s = objektArr[i];
-            s.update();
-        }
+        objektArr.forEach(obj => obj.update());
+        cocosCrash();
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }
@@ -170,5 +171,17 @@ var End;
         End.crc2.fillStyle = color;
         End.crc2.fill();
     }
+    function cocosCrash() {
+        kokosArr.forEach(kokosnuss => {
+            if (End.clkrabbe.y <= kokosnuss.y + 10 && End.clkrabbe.x <= kokosnuss.x + 20 && End.clkrabbe.x >= kokosnuss.x - 20) {
+                alert("GAME OVER");
+            }
+        });
+    }
+    function deleteKokosnuss(nut) {
+        kokosArr.slice(kokosArr.indexOf(nut), 1);
+        objektArr.slice(objektArr.indexOf(nut), 1);
+    }
+    End.deleteKokosnuss = deleteKokosnuss;
 })(End || (End = {})); //namespace Ende
 //# sourceMappingURL=main.js.map
