@@ -157,7 +157,7 @@ var End;
         End.crc2.putImageData(imgData, 0, 0);
         //Kokosnuss, Wolken
         objektArr.forEach(obj => obj.update());
-        //cocosCrash();
+        cocosCrash();
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }

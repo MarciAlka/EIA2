@@ -64,10 +64,8 @@ namespace End {
         var gradient2 = crc2.createRadialGradient(400, 150, 100, 400, 150, 50);
 
         // Add colors oben nach unten: oberste zeile ganz außen!!
-        gradient2.addColorStop(0.098, 'rgba(255, 255, 255, 0)');
-        
-        gradient2.addColorStop(0.102, 'rgba(255, 255, 255, 0.1)');
-        
+        gradient2.addColorStop(0.098, 'rgba(255, 255, 255, 0)');     
+        gradient2.addColorStop(0.102, 'rgba(255, 255, 255, 0.1)');    
         gradient2.addColorStop(0.398, 'rgba(255, 225, 0, 1.0)');
         gradient2.addColorStop(0.400, 'rgba(252, 252, 189, 1.0)');
         gradient2.addColorStop(0.999, 'rgba(250, 250, 250, 1.0)');
@@ -206,13 +204,13 @@ namespace End {
 
 
         //Bild einfügen, hier Hintergrund restaurieren
-        crc2.clearRect(0, 0, 800, 600)
+        crc2.clearRect(0, 0, 800, 600);
         crc2.putImageData(imgData, 0, 0);
 
         //Kokosnuss, Wolken
         objektArr.forEach(obj => obj.update());
 
-        //cocosCrash();
+        cocosCrash();
         
         //Geschwindigkeit
         window.setTimeout(animate, 100);
@@ -239,7 +237,7 @@ namespace End {
         }); 
     }
     
-    
+   
     export function deleteKokosnuss(nut: number){
         //arr.find(callback[, thisArg])
         kokosArr.splice(kokosArr.findIndex(kokosnuss => kokosnuss.kokoId === nut), 1);
