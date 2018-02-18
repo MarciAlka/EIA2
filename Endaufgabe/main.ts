@@ -21,6 +21,8 @@ namespace End {
 
     export let clkrabbe: Krabbe;
     let clwolken: Wolken;
+    //Test, i.wo anders drinnen?
+    let clkokos: Kokosnuss;
 
     let imgData: ImageData;
 
@@ -133,17 +135,33 @@ namespace End {
             objektArr.push(clwolken);
         }
 
-        let clkokos: Kokosnuss;
-        for (let i: number = 0; i < 6; i++) {
-
-            //clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 100 + Math.random() * 600);
-            clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0);
+        
+        const generateKokosnuss = () => {
+            addKokosnuss(
+                new Kokosnuss(
+                    parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800,
+                    0
+                )     
+                              
+            );              
             
-            addKokosnuss(clkokos);
+            
+        };
+        
+        for (let i: number = 0; i < 6; i++) {
+            generateKokosnuss();
         }
 
+        const genRandomKokosnuss = () => {
+            generateKokosnuss();
+            setTimeout(genRandomKokosnuss, Math.random() * 1000);
+            
+        };
 
+        genRandomKokosnuss();
         animate();
+        
+        //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten drückt
         
         document.querySelector("body").addEventListener("keydown",function(e: KeyboardEvent){
            //const event: KeyboardEvent = window.event ? window.event : e;
@@ -192,21 +210,11 @@ namespace End {
         //Kokosnuss, Wolken
         objektArr.forEach(obj => obj.update());
 
-        cocosCrash();
+        //cocosCrash();
+        
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }
-
-
-    //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten drückt
-
-
-/*
-    export function move_Krabbe_links() {
-        var krabbeLinks = document.getElementById('linksButton');
-        krabbeLinks.addEventListener('mousedown', clkrabbe.move_Krabbe_links);
-    }
-*/
 
     //Funktion für Palme
     function Palme(x: number, y: number, color: string): void {
@@ -220,17 +228,23 @@ namespace End {
         crc2.fill();
     }
     
+    
     function cocosCrash(){
         kokosArr.forEach (kokosnuss => {
             if (clkrabbe.y <= kokosnuss.y +10 && clkrabbe.x <= kokosnuss.x+20 && clkrabbe.x >= kokosnuss.x-20){
-                alert("GAME OVER");
+                alert("GAME OVER \n Seite bitte neu laden lassen");
             }
         }); 
     }
     
-    export function deleteKokosnuss(nut: Kokosnuss){
-        kokosArr.slice(kokosArr.indexOf(nut), 1);
-        objektArr.slice(objektArr.indexOf(nut), 1);
+    
+    export function deleteKokosnuss(nut: number){
+        //arr.find(callback[, thisArg])
+        kokosArr.splice(kokosArr.findIndex(kokosnuss => kokosnuss.kokoId === nut), 1);
+        
+        
+        //kokosArr.splice(kokosArr.reduce((/*acc, item, index*/Kokosnuss.kokoId,nut,0) => { return /*item*/ Kokosnuss.kokoId == nut ? index : /*acc*/ Kokosnuss.kokoId }, -1), 1);
+        //objektArr.splice(objektArr.reduce(nut), 1);
     }
 
 

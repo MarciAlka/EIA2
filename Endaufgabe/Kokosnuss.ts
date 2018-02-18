@@ -8,22 +8,25 @@
 */
 
 namespace End {
+    let kokoId:number = 0;
+    
 	export class Kokosnuss extends Objekt {
+        
+        public kokoId: number;
           
         constructor(_x: number, _y: number) {
             super(_x,_y);
             this.x = _x;
             this.y = _y;
+            this.kokoId = ++kokoId;
+            
         }
 
         
-        move(): void {
-
-
+        move(): void {    
+            
                 if (this.y > 600) {
-                    deleteKokosnuss(this);
-                    const clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0);
-                    addKokosnuss(clkokos);
+                    deleteKokosnuss(this.kokoId);
 //                    this.x = 1 + Math.random() * 800;
                 }
             

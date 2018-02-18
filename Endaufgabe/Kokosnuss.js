@@ -8,15 +8,17 @@
 */
 var End;
 (function (End) {
+    let kokoId = 0;
     class Kokosnuss extends End.Objekt {
         constructor(_x, _y) {
             super(_x, _y);
             this.x = _x;
             this.y = _y;
+            this.kokoId = ++kokoId;
         }
         move() {
             if (this.y > 600) {
-                End.deleteKokosnuss(this);
+                End.deleteKokosnuss(this.kokoId);
             }
             //test
             this.y += 10; //Math.random();

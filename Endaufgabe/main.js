@@ -12,6 +12,8 @@ var End;
     let objektArr = [];
     let kokosArr = [];
     let clwolken;
+    //Test, i.wo anders drinnen?
+    let clkokos;
     let imgData;
     function addKokosnuss(nut) {
         objektArr.push(nut);
@@ -106,13 +108,19 @@ var End;
             clwolken = new End.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
             objektArr.push(clwolken);
         }
-        let clkokos;
+        const generateKokosnuss = () => {
+            addKokosnuss(new End.Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0));
+        };
         for (let i = 0; i < 6; i++) {
-            //clkokos = new Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 100 + Math.random() * 600);
-            clkokos = new End.Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0);
-            addKokosnuss(clkokos);
+            generateKokosnuss();
         }
+        const genRandomKokosnuss = () => {
+            generateKokosnuss();
+            setTimeout(genRandomKokosnuss, Math.random() * 1000);
+        };
+        genRandomKokosnuss();
         animate();
+        //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten dr�ckt
         document.querySelector("body").addEventListener("keydown", function (e) {
             //const event: KeyboardEvent = window.event ? window.event : e;
             switch (e.keyCode) {
@@ -149,17 +157,10 @@ var End;
         End.crc2.putImageData(imgData, 0, 0);
         //Kokosnuss, Wolken
         objektArr.forEach(obj => obj.update());
-        cocosCrash();
+        //cocosCrash();
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }
-    //Funktion Button_Event; Krabbe bewegt sich, wenn man auf die pfeiltasten dr�ckt
-    /*
-        export function move_Krabbe_links() {
-            var krabbeLinks = document.getElementById('linksButton');
-            krabbeLinks.addEventListener('mousedown', clkrabbe.move_Krabbe_links);
-        }
-    */
     //Funktion f�r Palme
     function Palme(x, y, color) {
         End.crc2.beginPath();
@@ -174,13 +175,15 @@ var End;
     function cocosCrash() {
         kokosArr.forEach(kokosnuss => {
             if (End.clkrabbe.y <= kokosnuss.y + 10 && End.clkrabbe.x <= kokosnuss.x + 20 && End.clkrabbe.x >= kokosnuss.x - 20) {
-                alert("GAME OVER");
+                alert("GAME OVER \n Seite bitte neu laden lassen");
             }
         });
     }
     function deleteKokosnuss(nut) {
-        kokosArr.slice(kokosArr.indexOf(nut), 1);
-        objektArr.slice(objektArr.indexOf(nut), 1);
+        //arr.find(callback[, thisArg])
+        kokosArr.splice(kokosArr.findIndex(kokosnuss => kokosnuss.kokoId === nut), 1);
+        //kokosArr.splice(kokosArr.reduce((/*acc, item, index*/Kokosnuss.kokoId,nut,0) => { return /*item*/ Kokosnuss.kokoId == nut ? index : /*acc*/ Kokosnuss.kokoId }, -1), 1);
+        //objektArr.splice(objektArr.reduce(nut), 1);
     }
     End.deleteKokosnuss = deleteKokosnuss;
 })(End || (End = {})); //namespace Ende
