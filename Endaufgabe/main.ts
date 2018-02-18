@@ -65,7 +65,9 @@ namespace End {
 
         // Add colors oben nach unten: oberste zeile ganz auﬂen!!
         gradient2.addColorStop(0.098, 'rgba(255, 255, 255, 0)');
-        gradient2.addColorStop(0.102, 'rgba(255, 255, 255, 0.1)')
+        
+        gradient2.addColorStop(0.102, 'rgba(255, 255, 255, 0.1)');
+        
         gradient2.addColorStop(0.398, 'rgba(255, 225, 0, 1.0)');
         gradient2.addColorStop(0.400, 'rgba(252, 252, 189, 1.0)');
         gradient2.addColorStop(0.999, 'rgba(250, 250, 250, 1.0)');
