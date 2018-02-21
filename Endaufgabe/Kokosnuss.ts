@@ -42,12 +42,14 @@ namespace End {
             crc2.fillStyle = "#8B4513";
             crc2.fill();
             
+            /*HITZONE
             crc2.beginPath();
             crc2.fillStyle = "orange";
             crc2.moveTo(this.x-20, this.y+20);
             crc2.lineTo(this.x+20,this.y+20);
             //crc2.fillStyle = "orange";
             crc2.stroke();
+            */
             
         }
     }

@@ -9,15 +9,15 @@
 var End;
 (function (End) {
     window.addEventListener("load", init);
+    let gameOver = false;
     let objektArr = [];
-    let kokosArr = [];
     let clwolken;
     //Test, i.wo anders drinnen?
     let clkokos;
     let imgData;
     function addKokosnuss(nut) {
         objektArr.push(nut);
-        kokosArr.push(nut);
+        //kokosArr.push(nut);
     }
     End.addKokosnuss = addKokosnuss;
     function init() {
@@ -126,11 +126,11 @@ var End;
             switch (e.keyCode) {
                 //linke Pfeiltaste
                 case 37:
-                    End.clkrabbe.move_Krabbe_links();
+                    End.clkrabbe.move_Krabbe(30);
                     break;
                 //rechte Pfeiltaste
                 case 39:
-                    End.clkrabbe.move_Krabbe_rechts();
+                    End.clkrabbe.move_Krabbe(document.querySelector('canvas').clientWidth);
                     break;
             }
         });
@@ -147,6 +147,18 @@ var End;
                     break;
             }
         });
+        //Funktion Handy touch
+        document.querySelector("body").addEventListener("touchstart", function (e) {
+            const canvasTouchPosX = e.touches.item(0).clientX - document.querySelector('canvas').clientLeft;
+            End.clkrabbe.move_Krabbe(canvasTouchPosX);
+        });
+        document.querySelector("body").addEventListener("touchmove", function (e) {
+            const canvasTouchPosX = e.touches.item(0).clientX - document.querySelector('canvas').clientLeft;
+            End.clkrabbe.move_Krabbe(canvasTouchPosX);
+        });
+        document.querySelector("body").addEventListener("touchend", function (e) {
+            End.clkrabbe.stop_Krabbe();
+        });
         End.crc2.putImageData(imgData, 0, 0);
     }
     // FUNKTIONEN
@@ -158,6 +170,9 @@ var End;
         //Kokosnuss, Wolken
         objektArr.forEach(obj => obj.update());
         cocosCrash();
+        if (gameOver) {
+            return;
+        }
         //Geschwindigkeit
         window.setTimeout(animate, 100);
     }
@@ -173,15 +188,35 @@ var End;
         End.crc2.fill();
     }
     function cocosCrash() {
-        kokosArr.forEach(kokosnuss => {
-            if (End.clkrabbe.y <= kokosnuss.y + 10 && End.clkrabbe.x <= kokosnuss.x + 20 && End.clkrabbe.x >= kokosnuss.x - 20) {
+        objektArr.forEach(obj => {
+            if (!(obj instanceof End.Kokosnuss)) {
+                return;
+            }
+            let kokosnuss = obj;
+            if (End.clkrabbe.y + 3 <= kokosnuss.y + 10 &&
+                End.clkrabbe.y + 35 > kokosnuss.y &&
+                End.clkrabbe.x <= kokosnuss.x + 60 &&
+                End.clkrabbe.x >= kokosnuss.x - 35) {
                 alert("GAME OVER \n Seite bitte neu laden lassen");
+                gameOver = true;
             }
         });
     }
     function deleteKokosnuss(nut) {
         //arr.find(callback[, thisArg])
-        kokosArr.splice(kokosArr.findIndex(kokosnuss => kokosnuss.kokoId === nut), 1);
+        //kokosArr.splice(kokosArr.findIndex(kokosnuss => kokosnuss.kokoId === nut), 1);
+        /*
+         * objektArr.find(function contains(element)    { return element.kokoId === nut; });
+         * objektArr.find(                  element  =>          element.kokoId === nut    ;
+         */
+        if (objektArr.find(function contains(element) {
+            if (element instanceof End.Kokosnuss) {
+                return element.kokoId === nut;
+            }
+            return false;
+        })) {
+            objektArr.splice(objektArr.findIndex(kokosnuss => kokosnuss.kokoId === nut), 1);
+        }
         //kokosArr.splice(kokosArr.reduce((/*acc, item, index*/Kokosnuss.kokoId,nut,0) => { return /*item*/ Kokosnuss.kokoId == nut ? index : /*acc*/ Kokosnuss.kokoId }, -1), 1);
         //objektArr.splice(objektArr.reduce(nut), 1);
     }
