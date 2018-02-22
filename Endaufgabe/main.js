@@ -10,6 +10,7 @@ var End;
 (function (End) {
     window.addEventListener("load", init);
     let gameOver = false;
+    End.scale = (document.querySelector('canvas').clientWidth / 800);
     let objektArr = [];
     let clwolken;
     //Test, i.wo anders drinnen?
@@ -22,21 +23,23 @@ var End;
     End.addKokosnuss = addKokosnuss;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.height;
         End.crc2 = canvas.getContext("2d");
         //Rechteck f�r den Himmel
-        var gradient = End.crc2.createLinearGradient(0, 0, 0, 600);
+        var gradient = End.crc2.createLinearGradient(0, 0, 0, End.scale * 600);
         gradient.addColorStop(0, "#E0FFFF"); //Ursprungsfarbe
         gradient.addColorStop(0.5, "#4ba1b4");
         gradient.addColorStop(1, "#4962bf");
         End.crc2.fillStyle = gradient;
-        End.crc2.fillRect(0, 0, 800, 600);
+        End.crc2.fillRect(0, 0, End.scale * 800, End.scale * 600);
         //Meer Verlauf
-        var gradient = End.crc2.createLinearGradient(0, 250, 0, 600);
+        var gradient = End.crc2.createLinearGradient(0, End.scale * 250, 0, End.scale * 600);
         gradient.addColorStop(0, "#E0FFFF"); //Ursprungsfarbe
         gradient.addColorStop(0.5, "#4ba1b4");
         gradient.addColorStop(1, "#4962bf");
         End.crc2.fillStyle = gradient;
-        End.crc2.fillRect(0, 0, 800, 600);
+        End.crc2.fillRect(0, 0, End.scale * 800, End.scale * 600);
         //Son    
         // Create gradient
         //CanvasGradient createRadialGradient(x0, y0, radius0, x1, y1, radius1)
@@ -46,7 +49,7 @@ var End;
         //x1 - Horizontale Koordinate des Mittelpunkts des zweiten Kreises
         //y1 - Vertikale Koordinate des Mittelpunkts des zweiten Kreises
         //radius1 - Radius des zweiten Kreises
-        var gradient2 = End.crc2.createRadialGradient(400, 150, 100, 400, 150, 50);
+        var gradient2 = End.crc2.createRadialGradient(End.scale * 400, End.scale * 150, End.scale * 100, End.scale * 400, End.scale * 150, End.scale * 50);
         // Add colors oben nach unten: oberste zeile ganz au�en!!
         gradient2.addColorStop(0.098, 'rgba(255, 255, 255, 0)');
         gradient2.addColorStop(0.102, 'rgba(255, 255, 255, 0.1)');
@@ -56,15 +59,15 @@ var End;
         // Fill with gradient
         End.crc2.fillStyle = gradient2;
         //crc2.arc(400, 300, 50, 0, 2 * Math.PI);
-        End.crc2.fillRect(0, 0, 800, 600);
+        End.crc2.fillRect(0, 0, End.scale * 800, End.scale * 600);
         //Strand
         //Meer Verlauf hell ivory: #FFFFF0 ; dunkel: #FAEBD7
-        var gradient = End.crc2.createLinearGradient(0, 300, 0, 600);
+        var gradient = End.crc2.createLinearGradient(0, End.scale * 300, 0, End.scale * 600);
         gradient.addColorStop(0, "#FAEBD7"); //Ursprungsfarbe
         gradient.addColorStop(0.5, "#FAEBD7");
         gradient.addColorStop(1, "#FFFFF0");
         End.crc2.fillStyle = gradient;
-        End.crc2.fillRect(0, 400, 800, 600);
+        End.crc2.fillRect(0, End.scale * 400, End.scale * 800, End.scale * 600);
         //Palme mit linien?? Ansatz, nachher auslagern
         //Rechteck 1
         /* noch ausKOMMENTiert
@@ -101,15 +104,15 @@ var End;
         */
         // hier Hintergrund speichern
         imgData = End.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        End.clkrabbe = new End.Krabbe(400, 450);
+        End.clkrabbe = new End.Krabbe(End.scale * 400, End.scale * 450);
         objektArr.push(End.clkrabbe);
         //Animation    
         for (let i = 0; i < 3; i++) {
-            clwolken = new End.Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
+            clwolken = new End.Wolken(0 + Math.random() * 800 * End.scale, 0 + Math.random() * 80 * End.scale + End.scale * 50);
             objektArr.push(clwolken);
         }
         const generateKokosnuss = () => {
-            addKokosnuss(new End.Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800, 0));
+            addKokosnuss(new End.Kokosnuss(parseInt((new Date()).getTime().toString().substr(-2)) * 10 * End.scale + Math.random() * End.scale * 800, 0));
         };
         for (let i = 0; i < 6; i++) {
             generateKokosnuss();
@@ -165,7 +168,7 @@ var End;
     //Funktion Animate 
     function animate() {
         //Bild einf�gen, hier Hintergrund restaurieren
-        End.crc2.clearRect(0, 0, 800, 600);
+        End.crc2.clearRect(0, 0, End.scale * 800, End.scale * 600);
         End.crc2.putImageData(imgData, 0, 0);
         //Kokosnuss, Wolken
         objektArr.forEach(obj => obj.update());
@@ -177,26 +180,28 @@ var End;
         window.setTimeout(animate, 100);
     }
     //Funktion f�r Palme
-    function Palme(x, y, color) {
-        End.crc2.beginPath();
-        End.crc2.moveTo(x, y);
-        End.crc2.lineTo(x + 30, y + 100);
-        End.crc2.lineTo(x - 30, y + 100);
-        End.crc2.closePath();
-        End.crc2.stroke();
-        End.crc2.fillStyle = color;
-        End.crc2.fill();
+    /*
+    function Palme(x: number, y: number, color: string): void {
+        crc2.beginPath();
+        crc2.moveTo(x, y);
+        crc2.lineTo(x + 30, y + 100);
+        crc2.lineTo(x - 30, y + 100);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = color;
+        crc2.fill();
     }
+    */
     function cocosCrash() {
         objektArr.forEach(obj => {
             if (!(obj instanceof End.Kokosnuss)) {
                 return;
             }
             let kokosnuss = obj;
-            if (End.clkrabbe.y + 3 <= kokosnuss.y + 10 &&
-                End.clkrabbe.y + 35 > kokosnuss.y &&
-                End.clkrabbe.x <= kokosnuss.x + 60 &&
-                End.clkrabbe.x >= kokosnuss.x - 35) {
+            if (End.clkrabbe.y + End.scale * 3 <= kokosnuss.y + End.scale * 10 &&
+                End.clkrabbe.y + End.scale * 35 > kokosnuss.y &&
+                End.clkrabbe.x <= kokosnuss.x + End.scale * 60 &&
+                End.clkrabbe.x >= kokosnuss.x - End.scale * 35) {
                 alert("GAME OVER \n Seite bitte neu laden lassen");
                 gameOver = true;
             }

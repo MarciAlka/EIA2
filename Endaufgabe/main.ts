@@ -15,6 +15,7 @@ namespace End {
     //globale Variable
     export let crc2: CanvasRenderingContext2D;
     let gameOver: boolean = false;
+    export let scale: number = (document.querySelector('canvas').clientWidth / 800);
     
 
 
@@ -35,24 +36,27 @@ namespace End {
 
     function init(): void {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+        
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.height;        
 
         crc2 = canvas.getContext("2d");
 
         //Rechteck für den Himmel
-        var gradient = crc2.createLinearGradient(0, 0, 0, 600);
+        var gradient = crc2.createLinearGradient(0, 0, 0, scale*600);
         gradient.addColorStop(0, "#E0FFFF"); //Ursprungsfarbe
         gradient.addColorStop(0.5, "#4ba1b4");
         gradient.addColorStop(1, "#4962bf");
         crc2.fillStyle = gradient;
-        crc2.fillRect(0, 0, 800, 600);
+        crc2.fillRect(0, 0, scale*800, scale*600);
 
         //Meer Verlauf
-        var gradient = crc2.createLinearGradient(0, 250, 0, 600);
+        var gradient = crc2.createLinearGradient(0, scale*250, 0, scale*600);
         gradient.addColorStop(0, "#E0FFFF"); //Ursprungsfarbe
         gradient.addColorStop(0.5, "#4ba1b4");
         gradient.addColorStop(1, "#4962bf");
         crc2.fillStyle = gradient;
-        crc2.fillRect(0, 0, 800, 600);
+        crc2.fillRect(0, 0, scale*800, scale*600);
 
         //Son    
         // Create gradient
@@ -63,7 +67,7 @@ namespace End {
         //x1 - Horizontale Koordinate des Mittelpunkts des zweiten Kreises
         //y1 - Vertikale Koordinate des Mittelpunkts des zweiten Kreises
         //radius1 - Radius des zweiten Kreises
-        var gradient2 = crc2.createRadialGradient(400, 150, 100, 400, 150, 50);
+        var gradient2 = crc2.createRadialGradient(scale*400, scale*150, scale*100, scale*400, scale*150, scale*50);
 
         // Add colors oben nach unten: oberste zeile ganz außen!!
         gradient2.addColorStop(0.098, 'rgba(255, 255, 255, 0)');
@@ -75,16 +79,16 @@ namespace End {
         // Fill with gradient
         crc2.fillStyle = gradient2;
         //crc2.arc(400, 300, 50, 0, 2 * Math.PI);
-        crc2.fillRect(0, 0, 800, 600);
+        crc2.fillRect(0, 0, scale*800, scale*600);
 
         //Strand
         //Meer Verlauf hell ivory: #FFFFF0 ; dunkel: #FAEBD7
-        var gradient = crc2.createLinearGradient(0, 300, 0, 600);
+        var gradient = crc2.createLinearGradient(0, scale*300, 0, scale*600);
         gradient.addColorStop(0, "#FAEBD7"); //Ursprungsfarbe
         gradient.addColorStop(0.5, "#FAEBD7");
         gradient.addColorStop(1, "#FFFFF0");
         crc2.fillStyle = gradient;
-        crc2.fillRect(0, 400, 800, 600);
+        crc2.fillRect(0, scale*400, scale*800, scale*600);
 
         //Palme mit linien?? Ansatz, nachher auslagern
         //Rechteck 1
@@ -125,14 +129,14 @@ namespace End {
         // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
-        clkrabbe = new Krabbe(400, 450);
+        clkrabbe = new Krabbe(scale* 400, scale* 450);
 
         objektArr.push(clkrabbe);
 
         //Animation    
         for (let i: number = 0; i < 3; i++) {
 
-            clwolken = new Wolken(0 + Math.random() * 800, 0 + Math.random() * 80 + 50);
+            clwolken = new Wolken(0 + Math.random() * 800 * scale, 0 + Math.random() * 80*scale + scale* 50);
 
             objektArr.push(clwolken);
         }
@@ -141,13 +145,10 @@ namespace End {
         const generateKokosnuss = () => {
             addKokosnuss(
                 new Kokosnuss(
-                    parseInt((new Date()).getTime().toString().substr(-2)) * 10 + Math.random() * 800,
+                    parseInt((new Date()).getTime().toString().substr(-2)) * 10 * scale + Math.random() * scale*800,
                     0
                 )
-
             );
-
-
         };
 
         for (let i: number = 0; i < 6; i++) {
@@ -225,7 +226,7 @@ namespace End {
 
 
         //Bild einfügen, hier Hintergrund restaurieren
-        crc2.clearRect(0, 0, 800, 600);
+        crc2.clearRect(0, 0, scale*800, scale* 600);
         crc2.putImageData(imgData, 0, 0);
 
         //Kokosnuss, Wolken
@@ -240,6 +241,7 @@ namespace End {
     }
 
     //Funktion für Palme
+    /*
     function Palme(x: number, y: number, color: string): void {
         crc2.beginPath();
         crc2.moveTo(x, y);
@@ -250,6 +252,7 @@ namespace End {
         crc2.fillStyle = color;
         crc2.fill();
     }
+    */
 
 
     function cocosCrash() {
@@ -261,10 +264,10 @@ namespace End {
             let kokosnuss: Kokosnuss = obj as Kokosnuss;
             
             if (
-                clkrabbe.y + 3 <= kokosnuss.y + 10 &&
-                clkrabbe.y + 35 > kokosnuss.y &&
-                clkrabbe.x <= kokosnuss.x + 60 &&
-                clkrabbe.x >= kokosnuss.x - 35
+                clkrabbe.y + scale*3 <= kokosnuss.y + scale* 10 &&
+                clkrabbe.y + scale*35 > kokosnuss.y &&
+                clkrabbe.x <= kokosnuss.x + scale* 60 &&
+                clkrabbe.x >= kokosnuss.x - scale* 35
             ) {
                 alert("GAME OVER \n Seite bitte neu laden lassen");
                 gameOver = true;

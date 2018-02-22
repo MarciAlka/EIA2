@@ -38,7 +38,7 @@ namespace End {
         
         draw() : void {
             crc2.beginPath();
-            crc2.arc(this.x, this.y, 20, 0, 2 * Math.PI);
+            crc2.arc(this.x, this.y, scale*20, 0, 2 * Math.PI);
             crc2.fillStyle = "#8B4513";
             crc2.fill();
             

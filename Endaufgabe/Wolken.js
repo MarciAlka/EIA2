@@ -15,10 +15,10 @@ var End;
             this.y = _y;
         }
         move() {
-            if (this.x > 800) {
+            if (this.x > End.scale * 800) {
                 this.x = 0;
             }
-            this.x += 10;
+            this.x += End.scale * 10;
             this.y += 0;
         }
         draw() {
@@ -28,17 +28,17 @@ var End;
             End.crc2.fill();
             //W1.2
             End.crc2.beginPath();
-            End.crc2.arc(this.x + 10, this.y + 10, 10, 0, 2 * Math.PI);
+            End.crc2.arc(this.x + End.scale * 10, this.y + End.scale * 10, 10, 0, 2 * Math.PI);
             End.crc2.fillStyle = "#FFFFFF";
             End.crc2.fill();
             //W1.3
             End.crc2.beginPath();
-            End.crc2.arc(this.x - 10, this.y + 10, 10, 0, 2 * Math.PI); //10 radius
+            End.crc2.arc(this.x - End.scale * 10, this.y + End.scale * 10, 10, 0, 2 * Math.PI); //10 radius
             End.crc2.fillStyle = "#FFFFFF";
             End.crc2.fill();
             //W1.4
             End.crc2.beginPath();
-            End.crc2.arc(this.x, this.y + 8, 10, 0, 2 * Math.PI);
+            End.crc2.arc(this.x, this.y + End.scale * 8, 10, 0, 2 * Math.PI);
             End.crc2.fillStyle = "#FFFFFF";
             End.crc2.fill();
         } //draw
