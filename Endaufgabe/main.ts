@@ -1,7 +1,7 @@
 /* 
     Name: Denise Marcella Alka
     Matrikel: 256690
-    Datum: 06.02.2017
+    Datum: 22.02.2017
     Hiermit versichere ich, dass ich diesen
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert
@@ -90,30 +90,6 @@ namespace End {
         crc2.fillStyle = gradient;
         crc2.fillRect(0, scale*400, scale*800, scale*600);
 
-        //Palme mit linien?? Ansatz, nachher auslagern
-        //Rechteck 1
-        /* noch ausKOMMENTiert
-        crc2.beginPath();
-        crc2.moveTo(80, 600);
-        crc2.lineTo(20, 600);
-        crc2.lineTo(15, 550);
-        crc2.lineTo(70,550);
-        crc2.closePath();
-        crc2.stroke();
-        crc2.fillStyle = "#CD853F";
-        crc2.fill();
-        
-        //Rechteck 2
-        crc2.beginPath();
-        crc2.moveTo(70, 550); bis hierhin verändert
-        crc2.lineTo(20, 600);
-        crc2.lineTo(15, 550);
-        crc2.lineTo(70,550);
-        crc2.closePath();
-        crc2.stroke();
-        crc2.fillStyle = "#CD853F";
-        crc2.fill();
-        */
         /*Sprechblase für späteren Text! KOMMENTAR
         crc2.beginPath();
         crc2.moveTo(75, 25);
@@ -124,7 +100,6 @@ namespace End {
         crc2.quadraticCurveTo(125, 100, 125, 62.5);
         crc2.quadraticCurveTo(125, 25, 25        crc2.stroke();
         */
-
 
         // hier Hintergrund speichern
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -240,21 +215,6 @@ namespace End {
         window.setTimeout(animate, 100);
     }
 
-    //Funktion für Palme
-    /*
-    function Palme(x: number, y: number, color: string): void {
-        crc2.beginPath();
-        crc2.moveTo(x, y);
-        crc2.lineTo(x + 30, y + 100);
-        crc2.lineTo(x - 30, y + 100);
-        crc2.closePath();
-        crc2.stroke();
-        crc2.fillStyle = color;
-        crc2.fill();
-    }
-    */
-
-
     function cocosCrash() {
         objektArr.forEach(obj => {
             if (!(obj instanceof Kokosnuss)) {
@@ -294,8 +254,6 @@ namespace End {
             objektArr.splice(objektArr.findIndex(kokosnuss => (kokosnuss as Kokosnuss).kokoId === nut), 1);
         }
 
-        //kokosArr.splice(kokosArr.reduce((/*acc, item, index*/Kokosnuss.kokoId,nut,0) => { return /*item*/ Kokosnuss.kokoId == nut ? index : /*acc*/ Kokosnuss.kokoId }, -1), 1);
-        //objektArr.splice(objektArr.reduce(nut), 1);
     }
 
 

@@ -17,7 +17,7 @@ var End;
             this.kokoId = ++kokoId;
         }
         move() {
-            if (this.y > 600) {
+            if (this.y > 600 * End.scale) {
                 End.deleteKokosnuss(this.kokoId);
             }
             //test

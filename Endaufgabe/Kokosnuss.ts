@@ -25,7 +25,7 @@ namespace End {
         
         move(): void {    
             
-                if (this.y > 600) {
+                if (this.y > 600*scale) {
                     deleteKokosnuss(this.kokoId);
 //                    this.x = 1 + Math.random() * 800;
                 }
