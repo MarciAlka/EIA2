@@ -129,7 +129,7 @@ var End;
             switch (e.keyCode) {
                 //linke Pfeiltaste
                 case 37:
-                    End.clkrabbe.move_Krabbe(30);
+                    End.clkrabbe.move_Krabbe(30 * End.scale);
                     break;
                 //rechte Pfeiltaste
                 case 39:

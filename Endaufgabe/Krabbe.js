@@ -175,19 +175,19 @@ var End;
             End.crc2.fill();
             //Krabbenaugen
             End.crc2.beginPath();
-            End.crc2.arc(this.x - End.scale * 22, this.y + End.scale * 24, 2.5, 0, 2 * Math.PI);
+            End.crc2.arc(this.x - End.scale * 22, this.y + End.scale * 24, 2.5 * End.scale, 0, End.scale * 2 * Math.PI);
             End.crc2.fillStyle = "black";
             End.crc2.fill();
             End.crc2.beginPath();
-            End.crc2.arc(this.x - End.scale * 23, this.y + End.scale * 24, 1, 0, 2 * Math.PI);
+            End.crc2.arc(this.x - End.scale * 23, this.y + End.scale * 24, End.scale, 0, End.scale * 2 * Math.PI);
             End.crc2.fillStyle = "white";
             End.crc2.fill();
             End.crc2.beginPath();
-            End.crc2.arc(this.x - End.scale * 10, this.y + End.scale * 24, 2.5, 0, 2 * Math.PI);
+            End.crc2.arc(this.x - End.scale * 10, this.y + End.scale * 24, End.scale * 2.5, 0, End.scale * 2 * Math.PI);
             End.crc2.fillStyle = "black";
             End.crc2.fill();
             End.crc2.beginPath();
-            End.crc2.arc(this.x - End.scale * 11, this.y + End.scale * 24, 1, 0, 2 * Math.PI);
+            End.crc2.arc(this.x - End.scale * 11, this.y + End.scale * 24, End.scale, 0, End.scale * 2 * Math.PI);
             End.crc2.fillStyle = "white";
             End.crc2.fill();
             /*HITZONES

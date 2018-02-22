@@ -171,7 +171,7 @@ namespace End {
             switch (e.keyCode) {
                 //linke Pfeiltaste
                 case 37:
-                    clkrabbe.move_Krabbe(30);
+                    clkrabbe.move_Krabbe(30*scale);
                     break;
                 //rechte Pfeiltaste
                 case 39:

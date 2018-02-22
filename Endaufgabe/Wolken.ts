@@ -34,22 +34,22 @@ namespace End {
         draw() : void {
             
             crc2.beginPath();
-            crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI);//10 radius
+            crc2.arc(this.x, this.y, 10*scale, 0, scale*2 * Math.PI);//10 radius
             crc2.fillStyle = "#FFFFFF";
             crc2.fill();
             //W1.2
             crc2.beginPath();
-            crc2.arc(this.x + scale*10, this.y + scale*10, 10, 0, 2 * Math.PI);
+            crc2.arc(this.x + scale*10, this.y + scale*10, 10, 0, scale*2 * Math.PI);
             crc2.fillStyle = "#FFFFFF";
             crc2.fill();
             //W1.3
             crc2.beginPath();
-            crc2.arc(this.x - scale*10, this.y + scale*10, 10, 0, 2 * Math.PI); //10 radius
+            crc2.arc(this.x - scale*10, this.y + scale*10, 10*scale, 0, scale*2 * Math.PI); //10 radius
             crc2.fillStyle = "#FFFFFF";
             crc2.fill();
             //W1.4
             crc2.beginPath();
-            crc2.arc(this.x, this.y + scale*8, 10, 0, 2 * Math.PI);
+            crc2.arc(this.x, this.y + scale*8, 10*scale, 0, scale*2 * Math.PI);
             crc2.fillStyle = "#FFFFFF";
             crc2.fill();
         }//draw

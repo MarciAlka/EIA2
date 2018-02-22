@@ -23,22 +23,22 @@ var End;
         }
         draw() {
             End.crc2.beginPath();
-            End.crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI); //10 radius
+            End.crc2.arc(this.x, this.y, 10 * End.scale, 0, End.scale * 2 * Math.PI); //10 radius
             End.crc2.fillStyle = "#FFFFFF";
             End.crc2.fill();
             //W1.2
             End.crc2.beginPath();
-            End.crc2.arc(this.x + End.scale * 10, this.y + End.scale * 10, 10, 0, 2 * Math.PI);
+            End.crc2.arc(this.x + End.scale * 10, this.y + End.scale * 10, 10, 0, End.scale * 2 * Math.PI);
             End.crc2.fillStyle = "#FFFFFF";
             End.crc2.fill();
             //W1.3
             End.crc2.beginPath();
-            End.crc2.arc(this.x - End.scale * 10, this.y + End.scale * 10, 10, 0, 2 * Math.PI); //10 radius
+            End.crc2.arc(this.x - End.scale * 10, this.y + End.scale * 10, 10 * End.scale, 0, End.scale * 2 * Math.PI); //10 radius
             End.crc2.fillStyle = "#FFFFFF";
             End.crc2.fill();
             //W1.4
             End.crc2.beginPath();
-            End.crc2.arc(this.x, this.y + End.scale * 8, 10, 0, 2 * Math.PI);
+            End.crc2.arc(this.x, this.y + End.scale * 8, 10 * End.scale, 0, End.scale * 2 * Math.PI);
             End.crc2.fillStyle = "#FFFFFF";
             End.crc2.fill();
         } //draw
