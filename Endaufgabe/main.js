@@ -24,7 +24,7 @@ var End;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         canvas.width = canvas.clientWidth;
-        canvas.height = canvas.height;
+        canvas.height = canvas.clientHeight;
         End.crc2 = canvas.getContext("2d");
         //Rechteck f�r den Himmel
         var gradient = End.crc2.createLinearGradient(0, 0, 0, End.scale * 600);

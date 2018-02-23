@@ -38,7 +38,7 @@ namespace End {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         
         canvas.width = canvas.clientWidth;
-        canvas.height = canvas.height;        
+        canvas.height = canvas.clientHeight;        
 
         crc2 = canvas.getContext("2d");
 
