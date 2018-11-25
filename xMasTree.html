@@ -12,7 +12,7 @@ eigenständig geschrieben wurde
 	
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="xTree.css">
-	<script type="text/javascript" src="main.js"> </script>
+	<script type="text/javascript" src="maintree.js"> </script>
 	
 	
 </head>
@@ -31,6 +31,13 @@ eigenständig geschrieben wurde
 	<canvas width="800" height="800"> </canvas>
 	-->
 	
+	<!-- Willkommen -->
+	
+	<p> Oh Tannenbaum, oh Tannenbaum? </p>
+	
+	<p> Willkommen auf der Homepage von Pixel-Tree! Hier können Sie ihren Wunschbaum ganz einfach zusammenstellen. Wählen Sie
+	dazu ihre Wunschartikel aus und geben Sie Anschrift und Zahlungsart ein.
+	</p>
 	
 	<!-- Allgemeine Auswahl -->
 	
@@ -39,17 +46,23 @@ eigenständig geschrieben wurde
 		Baum
 		<select name="Select" id="selectTree">
 			<!-- <optgroup label="OptGroup1"></optgroup> -->
-			<option value="option1">Fichte (5,50 EUR)</option>
-			<option value="option2" selected>Tanne (8,00 EUR)</option>
-			<option value="option3">Kiefer (9,00 EUR)</option>
-			<option value="option4">Nordmann-Tanne (9,00 EUR)</option>
+			<option id="Fichte" value="Fichte">Fichte (5,50 EUR)</option>
+			<option id="Tanne" value="Tanne" selected>Tanne (8,00 EUR)</option>
+			<option id="Kiefer" value="Kiefer">Kiefer (9,00 EUR)</option>
+			<option id="Nordmanntanne" value="Nordmanntanne">Nordmann-Tanne (9,00 EUR)</option>
 		</select>
 		<hr/>
 		
 		<p> Baumgrund </p>
 		
-		<input id="standerCheckbox" type="checkbox" checked="checked" name= "Stander" value="checkStander" />
-		<label for="Stander">Ständer
+		<!-- 
+		<input id="standerCheckbox" type="checkbox" checked="checked" name= "Staender" value="checkStaender" [checked]="temp == 1? '' : null"/>
+		<label for="Staender">Ständer
+		-->
+		
+		<input id="staenderCheckbox" type="checkbox" name= "Staender" value="checkStaender" checked="temp == 1? '' : null"/>
+		<label for="Staender">Ständer
+		
 		<!--<input type="number" name="Text" class="gedrückt" placeholder="Anzahl" required/>
 		-->
 		</label>
@@ -66,6 +79,47 @@ eigenständig geschrieben wurde
 		
 		<!-- divs für Artikel -->
 		<div>
+			<p> Weihnachtskugel gold </p>
+			<img class="pics" src="img/goldKugel.jpg">
+			<input class="divArt" id="kugelGoldCheckbox" type="checkbox" checked="checked" name= "kugelGold" value="checkKugelGold" />
+			<input class="divArt" id="kugelGoldNumber" type="number" name= "kugelGoldNumber" value="0" />
+			<!-- 
+			<label for="Topf">KugelGold
+			</label>
+			-->
+		</div>
+		
+		<div>
+			<p> Weihnachtskugel rot </p>
+			<img class="pics" src="img/rotKugel.jpg">
+			<input class="divArt" id="kugelRotCheckbox" type="checkbox" checked="checked" name= "kugelRot" value="checkKugelRot" />
+			<input class="divArt" id="kugelRotNumber" type="number" name= "kugelRotNumber" value="0" />
+			<!-- 
+			<label for="Topf">KugelRot
+			</label>
+			-->
+		</div>
+		
+		<div>
+			<p> Lametta rot </p>
+			<img class="pics" src="img/rotLametta.jpg">
+			<input class="divArt" id="lamettaRotCheckbox" type="checkbox" checked="checked" name= "lamettaRot" value="checklamettaRot" />
+			<input class="divArt" id="lamettaRotNumber" type="number" name= "lamettaRotNumber" value="0" />
+			<!-- 
+			<label for="lamettaRot">KugelRot
+			</label>
+			-->
+		</div>
+		
+		<div>
+			<p> Lametta gold </p>
+			<img class="pics" src="img/goldLametta.jpg">
+			<input class="divArt" id="lamettaGoldCheckbox" type="checkbox" checked="checked" name= "lamettaGold" value="checklamettaGold" />
+			<input class="divArt" id="lamettaGoldNumber" type="number" name= "lamettaGoldNumber" value="0" />
+			<!-- 
+			<label for="lamettaGold">LamettaGold
+			</label>
+			-->
 		</div>
 
 	</fieldset>
@@ -86,11 +140,40 @@ eigenständig geschrieben wurde
 	<p id="warenkorb6"> </p>
 	<p id="warenkorb7"> </p>
 	
-	<p id="preis"> </p>
+	<hr/>
 	
-	<button>Finish</button>
+	<p id="preis"> Preis:  </p>
 
 	</fieldset>
+
+	<fieldset>
+	
+	</br>
+	
+	Bitte prüfen Sie ihren Einkauf und geben Sie ihre Anschrift an!
+	</br>	
+	Anschrift:
+	</br>
+	
+	<form action="senden.html" id="person">
+		<!--
+		<label class="" form="person">Namenseingabe</label>
+		 -->
+		<label for="vorname">Vorname: </label>
+		<input type="text" name="vorname" id="vorname" maxlength="40">
+		</br>
+		<label for="nachname">Nachname: </label>
+		<input type="text" name="nachname" id="nachname" maxlength="40">
+		</br>
+		<label for="strasseUndHausnr">Strasse und Hausnummer: </label>
+		<input type="text" name="strasse" id="strasse" maxlength="40">
+		<input type="text" name="hausnr" id="hausnr" maxlength="40">
+	</form>
+	
+	<button>Bestätigen</button>
+
+	</fieldset>
+
 </body>
 
 
