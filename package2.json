@@ -1,0 +1,16 @@
+//  ///
+{
+	"name" : "WeihnachtsServer",
+	"version" : "1.0.0",
+	"description" : "Minimal server just bouncing the URL",
+	"author" : "Marci",
+	"main" : "maintree.js",
+	"scripts" : {
+		"start" : "node ServerClient/Server/Server.js"
+	},
+	"engines" : {
+		"node" : "8.10.0"
+	},
+	"dependencies" : {
+	}
+}
